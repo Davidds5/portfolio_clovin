@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Silva - Desenvolvedor Java Backend</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #2563eb;
+            --text-main: #1f2937;
+            --text-light: #4b5563;
+            --accent: #eff6ff;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.4;
+            color: var(--text-main);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 40px;
+            background-color: #fff;
+        }
+
+        .header {
+            border-left: 5px solid var(--primary);
+            padding-left: 20px;
+            margin-bottom: 35px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+            color: var(--primary);
+            letter-spacing: -1px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-top: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+            font-size: 14px;
+            color: var(--text-light);
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border 0.3s;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: var(--secondary);
+        }
+
+        section {
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            font-size: 16px;
+            color: var(--primary);
+            background-color: var(--accent);
+            padding: 5px 12px;
+            display: inline-block;
+            border-radius: 4px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .summary p {
+            margin: 0;
+            text-align: justify;
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-group {
+            font-size: 14px;
+        }
+
+        .skill-group strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .project {
+            padding: 15px;
+            border: 1px solid #f3f4f6;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 18px;
+            color: #111827;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .project-links a {
+            font-size: 13px;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .project-tagline {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #dcfce7;
+            color: #166534;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 999px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 14px;
+        }
+
+        li {
+            margin-bottom: 3px;
+            color: var(--text-main);
+        }
+
+        li strong {
+            color: var(--primary);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .edu-item strong {
+            display: block;
+            color: var(--primary);
+            font-size: 15px;
+        }
+
+        .edu-item span {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        @media print {
+            body { padding: 15px 25px; font-size: 13px; }
+            .project { border: none; padding: 0; margin-bottom: 10px; }
+            section { margin-bottom: 12px; }
+            h2 { font-size: 14px; padding: 4px 10px; margin-bottom: 8px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 17px; }
+            li { margin-bottom: 2px; }
+            .summary p { font-size: 13px; }
+            .skill-group { font-size: 12px; }
+            ul { font-size: 12.5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>David Silva</h1>
+        <div class="subtitle">Desenvolvedor Java Backend | Spring Boot | APIs REST</div>
+        <div class="contact-info">
+            <span>São Paulo, SP — Brasil</span>
+            <a href="mailto:ds2945294@gmail.com">ds2945294@gmail.com</a>
+            <a href="https://www.linkedin.com/in/david-silva-17b2882bb">LinkedIn</a>
+            <a href="https://github.com/Davidds5">GitHub</a>
+            <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html">API em Produção ↗</a>
+        </div>
+    </div>
+
+    <section class="summary">
+        <h2>Resumo Profissional</h2>
+        <p>
+            Desenvolvedor Backend com foco na construção de sistemas escaláveis e de alta disponibilidade utilizando o ecossistema <strong>Java 21 e Spring Boot 3</strong>. Especializado em arquiteturas orientadas a serviços (REST) com foco rigoroso em <strong>Segurança (Spring Security / JWT)</strong>, <strong>Qualidade de Código (SOLID, Clean Architecture)</strong> e <strong>Observabilidade (Actuator, Micrometer)</strong>. Comprometido com automação e infraestrutura moderna, entregando ambientes resilientes com <strong>Docker</strong> e pipelines de CI/CD com <strong>GitHub Actions</strong>.
+        </p>
+    </section>
+
+    <section>
+        <h2>Competências Técnicas</h2>
+        <div class="skills-container">
+            <div class="skill-group">
+                <strong>Backend e Arquitetura</strong>
+                Java 21, Spring Boot 3, Spring Data JPA, Hibernate, SOLID, Clean Architecture, Paginação, Specification (filtros dinâmicos), HATEOAS.
+            </div>
+            <div class="skill-group">
+                <strong>Segurança e Autenticação</strong>
+                Spring Security, Autenticação Polimórfica, JWT (Stateless), RBAC (Role-Based Access Control), BCrypt.
+            </div>
+            <div class="skill-group">
+                <strong>DevOps e Infraestrutura</strong>
+                Docker, Docker Compose, Flyway (Migrations), Maven, Git/GitHub, CI/CD com GitHub Actions, Deploy no Render.
+            </div>
+            <div class="skill-group">
+                <strong>Qualidade, Testes e Documentação</strong>
+                JUnit 5, Mockito, ArgumentCaptor, Swagger/OpenAPI (SpringDoc), Spring Boot Actuator, Micrometer (métricas customizadas), Logging estruturado (Slf4j).
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projetos</h2>
+        <div class="project">
+            <div class="project-header">
+                <div class="project-title">
+                    Manicure API
+                    <span class="badge">EM PRODUÇÃO</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html">[Swagger UI — Produção]</a>
+                    <a href="https://github.com/Davidds5/manicure_api">[Ver Código no GitHub]</a>
+                </div>
+            </div>
+            <span class="project-tagline">API REST completa para gestão de salão de beleza — arquitetura e stack de nível enterprise, deployada e acessível publicamente.</span>
+            <ul>
+                <li><strong>Segurança:</strong> Autenticação polimórfica com <strong>Spring Security e JWT Stateless</strong> para Clientes (ROLE_USER) e Profissionais (ROLE_ADMIN) com controle de acesso por roles.</li>
+                <li><strong>Documentação:</strong> <strong>Swagger UI</strong> com SpringDoc e JWT integrado — endpoints testáveis publicamente em produção.</li>
+                <li><strong>Observabilidade:</strong> <strong>Spring Boot Actuator</strong> para health checks e métricas customizadas com <strong>Micrometer</strong>, protegidos por autenticação.</li>
+                <li><strong>Infraestrutura:</strong> <strong>Docker</strong>, schema gerenciado via <strong>Flyway</strong> e pipeline automatizado com <strong>GitHub Actions (CI/CD)</strong>. Deploy no <strong>Render</strong>.</li>
+                <li><strong>Testes e Eventos:</strong> Cobertura na camada de serviço com <strong>JUnit 5 e Mockito</strong>; notificações assíncronas por e-mail via <strong>ApplicationEventPublisher</strong>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Formação e Cursos</h2>
+        <div class="education-grid">
+            <div class="edu-item">
+                <strong>Bacharelado em Ciências da Computação</strong>
+                <span>UNIP Tatuapé — 4º Semestre | Foco em Algoritmos e Estrutura de Dados</span>
+            </div>
+            <div class="edu-item">
+                <strong>Especialização em Spring Boot</strong>
+                <span>Segurança Avançada, Docker, Aplicações Cloud-native e Testes.</span>
+            </div>
+            <div class="edu-item">
+                <strong>Java e Orientação a Objetos</strong>
+                <span>Fundamentos sólidos em Java moderno e padrões de design.</span>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
