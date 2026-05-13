@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Silva | Java Backend Developer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --bg-card: rgba(15, 15, 15, 0.7);
+            --text-main: #f8f8f8;
+            --text-muted: #888888;
+            --accent: #00E5FF;
+            --accent-glow: rgba(0, 229, 255, 0.3);
+            --secondary: #7000FF; /* Roxo para contraste técnico */
+            --secondary-glow: rgba(112, 0, 255, 0.2);
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Fundo Animado (Grid e Orbs) */
+        .bg-grid {
+            position: fixed; top: 0; left: 0; width: 200vw; height: 200vh; z-index: -2;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: moveGrid 40s linear infinite;
+        }
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-60px, -60px); }
+        }
+
+        .orb { position: fixed; border-radius: 50%; filter: blur(120px); z-index: -1; animation: floatOrb 25s infinite alternate ease-in-out; pointer-events: none;}
+        .orb-1 { width: 500px; height: 500px; background: var(--accent-glow); top: -150px; left: -150px; }
+        .orb-2 { width: 600px; height: 600px; background: var(--secondary-glow); bottom: -200px; right: -150px; animation-delay: -5s; }
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(150px, 100px) scale(1.3); }
+        }
+
+        /* Scroll Progress Bar */
+        #progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, var(--accent), var(--secondary)); width: 0%; z-index: 1000; box-shadow: 0 0 15px var(--accent); }
+
+        /* Cursor Personalizado Moderno */
+        .cursor-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s;}
+        .cursor-outline { width: 40px; height: 40px; border: 1px solid rgba(0,229,255,0.5); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s, background 0.2s, border-color 0.2s; backdrop-filter: grayscale(80%);}
+        
+        .hover-active ~ .cursor-dot { width: 0; height: 0; }
+        .hover-active ~ .cursor-outline { width: 70px; height: 70px; background: rgba(0,229,255,0.1); border-color: var(--accent); backdrop-filter: blur(2px);}
+
+        /* Tipografia e Layout */
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 30px; }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: var(--bg-card); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--border-color); border-radius: 20px; }
+        
+        /* Botões */
+        .btn { padding: 16px 36px; border-radius: 12px; font-weight: 600; text-decoration: none; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: inline-flex; align-items: center; gap: 10px; position: relative; overflow: hidden; z-index: 1; font-family: 'Space Grotesk'; font-size: 1.1rem; letter-spacing: 0.5px;}
+        .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: 0.5s; z-index: -1; }
+        .btn:hover::before { left: 100%; }
+        .btn-primary { background: var(--text-main); color: var(--bg-dark); box-shadow: 0 5px 20px rgba(255,255,255,0.1); }
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(255,255,255,0.3); }
+        .btn-accent { background: linear-gradient(45deg, var(--accent), #0099FF); color: #000; box-shadow: 0 5px 20px var(--accent-glow); }
+        .btn-accent:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 229, 255, 0.5); }
+        .btn-outline { border: 1px solid var(--border-color); color: var(--text-main); background: transparent; }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,229,255,0.15); }
+
+        /* ================= HERO SECTION ================= */
+        .hero { min-height: 100vh; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 60px; padding-top: 50px; }
+        
+        .hero-text .badge { color: var(--accent); font-family: 'Fira Code', monospace; font-size: 0.9rem; margin-bottom: 25px; display: inline-flex; align-items: center; gap: 10px; background: rgba(0,229,255,0.08); padding: 8px 16px; border-radius: 30px; border: 1px solid rgba(0,229,255,0.2);}
+        .hero-text .badge span { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite;}
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+        .hero h1 { font-size: 5.5rem; margin-bottom: 20px; line-height: 1.05; letter-spacing: -2px; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 40px; max-width: 550px; line-height: 1.8; }
+        .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
+
+        /* Terminal Window */
+        .terminal { background: #0A0A0A; border-radius: 12px; border: 1px solid #222; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05); transform: perspective(1000px) rotateY(-8deg) rotateX(5deg); transition: 0.5s; }
+        .terminal:hover { transform: perspective(1000px) rotateY(0) rotateX(0); box-shadow: 0 40px 80px rgba(0,229,255,0.15), 0 0 0 1px rgba(0,229,255,0.3); }
+        .terminal-header { background: #151515; padding: 12px 20px; display: flex; gap: 8px; border-bottom: 1px solid #222; }
+        .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: #FF5F56; } .dot-yellow { background: #FFBD2E; } .dot-green { background: #27C93F; }
+        
+        .terminal-body { padding: 25px; font-family: 'Fira Code', monospace; font-size: 0.85rem; color: #A0A0A0; height: 380px; overflow: hidden;}
+        .log-line { margin-bottom: 8px; opacity: 0; animation: fadeInLog 0.1s forwards; display: flex; gap: 15px;}
+        .log-time { color: #666; width: 80px; flex-shrink: 0;} 
+        .log-info { color: var(--accent); width: 45px;} 
+        .log-class { color: #bb86fc; }
+        .log-text { color: #d0d0d0; }
+        .log-success { color: #27C93F; }
+        @keyframes fadeInLog { to { opacity: 1; } }
+
+        /* ================= SECTIONS GLOBAL ================= */
+        section { padding: 150px 0; }
+        .section-header { margin-bottom: 70px; display: flex; align-items: center; gap: 30px;}
+        .section-title { font-size: 3.5rem; color: var(--text-main); letter-spacing: -1px;}
+        .section-line { height: 1px; background: linear-gradient(90deg, var(--accent), transparent); flex-grow: 1; opacity: 0.5;}
+
+        /* ================= SOBRE MIM ================= */
+        .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;}
+        .sobre-text p { margin-bottom: 25px; font-size: 1.2rem; color: var(--text-muted); line-height: 1.8; }
+        .sobre-text p strong { color: var(--text-main); font-weight: 600; }
+        
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .stat-card { padding: 30px; border-left: 4px solid var(--accent); background: linear-gradient(90deg, rgba(0,229,255,0.05), transparent); border-radius: 0 16px 16px 0; transition: 0.3s;}
+        .stat-card:hover { background: linear-gradient(90deg, rgba(0,229,255,0.1), transparent); transform: translateX(10px);}
+        .stat-number { font-size: 3rem; font-weight: 700; color: var(--text-main); font-family: 'Space Grotesk'; margin-bottom: 5px; line-height: 1;}
+        .stat-label { color: var(--accent); font-size: 0.95rem; font-weight: 600; font-family: 'Fira Code', monospace; text-transform: uppercase;}
+
+        /* ================= HABILIDADES ================= */
+        .skills-container { display: flex; flex-wrap: wrap; gap: 15px; }
+        .skill-pill { padding: 14px 28px; border-radius: 30px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 12px; transition: 0.4s; font-family: 'Space Grotesk'; font-size: 1.1rem; color: var(--text-muted);}
+        .skill-pill:hover { background: rgba(0,229,255,0.05); border-color: var(--accent); color: var(--text-main); transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,229,255,0.15);}
+        .skill-pill i { color: var(--accent); width: 20px; height: 20px;}
+
+        /* ================= PROJETOS ================= */
+        .project-featured { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 0; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 30px; overflow: hidden; transition: 0.5s; position: relative;}
+        .project-featured:hover { border-color: rgba(0,229,255,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 50px rgba(0,229,255,0.05); }
+        
+        .project-info { padding: 70px; display: flex; flex-direction: column; justify-content: center;}
+        .project-status { color: #27C93F; font-family: 'Fira Code', monospace; font-size: 0.9rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;}
+        .project-status::before { content: ''; width: 8px; height: 8px; background: #27C93F; border-radius: 50%; display: inline-block; animation: pulseGreen 2s infinite;}
+        
+        .project-title { font-size: 3rem; margin-bottom: 25px; line-height: 1.1;}
+        .project-desc { color: var(--text-muted); margin-bottom: 35px; font-size: 1.15rem; line-height: 1.8;}
+        
+        .project-techs { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 50px; }
+        .project-techs span { font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--accent); background: rgba(0,229,255,0.05); padding: 8px 16px; border-radius: 6px; border: 1px solid rgba(0,229,255,0.15);}
+        
+        .project-visual { background: #080808; border-left: 1px solid var(--border-color); position: relative; display: flex; align-items: center; justify-content: center; padding: 50px; overflow: hidden;}
+        .project-visual::before { content: 'API_REST'; font-family: 'Space Grotesk'; font-size: 7rem; font-weight: 900; color: rgba(255,255,255,0.01); position: absolute; transform: rotate(-90deg); left: -80px;}
+        
+        .api-mockup { background: #111; width: 100%; border-radius: 12px; border: 1px solid #333; padding: 25px; font-family: 'Fira Code', monospace; font-size: 0.9rem; color: #a0a0a0; box-shadow: 0 20px 50px rgba(0,0,0,0.6); z-index: 1;}
+        .api-mockup .req { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #222;}
+        .api-mockup .req:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none;}
+        .api-mockup span.method { color: #FFBD2E; font-weight: bold;}
+        .api-mockup span.method.post { color: #27C93F; }
+        .api-mockup span.path { color: var(--text-main); }
+        .api-mockup span.status { color: #00E5FF; margin-left: 10px; font-size: 0.8rem;}
+
+        /* ================= CANAIS & SOCIAL ================= */
+        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .social-card { padding: 50px 40px; text-decoration: none; color: var(--text-main); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; border-radius: 24px; transition: 0.4s; position: relative; overflow: hidden; border: 1px solid var(--border-color); background: rgba(255,255,255,0.01);}
+        .social-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 0%, rgba(0,229,255,0.1), transparent 60%); opacity: 0; transition: 0.5s;}
+        .social-card:hover { transform: translateY(-10px); border-color: rgba(0,229,255,0.3); background: rgba(255,255,255,0.03);}
+        .social-card:hover::before { opacity: 1; }
+        .social-card i { width: 56px; height: 56px; color: var(--accent); transition: 0.4s;}
+        .social-card:hover i { transform: scale(1.1) translateY(-5px); filter: drop-shadow(0 10px 15px var(--accent-glow));}
+        .social-card h3 { font-size: 1.8rem; margin-bottom: 10px; }
+        .social-card p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
+
+        /* ================= FOOTER ================= */
+        footer { padding: 80px 20px; text-align: center; border-top: 1px solid var(--border-color); margin-top: 50px; position: relative;}
+        footer p { color: var(--text-muted); font-family: 'Space Grotesk'; font-size: 1.1rem; }
+        footer .accent-text { color: var(--accent); }
+
+        /* Anim Reveal */
+        .reveal { opacity: 0; transform: translateY(60px); transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 100px;}
+            .hero-text .badge { margin: 0 auto 25px auto; }
+            .hero p { margin: 0 auto 40px auto; }
+            .hero-buttons { justify-content: center; }
+            .sobre-grid { grid-template-columns: 1fr; }
+            .project-featured { grid-template-columns: 1fr; }
+            .project-visual { display: none; }
+            .terminal { display: none; }
+            * { cursor: auto !important; }
+            .cursor-dot, .cursor-outline { display: none !important; }
+            .section-title { font-size: 2.5rem; }
+            .hero h1 { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fundo Animado -->
+    <div class="bg-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <!-- Scroll Progress Bar & Cursor -->
+    <div id="progress-bar"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-text reveal">
+                <div class="badge">
+                    <span></span> STATUS: OPEN TO WORK
+                </div>
+                <h1>David Silva<br><span>Backend Dev.</span></h1>
+                <p>
+                    Engenharia de Software levada a sério. Especialista em construir arquiteturas backend robustas, escaláveis e focadas em qualidade nível Enterprise com Java & Spring Boot.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projetos" class="btn btn-accent interactable">
+                        <i data-lucide="code-2"></i> Ver Projetos
+                    </a>
+                    <a href="https://linkedin.com/in/david-silva-17b2882bb" target="_blank" class="btn btn-primary interactable">
+                        <i data-lucide="linkedin"></i> LinkedIn
+                    </a>
+                    <a href="curriculo_david_pt.html" target="_blank" class="btn btn-outline interactable">
+                        <i data-lucide="file-text"></i> Ver Currículo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Fake Terminal -->
+            <div class="terminal reveal">
+                <div class="terminal-header">
+                    <div class="terminal-dot dot-red"></div>
+                    <div class="terminal-dot dot-yellow"></div>
+                    <div class="terminal-dot dot-green"></div>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <!-- Preenchido via JS para simular log de Boot do Spring -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Mim -->
+        <section id="sobre" class="reveal">
+            <div class="section-header">
+                <h2 class="section-title">01. Sobre mim</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="sobre-grid">
+                <div class="sobre-text">
+                    <p>
+                        Sou acadêmico de <strong>Ciências da Computação na UNIP (4º Semestre)</strong>, localizado em São Paulo. Meu ecossistema principal é o Java, e minha paixão é resolver problemas complexos com arquitetura limpa.
+                    </p>
+                    <p>
+                        Minha rotina me ensinou disciplina: concilio as aulas pela manhã, meu trabalho até a noite, e a madrugada se torna meu laboratório de código. Acredito que a verdadeira Engenharia de Software vai muito além de "fazer funcionar" — envolve entender o "porquê", debugar na raiz e dominar os fundamentos.
+                    </p>
+                    <p>
+                        Hoje, meu foco absoluto é garantir uma vaga como <strong>Desenvolvedor Java Backend Júnior</strong>, trazendo na bagagem projetos validados em produção e uma fome insaciável por aprendizado prático.
+                    </p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">4º</div>
+                        <div class="stat-label">Semestre UNIP</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Foco no Backend</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">#1</div>
+                        <div class="stat-label">Manicure API em Prod</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Tecnologias Dominadas</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades -->
+        <section id="habilidades" class="reveal">
+            <div class="section-header">
+                <h2 class="section-title">02. Stack Tecnológica</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-pill interactable"><i data-lucide="coffee"></i> Java 21</div>
+                <div class="skill-pill interactable"><i data-lucide="server"></i> Spring Boot 3</div>
+                <div class="skill-pill interactable"><i data-lucide="shield"></i> Spring Security / JWT</div>
+                <div class="skill-pill interactable"><i data-lucide="database"></i> PostgreSQL & JPA</div>
+                <div class="skill-pill interactable"><i data-lucide="box"></i> Docker</div>
+                <div class="skill-pill interactable"><i data-lucide="git-branch"></i> GitHub Actions (CI/CD)</div>
+                <div class="skill-pill interactable"><i data-lucide="check-circle-2"></i> JUnit 5 & Mockito</div>
+                <div class="skill-pill interactable"><i data-lucide="activity"></i> Actuator & Micrometer</div>
+                <div class="skill-pill interactable"><i data-lucide="layers"></i> SOLID & Clean Code</div>
+            </div>
+        </section>
+
+        <!-- Projetos -->
+        <section id="projetos" class="reveal">
+            <div class="section-header">
+                <h2 class="section-title">03. Engenharia na Prática</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <!-- Projeto: Manicure API -->
+            <div class="project-featured glass">
+                <div class="project-info">
+                    <div class="project-status">Deployed no Render</div>
+                    <h3 class="project-title">Manicure API</h3>
+                    <p class="project-desc">
+                        Uma API REST robusta construída do zero para gerenciamento completo de um salão de beleza. Não é apenas um CRUD: implementa Autenticação Polimórfica (Client/Profissional), Filtros dinâmicos complexos com JPA Specifications, Eventos Assíncronos e Observabilidade nativa.
+                    </p>
+                    <div class="project-techs">
+                        <span>Java 21</span>
+                        <span>Spring Boot 3</span>
+                        <span>PostgreSQL</span>
+                        <span>Docker</span>
+                        <span>Flyway</span>
+                        <span>JWT Stateless</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="https://github.com/Davidds5/manicure_api" target="_blank" class="btn btn-outline interactable">
+                            <i data-lucide="github"></i> Ver Código
+                        </a>
+                    </div>
+                </div>
+                <div class="project-visual">
+                    <div class="api-mockup">
+                        <div class="req">
+                            <span class="method">GET</span> <span class="path">/api/v1/appointments</span> <span class="status">200 OK</span><br>
+                            <span style="color:#666; margin-left:20px;">Fetching paginated records...</span>
+                        </div>
+                        <div class="req">
+                            <span class="method post">POST</span> <span class="path">/api/v1/auth/login</span> <span class="status">200 OK</span><br>
+                            <span style="color:#666; margin-left:20px;">Generating stateless JWT...</span>
+                        </div>
+                        <div class="req">
+                            <span class="method">GET</span> <span class="path">/actuator/metrics</span> <span class="status">200 OK</span><br>
+                            <span style="color:#666; margin-left:20px;">Observability active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Canais e Redes Sociais -->
+        <section id="canais" class="reveal">
+            <div class="section-header">
+                <h2 class="section-title">04. Conexões & Conteúdo</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="social-grid">
+                
+                <a href="https://github.com/Davidds5" target="_blank" class="social-card interactable">
+                    <i data-lucide="github"></i>
+                    <div>
+                        <h3>GitHub</h3>
+                        <p>Meus repositórios, contribuições e arquiteturas desenhadas em código aberto.</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/david-silva-17b2882bb" target="_blank" class="social-card interactable">
+                    <i data-lucide="linkedin"></i>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <p>Artigos técnicos, insights sobre minha rotina de estudos e evolução como engenheiro.</p>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/@clovindev" target="_blank" class="social-card interactable">
+                    <i data-lucide="youtube"></i>
+                    <div>
+                        <h3>YouTube</h3>
+                        <p>Lives de estudo de Java Backend, Code Reviews e a série sobre "Falso Positivo em testes".</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 David Silva. <span class="accent-text">System.out.println("Construindo o futuro");</span></p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Scroll Progress Bar
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        // Custom Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        window.addEventListener('mousemove', function(e) {
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+            setTimeout(() => {
+                cursorOutline.style.left = e.clientX + 'px';
+                cursorOutline.style.top = e.clientY + 'px';
+            }, 40);
+        });
+
+        // Hover Effect interactables
+        document.querySelectorAll('.interactable').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('hover-active'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('hover-active'));
+        });
+
+        // Terminal Boot Sequence Animation
+        const terminalLogs = [
+            { time: "00:00:00.001", info: "INFO", class: "SpringApplication", text: "Starting ManicureApiApplication v1.0.0" },
+            { time: "00:00:00.150", info: "INFO", class: "ConfigServletWebServer", text: "Tomcat initialized with port(s): 8080 (http)" },
+            { time: "00:00:00.420", info: "INFO", class: "PostgreSQLDialect", text: "Connection to database established" },
+            { time: "00:00:00.600", info: "INFO", class: "FlywayMigrate", text: "Successfully applied 5 migrations" },
+            { time: "00:00:00.850", info: "INFO", class: "SecurityFilterChain", text: "Will secure any request with [JwtAuthFilter]" },
+            { time: "00:00:01.200", info: "INFO", class: "EndpointLinksResolver", text: "Exposing 14 endpoint(s) beneath base path '/actuator'" },
+            { time: "00:00:01.500", info: "INFO", class: "SpringApplication", text: "Started ManicureApiApplication in 1.5 seconds" },
+            { time: "00:00:01.550", info: "INFO", class: "DavidSilvaDev", text: "<span class='log-success'>System Ready. Ready to code.</span>" }
+        ];
+
+        const terminalBody = document.getElementById('terminal-body');
+        let logIndex = 0;
+
+        function renderNextLog() {
+            if (logIndex < terminalLogs.length) {
+                const log = terminalLogs[logIndex];
+                const div = document.createElement('div');
+                div.className = 'log-line';
+                div.innerHTML = `
+                    <div class="log-time">${log.time}</div>
+                    <div class="log-info">${log.info}</div>
+                    <div class="log-class">[${log.class}]</div>
+                    <div class="log-text">: ${log.text}</div>
+                `;
+                terminalBody.appendChild(div);
+                logIndex++;
+                setTimeout(renderNextLog, Math.random() * 400 + 100);
+            }
+        }
+        
+        // Delay to start terminal sequence
+        setTimeout(renderNextLog, 1000);
+
+        // Reveal Animations on Scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var j = 0; j < reveals.length; j++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[j].getBoundingClientRect().top;
+                var elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[j].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+    </script>
+</body>
+</html>
