@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Silva - Desenvolvedor Java Backend</title>
+    <title>David Silva - Desenvolvedor Java Backend | Fullstack</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
         
@@ -212,20 +212,20 @@
 
     <div class="header">
         <h1>David Silva</h1>
-        <div class="subtitle">Desenvolvedor Java Backend | Spring Boot | APIs REST</div>
+        <div class="subtitle">Desenvolvedor Java Backend | Fullstack | Spring Boot | Next.js</div>
         <div class="contact-info">
             <span>São Paulo, SP — Brasil</span>
             <a href="mailto:ds2945294@gmail.com">ds2945294@gmail.com</a>
-            <a href="https://www.linkedin.com/in/david-silva-17b2882bb">LinkedIn</a>
-            <a href="https://github.com/Davidds5">GitHub</a>
-            <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html">API em Produção ↗</a>
+            <a href="https://www.linkedin.com/in/david-silva-17b2882bb" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Davidds5" target="_blank">GitHub</a>
+            <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank">API em Produção ↗</a>
         </div>
     </div>
 
     <section class="summary">
         <h2>Resumo Profissional</h2>
         <p>
-            Desenvolvedor Backend com foco na construção de sistemas escaláveis e de alta disponibilidade utilizando o ecossistema <strong>Java 21 e Spring Boot 3</strong>. Especializado em arquiteturas orientadas a serviços (REST) com foco rigoroso em <strong>Segurança (Spring Security / JWT)</strong>, <strong>Qualidade de Código (SOLID, Clean Architecture)</strong> e <strong>Observabilidade (Actuator, Micrometer)</strong>. Comprometido com automação e infraestrutura moderna, entregando ambientes resilientes com <strong>Docker</strong> e pipelines de CI/CD com <strong>GitHub Actions</strong>.
+            Desenvolvedor Backend e Fullstack focado na construção de sistemas escaláveis e de alta disponibilidade utilizando o ecossistema <strong>Java 21, Spring Boot 3 e Next.js</strong>. Especializado em arquiteturas orientadas a serviços (REST) com foco em <strong>Segurança (Spring Security / JWT)</strong>, <strong>Qualidade de Código (SOLID, Clean Architecture)</strong>, e interfaces responsivas de alta performance com <strong>React, TypeScript e Tailwind CSS</strong>. Comprometido com automação, infraestrutura moderna (<strong>Docker</strong>), banco de dados (PostgreSQL, Prisma ORM, Flyway) e pipelines de CI/CD com <strong>GitHub Actions</strong>.
         </p>
     </section>
 
@@ -237,12 +237,20 @@
                 Java 21, Spring Boot 3, Spring Data JPA, Hibernate, SOLID, Clean Architecture, Paginação, Specification (filtros dinâmicos), HATEOAS.
             </div>
             <div class="skill-group">
+                <strong>Frontend e Web</strong>
+                JavaScript (ES6+), TypeScript, React, Next.js (App Router), Tailwind CSS (v4), HTML5, CSS3, APIs REST (Consumo via Axios/Fetch).
+            </div>
+            <div class="skill-group">
                 <strong>Segurança e Autenticação</strong>
-                Spring Security, Autenticação Polimórfica, JWT (Stateless), RBAC (Role-Based Access Control), BCrypt.
+                Spring Security, Autenticação Polimórfica, JWT (Stateless), RBAC (Role-Based Access Control), BCrypt, localStorage (Persistência segura).
+            </div>
+            <div class="skill-group">
+                <strong>Bancos de Dados e ORM</strong>
+                PostgreSQL, Prisma ORM, JPA/Hibernate, Flyway (Migrations), Banco de dados na nuvem (Render/Neon).
             </div>
             <div class="skill-group">
                 <strong>DevOps e Infraestrutura</strong>
-                Docker, Docker Compose, Flyway (Migrations), Maven, Git/GitHub, CI/CD com GitHub Actions, Deploy no Render.
+                Docker, Docker Compose, Maven, NPM/Node.js, Git/GitHub, CI/CD com GitHub Actions, Deploy no Render e Vercel.
             </div>
             <div class="skill-group">
                 <strong>Qualidade, Testes e Documentação</strong>
@@ -260,17 +268,77 @@
                     <span class="badge">EM PRODUÇÃO</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html">[Swagger UI — Produção]</a>
-                    <a href="https://github.com/Davidds5/manicure_api">[Ver Código no GitHub]</a>
+                    <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank">[Swagger UI — Produção]</a>
+                    <a href="https://github.com/Davidds5/manicure_api" target="_blank">[Ver Código no GitHub]</a>
                 </div>
             </div>
             <span class="project-tagline">API REST completa para gestão de salão de beleza — arquitetura e stack de nível enterprise, deployada e acessível publicamente.</span>
             <ul>
                 <li><strong>Segurança:</strong> Autenticação polimórfica com <strong>Spring Security e JWT Stateless</strong> para Clientes (ROLE_USER) e Profissionais (ROLE_ADMIN) com controle de acesso por roles.</li>
-                <li><strong>Documentação:</strong> <strong>Swagger UI</strong> com SpringDoc e JWT integrado — endpoints testáveis publicamente em produção.</li>
-                <li><strong>Observabilidade:</strong> <strong>Spring Boot Actuator</strong> para health checks e métricas customizadas com <strong>Micrometer</strong>, protegidos por autenticação.</li>
-                <li><strong>Infraestrutura:</strong> <strong>Docker</strong>, schema gerenciado via <strong>Flyway</strong> e pipeline automatizado com <strong>GitHub Actions (CI/CD)</strong>. Deploy no <strong>Render</strong>.</li>
-                <li><strong>Testes e Eventos:</strong> Cobertura na camada de serviço com <strong>JUnit 5 e Mockito</strong>; notificações assíncronas por e-mail via <strong>ApplicationEventPublisher</strong>.</li>
+                <li><strong>Documentação e Observabilidade:</strong> Swagger UI com SpringDoc e JWT integrado; Actuator para health checks e métricas customizadas com Micrometer.</li>
+                <li><strong>Infraestrutura:</strong> Docker, schema gerenciado via Flyway e pipeline automatizado com GitHub Actions (CI/CD). Deploy no Render.</li>
+                <li><strong>Testes e Eventos:</strong> Cobertura na camada de serviço com JUnit 5 e Mockito; notificações assíncronas por e-mail via ApplicationEventPublisher.</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
+                <div class="project-title">
+                    Lista de Tarefas Fullstack
+                    <span class="badge">CONCLUÍDO</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Davidds5/lista-de-tarefas" target="_blank">[Ver Código no GitHub]</a>
+                </div>
+            </div>
+            <span class="project-tagline">Aplicação To-Do List Fullstack interativa, focada em performance e persistência de dados.</span>
+            <ul>
+                <li><strong>Arquitetura Moderna:</strong> Construída com <strong>Next.js (App Router)</strong>, React e TypeScript no frontend, garantindo carregamento rápido e tipagem estrita.</li>
+                <li><strong>Banco de Dados e ORM:</strong> Modelagem relacional e persistência estruturada com <strong>Prisma ORM e PostgreSQL</strong>.</li>
+                <li><strong>Estilização:</strong> Design premium e responsivo desenvolvido com <strong>Tailwind CSS</strong>, aplicando variáveis de tema modernas (oklch) e barra de progresso animada.</li>
+                <li><strong>Funcionalidades:</strong> CRUD completo de tarefas, filtros dinâmicos de status (Todas, Pendentes, Concluídas) e contadores dinâmicos de progresso.</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
+                <div class="project-title">
+                    Clovin Food
+                    <span class="badge" style="background-color: #dbeafe; color: #1e40af;">EM DESENVOLVIMENTO</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Davidds5/clovin_food" target="_blank">[Ver Código no GitHub]</a>
+                </div>
+            </div>
+            <span class="project-tagline">Cardápio Digital e Bot de WhatsApp para automação de pedidos de pizzarias e lanchonetes.</span>
+            <ul>
+                <li><strong>UX Aprimorada:</strong> Área do cliente com carrinho interativo, salvamento automático de endereço no navegador (`localStorage`) e redirecionamento de pedido formatado via WhatsApp.</li>
+                <li><strong>Gerenciamento Operacional:</strong> Painel em tempo real para o Atendente gerenciar a cozinha (status de preparo) e painel Administrador para CRUD de produtos, taxa de entrega e funcionamento da loja.</li>
+                <li><strong>Tecnologias:</strong> Next.js, TypeScript, Tailwind CSS v4, Prisma ORM e PostgreSQL.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Experiência Profissional</h2>
+        <div class="project" style="border: none; padding: 0; margin-bottom: 15px;">
+            <div class="project-header" style="margin-bottom: 2px;">
+                <div class="project-title" style="font-size: 15px;">Pizzaiolo, Chapeiro e Atendente</div>
+                <span style="font-size: 14px; color: var(--text-light); font-weight: 600;">Padaria / Alimentação — São Paulo, SP | 2023 – Presente</span>
+            </div>
+            <ul>
+                <li>Preparação de pizzas, montagem de lanches na chapa e atendimento ao cliente presencial e delivery.</li>
+                <li>Operação de produção sob alta demanda com foco em qualidade de alimentos, higiene e cumprimento de prazos.</li>
+            </ul>
+        </div>
+        <div class="project" style="border: none; padding: 0; margin-bottom: 0px;">
+            <div class="project-header" style="margin-bottom: 2px;">
+                <div class="project-title" style="font-size: 15px;">Instrutor de Musculação</div>
+                <span style="font-size: 14px; color: var(--text-light); font-weight: 600;">Academia — Bahia | 2021 – 2022</span>
+            </div>
+            <ul>
+                <li>Atendimento e acompanhamento de clientes na musculação, orientando na execução correta de exercícios.</li>
+                <li>Comunicação direta com diferentes perfis de pessoas, promovendo motivação e consistência nos treinos.</li>
             </ul>
         </div>
     </section>
@@ -280,7 +348,7 @@
         <div class="education-grid">
             <div class="edu-item">
                 <strong>Bacharelado em Ciências da Computação</strong>
-                <span>UNIP Tatuapé — 4º Semestre | Foco em Algoritmos e Estrutura de Dados</span>
+                <span>UNIP Tatuapé — 5º Semestre | Foco em Algoritmos e Estrutura de Dados</span>
             </div>
             <div class="edu-item">
                 <strong>Especialização em Spring Boot</strong>
@@ -289,6 +357,24 @@
             <div class="edu-item">
                 <strong>Java e Orientação a Objetos</strong>
                 <span>Fundamentos sólidos em Java moderno e padrões de design.</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Atividades Complementares & Idiomas</h2>
+        <div class="education-grid">
+            <div class="edu-item">
+                <strong>Canal Clovin DEV — Criador de Conteúdo Técnico</strong>
+                <span><a href="https://youtube.com/@clovindev" target="_blank">youtube.com/@clovindev ↗</a></span>
+                <ul style="padding-left: 15px; margin-top: 5px; font-size: 13px;">
+                    <li>Lives diárias de estudo ao vivo focado em Java, Spring Boot e desenvolvimento web.</li>
+                    <li>Documentação prática da jornada de aprendizado, com interação ativa com a comunidade.</li>
+                </ul>
+            </div>
+            <div class="edu-item">
+                <strong>Idiomas</strong>
+                <span>Inglês: Intermediário (leitura técnica e documentação de APIs).</span>
             </div>
         </div>
     </section>
