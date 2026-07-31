@@ -5,206 +5,242 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Silva - Desenvolvedor Java Backend | Fullstack</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
         :root {
-            --primary: #1e3a8a;
-            --secondary: #2563eb;
-            --text-main: #1f2937;
-            --text-light: #4b5563;
-            --accent: #eff6ff;
+            --text-primary: #0f172a; /* slate-900 */
+            --text-secondary: #334155; /* slate-700 */
+            --text-muted: #64748b; /* slate-500 */
+            --link-color: #2563eb; /* blue-600 */
+            --border-color: #cbd5e1; /* slate-300 */
+            --border-light: #e2e8f0; /* slate-200 */
         }
 
         body {
-            font-family: 'Outfit', sans-serif;
-            line-height: 1.4;
-            color: var(--text-main);
-            max-width: 900px;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.28;
+            color: var(--text-primary);
+            max-width: 820px;
             margin: 0 auto;
-            padding: 30px 40px;
+            padding: 8px 35px;
             background-color: #fff;
         }
 
+        /* Header */
         .header {
-            border-left: 5px solid var(--primary);
-            padding-left: 20px;
-            margin-bottom: 35px;
+            margin-bottom: 8px;
         }
 
         h1 {
             margin: 0;
-            font-size: 36px;
-            color: var(--primary);
-            letter-spacing: -1px;
+            font-size: 24px;
             font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
         }
 
         .subtitle {
-            font-size: 20px;
-            color: var(--secondary);
-            font-weight: 600;
-            margin-top: 5px;
-            letter-spacing: 0.5px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 3px;
+            margin-bottom: 5px;
         }
 
         .contact-info {
-            margin-top: 15px;
-            font-size: 14px;
-            color: var(--text-light);
+            font-size: 11px;
+            color: var(--text-muted);
             display: flex;
-            gap: 20px;
+            gap: 6px;
             flex-wrap: wrap;
+            align-items: center;
         }
 
         .contact-info a {
-            color: var(--secondary);
+            color: var(--link-color);
             text-decoration: none;
             font-weight: 500;
-            border-bottom: 1px solid transparent;
-            transition: border 0.3s;
         }
 
         .contact-info a:hover {
-            border-bottom-color: var(--secondary);
+            text-decoration: underline;
         }
 
+        .dot-separator {
+            color: var(--border-color);
+            margin: 0 2px;
+        }
+
+        hr.header-line {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 6px 0 10px 0;
+        }
+
+        /* Sections */
         section {
-            margin-bottom: 18px;
+            margin-bottom: 8px;
         }
 
         h2 {
-            font-size: 16px;
-            color: var(--primary);
-            background-color: var(--accent);
-            padding: 5px 12px;
-            display: inline-block;
-            border-radius: 4px;
-            margin-top: 0;
-            margin-bottom: 10px;
+            font-size: 11.5px;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2px;
+            margin-top: 8px;
+            margin-bottom: 3px;
             text-transform: uppercase;
             font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .summary p {
             margin: 0;
             text-align: justify;
-            font-size: 15px;
-            color: var(--text-main);
+            font-size: 11.5px;
+            color: var(--text-secondary);
         }
 
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+        /* Competencies */
+        .competencies-list {
+            font-size: 11.5px;
+            line-height: 1.4;
         }
 
-        .skill-group {
-            font-size: 14px;
+        .competencies-list p {
+            margin: 1px 0;
         }
 
-        .skill-group strong {
-            display: block;
-            color: var(--primary);
+        .competencies-list strong {
+            color: var(--text-primary);
+        }
+
+        /* Items (Experiences / Projects) */
+        .item-entry {
             margin-bottom: 4px;
+            page-break-inside: avoid;
         }
 
-        .project {
-            padding: 15px;
-            border: 1px solid #f3f4f6;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .project-header {
+        .item-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
+            align-items: baseline;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 4px;
         }
 
-        .project-title {
+        .item-title {
             font-weight: 700;
-            font-size: 18px;
-            color: #111827;
+            font-size: 12px;
+            color: var(--text-primary);
         }
 
-        .project-links {
-            display: flex;
-            gap: 12px;
-        }
-
-        .project-links a {
-            font-size: 13px;
-            color: var(--secondary);
+        .item-title a {
+            color: var(--link-color);
             text-decoration: none;
-            font-weight: 600;
-        }
-
-        .project-tagline {
-            font-weight: 600;
-            color: var(--text-light);
-            font-size: 14px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: #dcfce7;
-            color: #166534;
+            font-weight: 500;
             font-size: 11px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 999px;
-            margin-left: 8px;
-            vertical-align: middle;
+            margin-left: 6px;
+        }
+
+        .item-title a:hover {
+            text-decoration: underline;
+        }
+
+        .item-date {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .item-subtitle {
+            font-size: 11px;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-top: 1px;
+            margin-bottom: 2px;
+        }
+
+        .item-tech {
+            font-size: 10.5px;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 3px;
         }
 
         ul {
             margin: 0;
             padding-left: 18px;
-            font-size: 14px;
         }
 
         li {
-            margin-bottom: 3px;
-            color: var(--text-main);
+            margin-bottom: 0px;
+            color: var(--text-secondary);
+            font-size: 11.5px;
+            text-align: justify;
         }
 
         li strong {
-            color: var(--primary);
+            color: var(--text-primary);
         }
 
-        .education-grid {
+        /* Grid (Education / Languages) */
+        .grid-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 8px 12px;
         }
 
-        .edu-item strong {
+        .grid-item {
+            font-size: 11px;
+            page-break-inside: avoid;
+        }
+
+        .grid-item strong {
             display: block;
-            color: var(--primary);
-            font-size: 15px;
+            color: var(--text-primary);
+            font-size: 11.5px;
+            margin-bottom: 1px;
         }
 
-        .edu-item span {
-            font-size: 14px;
-            color: var(--text-light);
+        .grid-item span {
+            color: var(--text-secondary);
+        }
+
+        .grid-item a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .grid-item a:hover {
+            text-decoration: underline;
         }
 
         @media print {
-            body { padding: 15px 25px; font-size: 13px; }
-            .project { border: none; padding: 0; margin-bottom: 10px; }
-            section { margin-bottom: 12px; }
-            h2 { font-size: 14px; padding: 4px 10px; margin-bottom: 8px; }
-            h1 { font-size: 28px; }
-            .subtitle { font-size: 17px; }
-            li { margin-bottom: 2px; }
-            .summary p { font-size: 13px; }
-            .skill-group { font-size: 12px; }
-            ul { font-size: 12.5px; }
+            body {
+                padding: 10px 20px;
+                font-size: 11px;
+            }
+            .item-entry {
+                margin-bottom: 6px;
+            }
+            h2 {
+                margin-top: 10px;
+                margin-bottom: 5px;
+                font-size: 11px;
+            }
+            .item-title {
+                font-size: 11.5px;
+            }
+            .item-subtitle {
+                font-size: 10.5px;
+            }
+            li {
+                font-size: 10.5px;
+            }
         }
     </style>
 </head>
@@ -212,170 +248,142 @@
 
     <div class="header">
         <h1>David Silva</h1>
-        <div class="subtitle">Desenvolvedor Java Backend | Fullstack | Spring Boot | Next.js</div>
+        <div class="subtitle">Estudante de Ciência da Computação · Desenvolvedor Java & Next.js</div>
         <div class="contact-info">
-            <span>São Paulo, SP — Brasil</span>
-            <a href="mailto:ds2945294@gmail.com">ds2945294@gmail.com</a>
-            <a href="https://www.linkedin.com/in/david-silva-17b2882bb" target="_blank">LinkedIn</a>
-            <a href="https://github.com/Davidds5" target="_blank">GitHub</a>
-            <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank">API em Produção ↗</a>
+            <span>São Paulo, SP</span>
+            <span class="dot-separator">·</span>
+            <span>(11) 94008-9101</span>
+            <span class="dot-separator">·</span>
+            <a href="mailto:davis.clovins@gmail.com">davis.clovins@gmail.com</a>
+            <span class="dot-separator">·</span>
+            <a href="https://www.linkedin.com/in/david-silva-17b2882bb" target="_blank">linkedin.com/in/david-silva-17b2882bb</a>
+            <span class="dot-separator">·</span>
+            <a href="https://github.com/Davidds5" target="_blank">github.com/Davidds5</a>
+            <span class="dot-separator">·</span>
+            <a href="https://davidds5.github.io/portfolio_clovin" target="_blank">davidds5.github.io/portfolio_clovin</a>
         </div>
     </div>
+    
+    <hr class="header-line">
 
     <section class="summary">
         <h2>Resumo Profissional</h2>
         <p>
-            Desenvolvedor Backend e Fullstack focado na construção de sistemas escaláveis e de alta disponibilidade utilizando o ecossistema <strong>Java 21, Spring Boot 3 e Next.js</strong>. Especializado em arquiteturas orientadas a serviços (REST) com foco em <strong>Segurança (Spring Security / JWT)</strong>, <strong>Qualidade de Código (SOLID, Clean Architecture)</strong>, e interfaces responsivas de alta performance com <strong>React, TypeScript e Tailwind CSS</strong>. Comprometido com automação, infraestrutura moderna (<strong>Docker</strong>), banco de dados (PostgreSQL, Prisma ORM, Flyway) e pipelines de CI/CD com <strong>GitHub Actions</strong>.
+            Estudante de Ciência da Computação (5º semestre) focado em desenvolvimento de software com o ecossistema <strong>Java, Spring Boot e React/Next.js</strong>. Dedicado a aplicar conceitos teóricos na construção de projetos práticos e autorais com deploy real, como APIs REST seguras (Spring Security, JWT) e interfaces responsivas (TypeScript, Tailwind CSS). Extremamente comunicativo e voltado ao aprendizado prático, compartilho meus estudos de programação e o desenvolvimento de projetos diariamente em transmissões ao vivo no canal Clovin DEV, buscando a consolidação de conhecimentos técnicos e a colaboração activa com a comunidade.
         </p>
     </section>
 
     <section>
-        <h2>Competências Técnicas</h2>
-        <div class="skills-container">
-            <div class="skill-group">
-                <strong>Backend e Arquitetura</strong>
-                Java 21, Spring Boot 3, Spring Data JPA, Hibernate, SOLID, Clean Architecture, Paginação, Specification (filtros dinâmicos), HATEOAS.
+        <h2>Diferencial & Comunicação</h2>
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">Criador de Conteúdo Técnico — Canal Clovin DEV <a href="https://youtube.com/@clovindev" target="_blank">youtube.com/@clovindev</a></span>
+                <span class="item-date">2026 – Presente</span>
             </div>
-            <div class="skill-group">
-                <strong>Frontend e Web</strong>
-                JavaScript (ES6+), TypeScript, React, Next.js (App Router), Tailwind CSS (v4), HTML5, CSS3, APIs REST (Consumo via Axios/Fetch).
-            </div>
-            <div class="skill-group">
-                <strong>Segurança e Autenticação</strong>
-                Spring Security, Autenticação Polimórfica, JWT (Stateless), RBAC (Role-Based Access Control), BCrypt, localStorage (Persistência segura).
-            </div>
-            <div class="skill-group">
-                <strong>Bancos de Dados e ORM</strong>
-                PostgreSQL, Prisma ORM, JPA/Hibernate, Flyway (Migrations), Banco de dados na nuvem (Render/Neon).
-            </div>
-            <div class="skill-group">
-                <strong>DevOps e Infraestrutura</strong>
-                Docker, Docker Compose, Maven, NPM/Node.js, Git/GitHub, CI/CD com GitHub Actions, Deploy no Render e Vercel.
-            </div>
-            <div class="skill-group">
-                <strong>Qualidade, Testes e Documentação</strong>
-                JUnit 5, Mockito, ArgumentCaptor, Swagger/OpenAPI (SpringDoc), Spring Boot Actuator, Micrometer (métricas customizadas), Logging estruturado (Slf4j).
-            </div>
+            <div class="item-subtitle">YouTube | Live Coding & Documentação em Público</div>
+            <ul>
+                <li><strong>Comunicação e Didática:</strong> Realização de transmissões ao vivo diárias dedicadas ao estudo e prática de programação (Java, Spring Boot, React, Next.js e TypeScript), construindo aplicações práticas publicamente e engajando uma comunidade ativa de <strong>192 inscritos</strong>.</li>
+                <li><strong>Resolução de Problemas em Público:</strong> Demonstração de soft skills essenciais ao vivo, como adaptabilidade para debug de erros, capacidade de explicação técnica estruturada de conceitos e construção de documentação em tempo real.</li>
+            </ul>
         </div>
     </section>
 
     <section>
-        <h2>Projetos</h2>
-        <div class="project">
-            <div class="project-header">
-                <div class="project-title">
-                    Manicure API
-                    <span class="badge">EM PRODUÇÃO</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank">[Swagger UI — Produção]</a>
-                    <a href="https://github.com/Davidds5/manicure_api" target="_blank">[Ver Código no GitHub]</a>
-                </div>
+        <h2>Projetos em Destaque</h2>
+
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">Manicure API <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank">manicure-api-vi63.onrender.com</a></span>
+                <span class="item-date">Em Produção</span>
             </div>
-            <span class="project-tagline">API REST completa para gestão de salão de beleza — arquitetura e stack de nível enterprise, deployada e acessível publicamente.</span>
+            <div class="item-tech">Java 21 · Spring Boot 3 · Spring Security · JWT Stateless · PostgreSQL · Docker · Flyway · GitHub Actions · JUnit 5 · Mockito</div>
             <ul>
-                <li><strong>Segurança:</strong> Autenticação polimórfica com <strong>Spring Security e JWT Stateless</strong> para Clientes (ROLE_USER) e Profissionais (ROLE_ADMIN) com controle de acesso por roles.</li>
-                <li><strong>Documentação e Observabilidade:</strong> Swagger UI com SpringDoc e JWT integrado; Actuator para health checks e métricas customizadas com Micrometer.</li>
-                <li><strong>Infraestrutura:</strong> Docker, schema gerenciado via Flyway e pipeline automatizado com GitHub Actions (CI/CD). Deploy no Render.</li>
-                <li><strong>Testes e Eventos:</strong> Cobertura na camada de serviço com JUnit 5 e Mockito; notificações assíncronas por e-mail via ApplicationEventPublisher.</li>
+                <li><strong>Segurança de APIs:</strong> Autenticação stateless via token JWT e autorização baseada em roles com controle de acessos fino para múltiplos perfis de usuários.</li>
+                <li><strong>Qualidade de Software:</strong> Cobertura de testes unitários com JUnit 5 e Mockito para garantir a consistência das regras de negócio.</li>
+                <li><strong>Automação & Deploy:</strong> Criação de pipeline de CI/CD automatizada com GitHub Actions para deploy em ambiente de produção (Render) e banco de dados gerenciado.</li>
             </ul>
         </div>
 
-        <div class="project">
-            <div class="project-header">
-                <div class="project-title">
-                    Lista de Tarefas Fullstack
-                    <span class="badge">CONCLUÍDO</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/Davidds5/lista-de-tarefas" target="_blank">[Ver Código no GitHub]</a>
-                </div>
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">Lista de Tarefas Fullstack <a href="https://github.com/Davidds5/lista-de-tarefas" target="_blank">github.com/Davidds5/lista-de-tarefas</a></span>
+                <span class="item-date">Concluído</span>
             </div>
-            <span class="project-tagline">Aplicação To-Do List Fullstack interativa, focada em performance e persistência de dados.</span>
+            <div class="item-tech">Next.js · React · TypeScript · Tailwind CSS · Prisma ORM · PostgreSQL</div>
             <ul>
-                <li><strong>Arquitetura Moderna:</strong> Construída com <strong>Next.js (App Router)</strong>, React e TypeScript no frontend, garantindo carregamento rápido e tipagem estrita.</li>
-                <li><strong>Banco de Dados e ORM:</strong> Modelagem relacional e persistência estruturada com <strong>Prisma ORM e PostgreSQL</strong>.</li>
-                <li><strong>Estilização:</strong> Design premium e responsivo desenvolvido com <strong>Tailwind CSS</strong>, aplicando variáveis de tema modernas (oklch) e barra de progresso animada.</li>
-                <li><strong>Funcionalidades:</strong> CRUD completo de tarefas, filtros dinâmicos de status (Todas, Pendentes, Concluídas) e contadores dinâmicos de progresso.</li>
+                <li><strong>Desenvolvimento Frontend:</strong> Interface dinâmica usando Next.js App Router e React, utilizando tipagem estrita com TypeScript.</li>
+                <li><strong>Persistência de Dados:</strong> Modelagem e manipulação relacional no PostgreSQL com o auxílio do Prisma ORM.</li>
+                <li><strong>Experiência do Usuário (UX):</strong> Interface moderna e responsiva utilizando Tailwind CSS, com controles interativos de status das tarefas e componentes funcionais.</li>
             </ul>
         </div>
+    </section>
 
-        <div class="project">
-            <div class="project-header">
-                <div class="project-title">
-                    Clovin Food
-                    <span class="badge" style="background-color: #dbeafe; color: #1e40af;">EM DESENVOLVIMENTO</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/Davidds5/clovin_food" target="_blank">[Ver Código no GitHub]</a>
-                </div>
+    <section>
+        <h2>Competências Técnicas</h2>
+        <div class="competencies-list">
+            <p><strong>Backend & Linguagens:</strong> Java 21, Spring Boot 3, Spring Data JPA, Hibernate, OOP, REST APIs, SOLID.</p>
+            <p><strong>Frontend & Web:</strong> JavaScript (ES6+), TypeScript, React, Next.js (App Router), HTML5, CSS3, Tailwind CSS (v4).</p>
+            <p><strong>Segurança & Dados:</strong> Spring Security, JWT, PostgreSQL, Prisma ORM, Flyway (Migrations).</p>
+            <p><strong>Ferramentas & Infra:</strong> Docker, Git/GitHub, CI/CD (GitHub Actions), npm/Node.js, Deploy (Render, Vercel).</p>
+            <p><strong>Testes & Documentação:</strong> JUnit 5, Mockito, Swagger/OpenAPI (SpringDoc), Slf4j (Logging).</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Formação Acadêmica & Cursos</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <strong>Bacharelado em Ciência da Computação</strong>
+                <span>UNIP Tatuapé — 5º Semestre | Conclusão prevista: 2028</span>
             </div>
-            <span class="project-tagline">Cardápio Digital e Bot de WhatsApp para automação de pedidos de pizzarias e lanchonetes.</span>
-            <ul>
-                <li><strong>UX Aprimorada:</strong> Área do cliente com carrinho interativo, salvamento automático de endereço no navegador (`localStorage`) e redirecionamento de pedido formatado via WhatsApp.</li>
-                <li><strong>Gerenciamento Operacional:</strong> Painel em tempo real para o Atendente gerenciar a cozinha (status de preparo) e painel Administrador para CRUD de produtos, taxa de entrega e funcionamento da loja.</li>
-                <li><strong>Tecnologias:</strong> Next.js, TypeScript, Tailwind CSS v4, Prisma ORM e PostgreSQL.</li>
-            </ul>
+            <div class="grid-item">
+                <strong>Spring Boot, Docker, K8s e Nuvem AWS/GCP — Udemy / Leandro Costa (54,5h)</strong>
+                <span>APIs RESTful, autenticação JWT, Spring Security, Swagger, testes (JUnit 5, Mockito) e CI/CD.</span>
+            </div>
+            <div class="grid-item">
+                <strong>Java COMPLETO e Orientação a Objetos — Udemy / Nelio Alves (54h)</strong>
+                <span>Domínio de POO, diagramas UML, acesso a bancos relacionais (JDBC, JPA/Hibernate) e web services.</span>
+            </div>
+            <div class="grid-item">
+                <strong>JS e TS Full Stack (Node, React, Next.js, SOLID, Jest) — Udemy / Luiz Otávio (146h)</strong>
+                <span><em>Em Andamento</em> | Desenvolvimento full stack (MySQL, MongoDB), testes e padrões GoF.</span>
+            </div>
+            <div class="grid-item">
+                <strong>Inglês Extremo — Udemy / Paulo Botelho (17,5h)</strong>
+                <span><em>Em Andamento</em> | Desenvolvimento de escuta, fala e leitura sem traduções mecânicas.</span>
+            </div>
+            <div class="grid-item">
+                <strong>Idiomas & Comunicação</strong>
+                <span>Português (Nativo) · Inglês (Intermediário - leitura técnica de documentação e APIs).</span>
+            </div>
         </div>
     </section>
 
     <section>
         <h2>Experiência Profissional</h2>
-        <div class="project" style="border: none; padding: 0; margin-bottom: 15px;">
-            <div class="project-header" style="margin-bottom: 2px;">
-                <div class="project-title" style="font-size: 15px;">Pizzaiolo, Chapeiro e Atendente</div>
-                <span style="font-size: 14px; color: var(--text-light); font-weight: 600;">Padaria / Alimentação — São Paulo, SP | 2023 – Presente</span>
+        
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">Pizzaiolo e Atendimento Operacional</span>
+                <span class="item-date">2023 – Presente</span>
             </div>
+            <div class="item-subtitle">Padaria e Confeitaria / Alimentação · São Paulo, SP</div>
             <ul>
-                <li>Preparação de pizzas, montagem de lanches na chapa e atendimento ao cliente presencial e delivery.</li>
-                <li>Operação de produção sob alta demanda com foco em qualidade de alimentos, higiene e cumprimento de prazos.</li>
+                <li>Atendimento direto ao cliente via WhatsApp Business e processamento digital de pedidos via iFood, operando o sistema de PDV e garantindo a eficiência no fluxo de entregas.</li>
+                <li>Trabalho dinâmico sob alta demanda com foco na organização de processos, consistência e agilidade no alcance de metas diárias.</li>
             </ul>
         </div>
-        <div class="project" style="border: none; padding: 0; margin-bottom: 0px;">
-            <div class="project-header" style="margin-bottom: 2px;">
-                <div class="project-title" style="font-size: 15px;">Instrutor de Musculação</div>
-                <span style="font-size: 14px; color: var(--text-light); font-weight: 600;">Academia — Bahia | 2021 – 2022</span>
+
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">Instrutor de Academia</span>
+                <span class="item-date">2021 – 2022</span>
             </div>
+            <div class="item-subtitle">Academia · Bahia</div>
             <ul>
-                <li>Atendimento e acompanhamento de clientes na musculação, orientando na execução correta de exercícios.</li>
-                <li>Comunicação direta com diferentes perfis de pessoas, promovendo motivação e consistência nos treinos.</li>
+                <li>Atendimento e orientação física de alunos, elaboração de rotinas de treinamento e acompanhamento prático.</li>
+                <li>Desenvolvimento diário de comunicação interpessoal, escuta ativa e motivação, impulsionando a fidelização dos membros da academia.</li>
             </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>Formação e Cursos</h2>
-        <div class="education-grid">
-            <div class="edu-item">
-                <strong>Bacharelado em Ciências da Computação</strong>
-                <span>UNIP Tatuapé — 5º Semestre | Foco em Algoritmos e Estrutura de Dados</span>
-            </div>
-            <div class="edu-item">
-                <strong>Especialização em Spring Boot</strong>
-                <span>Segurança Avançada, Docker, Aplicações Cloud-native e Testes.</span>
-            </div>
-            <div class="edu-item">
-                <strong>Java e Orientação a Objetos</strong>
-                <span>Fundamentos sólidos em Java moderno e padrões de design.</span>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Atividades Complementares & Idiomas</h2>
-        <div class="education-grid">
-            <div class="edu-item">
-                <strong>Canal Clovin DEV — Criador de Conteúdo Técnico</strong>
-                <span><a href="https://youtube.com/@clovindev" target="_blank">youtube.com/@clovindev ↗</a></span>
-                <ul style="padding-left: 15px; margin-top: 5px; font-size: 13px;">
-                    <li>Lives diárias de estudo ao vivo focado em Java, Spring Boot e desenvolvimento web.</li>
-                    <li>Documentação prática da jornada de aprendizado, com interação ativa com a comunidade.</li>
-                </ul>
-            </div>
-            <div class="edu-item">
-                <strong>Idiomas</strong>
-                <span>Inglês: Intermediário (leitura técnica e documentação de APIs).</span>
-            </div>
         </div>
     </section>
 
