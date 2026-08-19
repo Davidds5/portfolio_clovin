@@ -955,25 +955,82 @@
             <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem;">Projetos desenvolvidos com foco
                 em escalabilidade, testes e padrões de mercado.</p>
 
-            <!-- Projeto: Manicure API -->
+            <!-- Projeto: ObraSync (SaaS Multi-Tenant) -->
             <div class="project-featured glass">
                 <div class="project-info">
-                    <div class="project-status">Deployed no Render</div>
-                    <h3 class="project-title">Manicure API</h3>
+                    <div class="project-status">Deployed no Render • Live</div>
+                    <h3 class="project-title">ObraSync</h3>
                     <p class="project-desc">
-                        Uma API REST robusta construída do zero para gerenciamento completo de um salão de beleza. Não é
-                        apenas um CRUD: implementa Autenticação Polimórfica (Client/Profissional), Filtros dinâmicos
-                        complexos com JPA Specifications, Eventos Assíncronos e Observabilidade nativa.
+                        Plataforma SaaS Multi-Tenant completa para arquitetos e construtoras gerenciarem obras em tempo real.
+                        Conta com cálculo de progresso ponderado de etapas, diário de obra visual com fotos, gestão de documentos/PDFs
+                        e um <strong>Portal do Cliente via Magic Link</strong> sem fricção de login.
+                    </p>
+                    <div class="project-techs">
+                        <span>Next.js 16 (App Router)</span>
+                        <span>React 19</span>
+                        <span>TypeScript</span>
+                        <span>Prisma ORM</span>
+                        <span>Tailwind CSS</span>
+                        <span>Multi-Tenancy</span>
+                        <span>JWT & Magic Links</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="https://obrasync-bf1t.onrender.com" target="_blank"
+                            class="btn btn-accent interactable">
+                            <i data-lucide="external-link"></i> Ver em Produção
+                        </a>
+                        <a href="https://github.com/Davidds5/obrasync" target="_blank"
+                            class="btn btn-outline interactable">
+                            <i data-lucide="github"></i> Ver Código
+                        </a>
+                    </div>
+                </div>
+                <div class="project-visual">
+                    <div class="api-mockup" style="font-size: 0.8rem; background: #0A0A0A;">
+                        <div class="req">
+                            <span class="method" style="color: #00E5FF;">TENANT</span> <span
+                                class="path">tenantId: "escritorio-arquitetura"</span><br>
+                            <span style="color:#666; margin-left:20px;">Isolamento estrito multi-tenant...</span>
+                        </div>
+                        <div class="req">
+                            <span class="method" style="color: #27C93F;">PROGRESS</span> <span
+                                class="path">calculateWeightedProgress(stages)</span><br>
+                            <span style="color:#666; margin-left:20px;">85% concluído ponderado</span>
+                        </div>
+                        <div class="req">
+                            <span class="method" style="color: #bb86fc;">MAGIC-LINK</span> <span
+                                class="path">/acompanhar/[magicToken]</span><br>
+                            <span style="color:#666; margin-left:20px;">Portal público do cliente ativo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projeto: Manicure API -->
+            <div class="project-featured glass" style="margin-top: 50px;">
+                <div class="project-info">
+                    <div class="project-status">Deployed no Render • Live Swagger</div>
+                    <h3 class="project-title">Manicure API (SaaS)</h3>
+                    <p class="project-desc">
+                        Backend SaaS corporativo Multi-Tenant em Java 21 e Spring Boot 3 para salões de beleza.
+                        Apresenta isolamento estrito via Hibernate Filters com AspectJ AOP, auto-onboarding de salões,
+                        gestão de planos e assinaturas com bloqueio de limites (HTTP 402) e painel SUPER_ADMIN com métricas de MRR.
                     </p>
                     <div class="project-techs">
                         <span>Java 21</span>
                         <span>Spring Boot 3</span>
+                        <span>Spring Security & JWT</span>
+                        <span>Multi-Tenancy (AOP)</span>
                         <span>PostgreSQL</span>
                         <span>Docker</span>
                         <span>Flyway</span>
-                        <span>JWT Stateless</span>
+                        <span>JUnit 5</span>
                     </div>
                     <div class="hero-buttons">
+                        <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank"
+                            class="btn btn-accent interactable">
+                            <i data-lucide="external-link"></i> Swagger UI
+                        </a>
                         <a href="https://github.com/Davidds5/manicure_api" target="_blank"
                             class="btn btn-outline interactable">
                             <i data-lucide="github"></i> Ver Código
@@ -983,19 +1040,19 @@
                 <div class="project-visual">
                     <div class="api-mockup">
                         <div class="req">
-                            <span class="method">GET</span> <span class="path">/api/v1/appointments</span> <span
-                                class="status">200 OK</span><br>
-                            <span style="color:#666; margin-left:20px;">Fetching paginated records...</span>
+                            <span class="method post">POST</span> <span class="path">/tenants/signup</span> <span
+                                class="status">201 Created</span><br>
+                            <span style="color:#666; margin-left:20px;">Novo salão provisionado com isolamento...</span>
                         </div>
                         <div class="req">
-                            <span class="method post">POST</span> <span class="path">/api/v1/auth/login</span> <span
-                                class="status">200 OK</span><br>
-                            <span style="color:#666; margin-left:20px;">Generating stateless JWT...</span>
+                            <span class="method">FILTER</span> <span class="path">@Filter(name="tenantFilter")</span> <span
+                                class="status">ThreadLocal</span><br>
+                            <span style="color:#666; margin-left:20px;">Blindagem cross-tenant ativa via JPA...</span>
                         </div>
                         <div class="req">
-                            <span class="method">GET</span> <span class="path">/actuator/metrics</span> <span
+                            <span class="method">GET</span> <span class="path">/admin/tenants/mrr</span> <span
                                 class="status">200 OK</span><br>
-                            <span style="color:#666; margin-left:20px;">Observability active</span>
+                            <span style="color:#666; margin-left:20px;">Cálculo de receita recorrente...</span>
                         </div>
                     </div>
                 </div>
@@ -1007,17 +1064,16 @@
                     <div class="project-status">Código no GitHub</div>
                     <h3 class="project-title">Lista de Tarefas</h3>
                     <p class="project-desc">
-                        Um gerenciador de tarefas (Todo List) completo de ponta a ponta. Integra o ecossistema Next.js
-                        com TypeScript e banco de dados PostgreSQL via Prisma ORM. Conta com filtros de status reativos,
-                        contadores dinâmicos, edição de tarefas via diálogos interativos (Shadcn UI) e Server Actions.
+                        Um gerenciador de tarefas completo de ponta a ponta. Integra o ecossistema Next.js
+                        com TypeScript e banco de dados via Prisma ORM. Conta com filtros de status reativos,
+                        contadores dinâmicos e manipulação de estado otimizada.
                     </p>
                     <div class="project-techs">
                         <span>Next.js 15</span>
                         <span>TypeScript</span>
                         <span>Tailwind CSS</span>
                         <span>Prisma ORM</span>
-                        <span>PostgreSQL</span>
-                        <span>Shadcn UI</span>
+                        <span>SQLite / Postgres</span>
                     </div>
                     <div class="hero-buttons">
                         <a href="https://github.com/Davidds5/lista-de-tarefas" target="_blank"
