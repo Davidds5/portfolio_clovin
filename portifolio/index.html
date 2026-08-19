@@ -606,38 +606,104 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 50px;
+            padding: 30px;
             overflow: hidden;
         }
 
-        .project-visual::before {
-            content: 'API_REST';
-            font-family: 'Space Grotesk';
-            font-size: 7rem;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.01);
-            position: absolute;
-            transform: rotate(-90deg);
-            left: -80px;
-        }
-
-        .api-mockup {
-            background: #111;
+        .browser-mockup {
             width: 100%;
-            border-radius: 12px;
-            border: 1px solid #333;
-            padding: 25px;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
-            color: #a0a0a0;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-            z-index: 1;
+            background: #111;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 229, 255, 0.08);
+            transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
         }
 
-        .api-mockup .req {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #222;
+        .project-featured:hover .browser-mockup {
+            transform: scale(1.02) translateY(-4px);
+            border-color: rgba(0, 229, 255, 0.4);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 229, 255, 0.2);
+        }
+
+        .browser-header {
+            background: #181818;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .browser-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .browser-address-bar {
+            background: #0d0d0d;
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            color: #888;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .browser-address-bar span {
+            color: #27C93F;
+        }
+
+        .browser-preview-img {
+            width: 100%;
+            height: auto;
+            max-height: 320px;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+            transition: 0.6s ease;
+        }
+
+        .project-featured:hover .browser-preview-img {
+            transform: scale(1.03);
+        }
+
+        .live-tag {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: rgba(15, 15, 15, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            color: #fff;
+            font-size: 0.75rem;
+            font-family: 'Fira Code', monospace;
+            padding: 6px 12px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 2;
+        }
+
+        .live-tag span {
+            width: 6px;
+            height: 6px;
+            background: #27C93F;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #27C93F;
         }
 
         .api-mockup .req:last-child {
@@ -986,21 +1052,20 @@
                     </div>
                 </div>
                 <div class="project-visual">
-                    <div class="api-mockup" style="font-size: 0.8rem; background: #0A0A0A;">
-                        <div class="req">
-                            <span class="method" style="color: #00E5FF;">TENANT</span> <span
-                                class="path">tenantId: "escritorio-arquitetura"</span><br>
-                            <span style="color:#666; margin-left:20px;">Isolamento estrito multi-tenant...</span>
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <div class="browser-dot dot-red"></div>
+                                <div class="browser-dot dot-yellow"></div>
+                                <div class="browser-dot dot-green"></div>
+                            </div>
+                            <div class="browser-address-bar">
+                                <span>🔒 https://</span>obrasync-bf1t.onrender.com
+                            </div>
                         </div>
-                        <div class="req">
-                            <span class="method" style="color: #27C93F;">PROGRESS</span> <span
-                                class="path">calculateWeightedProgress(stages)</span><br>
-                            <span style="color:#666; margin-left:20px;">85% concluído ponderado</span>
-                        </div>
-                        <div class="req">
-                            <span class="method" style="color: #bb86fc;">MAGIC-LINK</span> <span
-                                class="path">/acompanhar/[magicToken]</span><br>
-                            <span style="color:#666; margin-left:20px;">Portal público do cliente ativo</span>
+                        <img src="assets/img/obrasync.jpg" alt="Dashboard do ObraSync SaaS" class="browser-preview-img" />
+                        <div class="live-tag">
+                            <span></span> Online em Produção
                         </div>
                     </div>
                 </div>
@@ -1038,21 +1103,20 @@
                     </div>
                 </div>
                 <div class="project-visual">
-                    <div class="api-mockup">
-                        <div class="req">
-                            <span class="method post">POST</span> <span class="path">/tenants/signup</span> <span
-                                class="status">201 Created</span><br>
-                            <span style="color:#666; margin-left:20px;">Novo salão provisionado com isolamento...</span>
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <div class="browser-dot dot-red"></div>
+                                <div class="browser-dot dot-yellow"></div>
+                                <div class="browser-dot dot-green"></div>
+                            </div>
+                            <div class="browser-address-bar">
+                                <span>🔒 https://</span>manicure-api-vi63.onrender.com/swagger-ui
+                            </div>
                         </div>
-                        <div class="req">
-                            <span class="method">FILTER</span> <span class="path">@Filter(name="tenantFilter")</span> <span
-                                class="status">ThreadLocal</span><br>
-                            <span style="color:#666; margin-left:20px;">Blindagem cross-tenant ativa via JPA...</span>
-                        </div>
-                        <div class="req">
-                            <span class="method">GET</span> <span class="path">/admin/tenants/mrr</span> <span
-                                class="status">200 OK</span><br>
-                            <span style="color:#666; margin-left:20px;">Cálculo de receita recorrente...</span>
+                        <img src="assets/img/manicure.jpg" alt="Dashboard e Swagger da Manicure API" class="browser-preview-img" />
+                        <div class="live-tag">
+                            <span></span> Multi-Tenant API
                         </div>
                     </div>
                 </div>
@@ -1083,21 +1147,20 @@
                     </div>
                 </div>
                 <div class="project-visual">
-                    <div class="api-mockup" style="font-size: 0.8rem; background: #0A0A0A;">
-                        <div class="req">
-                            <span class="method" style="color: #27C93F;">done</span> <span
-                                class="path">minhasTarefas.filter(t => t.done)</span><br>
-                            <span style="color:#666; margin-left:20px;">Filtrando tarefas concluídas...</span>
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <div class="browser-dot dot-red"></div>
+                                <div class="browser-dot dot-yellow"></div>
+                                <div class="browser-dot dot-green"></div>
+                            </div>
+                            <div class="browser-address-bar">
+                                <span>🔒 https://</span>lista-de-tarefas.app
+                            </div>
                         </div>
-                        <div class="req">
-                            <span class="method" style="color: #00E5FF;">use server</span> <span
-                                class="path">alternarStatusTarefa(id, status)</span><br>
-                            <span style="color:#666; margin-left:20px;">Invertendo status no banco via Prisma...</span>
-                        </div>
-                        <div class="req">
-                            <span class="method" style="color: #bb86fc;">style</span> <span class="path">width:
-                                `${porcentagemProgresso}%`</span><br>
-                            <span style="color:#666; margin-left:20px;">Barra de progresso reativa</span>
+                        <img src="assets/img/todolist.jpg" alt="Interface da Lista de Tarefas App" class="browser-preview-img" />
+                        <div class="live-tag">
+                            <span></span> Next.js + React 19
                         </div>
                     </div>
                 </div>
