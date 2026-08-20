@@ -444,7 +444,14 @@
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
+        }
+
+        .skills-context-desc {
+            font-size: 0.88rem;
+            color: var(--text-body);
+            line-height: 1.5;
+            margin-bottom: 12px;
         }
 
         .skills-col ul {
@@ -571,7 +578,7 @@
             <div class="section-header">
                 <div>
                     <span class="section-tag">Trabalhos em Destaque</span>
-                    <h2 class="section-title">Sistemas e Aplicações Reais</h2>
+                    <h2 class="section-title">Projetos</h2>
                 </div>
             </div>
 
@@ -596,17 +603,16 @@
                         </div>
 
                         <p class="card-impact">
-                            <span class="card-impact-highlight">SaaS Multi-Tenant para escritórios de arquitetura e construtoras.</span> Elimina a troca desorganizada de mensagens em grupos ao gerar um portal exclusivo via Magic Link para clientes acompanharem fotos diárias, plantas e avanço físico ponderado sem necessidade de login.
+                            <span class="card-impact-highlight">SaaS Multi-Tenant para escritórios de arquitetura e construtoras.</span> Elimina o ruído de grupos de mensagens ao centralizar diários fotográficos, cronogramas de avanço físico ponderado e geração de portal público via Magic Link seguro para clientes finais sem exigência de login.
                         </p>
 
                         <div class="card-footer">
                             <div class="tech-tags">
-                                <span class="tech-tag">Next.js 16</span>
-                                <span class="tech-tag">React 19</span>
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">Prisma ORM</span>
-                                <span class="tech-tag">Tailwind CSS</span>
-                                <span class="tech-tag">Multi-Tenant JWT</span>
+                                <span class="tech-tag">Next.js 16 (App Router) & React 19</span>
+                                <span class="tech-tag">Prisma ORM & PostgreSQL</span>
+                                <span class="tech-tag">Autenticação JWT com isolamento multi-tenant por tenantId</span>
+                                <span class="tech-tag">Acesso seguro de clientes via Magic Token</span>
+                                <span class="tech-tag">Deploy contínuo no Render</span>
                             </div>
                         </div>
                     </div>
@@ -636,13 +642,12 @@
 
                         <div class="card-footer">
                             <div class="tech-tags">
-                                <span class="tech-tag">Java 21</span>
-                                <span class="tech-tag">Spring Boot 3</span>
-                                <span class="tech-tag">Spring Security</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">Flyway</span>
-                                <span class="tech-tag">Docker</span>
-                                <span class="tech-tag">JUnit 5</span>
+                                <span class="tech-tag">Java 21 & Spring Boot 3</span>
+                                <span class="tech-tag">Spring Security com JWT multi-tenant</span>
+                                <span class="tech-tag">Isolamento via Hibernate Filter dinâmico com AOP</span>
+                                <span class="tech-tag">PostgreSQL & Migrações com Flyway</span>
+                                <span class="tech-tag">Testes automatizados com JUnit 5 e Mockito</span>
+                                <span class="tech-tag">Docker & CI/CD no Render</span>
                             </div>
                         </div>
                     </div>
@@ -669,11 +674,10 @@
 
                         <div class="card-footer">
                             <div class="tech-tags">
-                                <span class="tech-tag">Next.js</span>
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">Prisma</span>
-                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">Next.js & TypeScript</span>
+                                <span class="tech-tag">React 19 com Server e Client Components</span>
+                                <span class="tech-tag">Modelagem e persistência com Prisma ORM</span>
+                                <span class="tech-tag">Design System utilitário com Tailwind CSS</span>
                             </div>
                         </div>
                     </div>
@@ -702,18 +706,19 @@
 
                 <div class="about-content">
                     <p>
-                        Minha jornada na tecnologia começou pela curiosidade de entender como sistemas de grande escala realmente operam por trás da interface. Atualmente curso o <strong>5º semestre de Ciência da Computação na UNIP</strong>, em São Paulo.
+                        Escolhi me aprofundar em <strong>Java e Spring Boot</strong> porque sistemas reais de missão crítica exigem tipagem estrita, previsibilidade em concorrência e controle refinado de ciclo de vida. Atualmente curso o <strong>5º semestre de Ciência da Computação na UNIP</strong>, em São Paulo.
                     </p>
                     <p>
-                        Aprendi a ter disciplina cedo: concilio a faculdade pela manhã e o trabalho com madrugadas dedicadas a construir arquiteturas sólidas, debugar problemas na raiz e testar soluções do zero até o deploy em produção.
+                        Um desafio real que resolvi foi o <strong>vazamento de dados entre empresas em arquiteturas multi-tenant</strong>. Em vez de depender que cada desenvolvedor lembrasse de injetar <code>where tenant_id = ?</code> em cada query JPA — uma abordagem sujeita a falha humana —, decidi implementar um interceptor com <strong>AspectJ (AOP) combinado a filtros globais dinâmicos no Hibernate</strong>. O filtro extrai o <code>tenantId</code> do token JWT no <code>TenantContext</code> (ThreadLocal) e o aplica de forma transparente a 100% das operações de banco, garantindo isolamento total por design.
                     </p>
                     <p>
-                        Também compartilho meus estudos de código em transmissões ao vivo no canal <strong>Clovin DEV no YouTube</strong>, onde pratico live coding e documentação em público — um hábito que me ajudou a desenvolver clareza na comunicação técnica e rapidez para resolver imprevistos.
+                        Para a camada de produto, integro esse ecossistema com <strong>Next.js 16, TypeScript e Tailwind CSS</strong>. Também documento essa engenharia diariamente em transmissões ao vivo no canal <strong>Clovin DEV no YouTube</strong>, onde pratico live coding e resolução de problemas sob pressão em tempo real.
                     </p>
 
                     <div class="skills-grid-editorial">
                         <div class="skills-col">
                             <h4>Backend & Dados</h4>
+                            <p class="skills-context-desc">Onde passo a maior parte do tempo, focado em arquitetura multi-tenant, segurança e integridade transacional.</p>
                             <ul>
                                 <li>Java 21</li>
                                 <li>Spring Boot 3</li>
@@ -726,6 +731,7 @@
 
                         <div class="skills-col">
                             <h4>Frontend & Web</h4>
+                            <p class="skills-context-desc">Construção de interfaces de alta fidelidade, portais de autoatendimento e integração fluida com APIs.</p>
                             <ul>
                                 <li>TypeScript</li>
                                 <li>Next.js (App Router)</li>
