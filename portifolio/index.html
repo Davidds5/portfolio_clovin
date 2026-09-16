@@ -1,752 +1,898 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Silva — Engenheiro de Software Full Stack</title>
+    <title>David Silva — Software Developer & Full Stack Engineer</title>
+    <meta name="description" content="Portfólio de David Silva (Clovin DEV) — Engenheiro de Software Full Stack especializado em Java 21, Spring Boot 3, Next.js, TypeScript e arquitetura Multi-Tenant.">
+    <meta name="theme-color" content="#ffffff">
 
-    <!-- Google Fonts: Cabinet Grotesk & Satoshi (via fontshare) + Newsreader & Inter -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/img/profile.png">
+
+    <!-- Google Fonts: Playfair Display (Serif), DM Sans (Sans) & JetBrains Mono (Monospace) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN com Configuração Customizada -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        canvas: '#ffffff',
+                        'canvas-soft': '#f8f8f6',
+                        'canvas-subtle': '#f2f2ee',
+                        ink: '#090909',
+                        'ink-muted': '#595959',
+                        'ink-faint': '#8c8c87',
+                        line: '#e5e5e0',
+                        'line-dark': '#d4d4cd',
+                        accent: '#f15a24',
+                        'accent-hover': '#d94710',
+                        'accent-soft': '#fff3ed',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        :root {
-            --bg: #0c0e12;
-            --surface: #13171f;
-            --surface-hover: #191e28;
-            --border: #202633;
-            --border-light: #2d3648;
-            
-            --text-heading: #f8fafc;
-            --text-body: #94a3b8;
-            --text-muted: #64748b;
-            
-            --accent-link: #e2e8f0;
-            --tag-bg: #181d26;
-            --tag-border: #262e3d;
-            --tag-text: #cbd5e1;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg);
-            color: var(--text-body);
-            line-height: 1.7;
+            background-color: #ffffff;
+            color: #090909;
+            font-family: 'DM Sans', sans-serif;
             -webkit-font-smoothing: antialiased;
-            position: relative;
+            text-rendering: optimizeLegibility;
         }
 
-        /* Subtle grid & noise texture background */
         body::before {
-            content: '';
+            content: "";
             position: fixed;
             top: 0;
+            right: 0;
+            bottom: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 48px 48px;
-            pointer-events: none;
             z-index: -1;
+            pointer-events: none;
+            opacity: 0.18;
+            background-image: radial-gradient(rgba(9, 9, 9, 0.16) 0.65px, transparent 0.65px);
+            background-size: 6px 6px;
         }
 
-        /* Layout Container */
-        .container {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 0 28px;
+        .hairline-b {
+            border-bottom: 1px solid #e5e5e0;
         }
 
-        /* Header / Navbar */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(12, 14, 18, 0.85);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
+        .hairline-t {
+            border-top: 1px solid #e5e5e0;
         }
 
-        .nav-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 68px;
+        .hairline-l {
+            border-left: 1px solid #e5e5e0;
         }
 
-        .brand {
-            font-weight: 700;
-            font-size: 1.05rem;
-            color: var(--text-heading);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .hairline-r {
+            border-right: 1px solid #e5e5e0;
         }
 
-        .brand-avatar {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid var(--border-light);
+        .hairline {
+            border: 1px solid #e5e5e0;
         }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 24px;
+        .transition-editorial {
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.15s ease;
+        #toast {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .nav-links a:hover {
-            color: var(--text-heading);
-        }
-
-        /* Typography */
-        h1, h2, h3 {
-            color: var(--text-heading);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-        }
-
-        .editorial-title {
-            font-family: 'Newsreader', Georgia, serif;
-            font-style: italic;
-            font-weight: 400;
-            letter-spacing: 0;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 80px 0 50px 0;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            line-height: 1.18;
-            margin-bottom: 22px;
-            max-width: 820px;
-            font-weight: 700;
-        }
-
-        .hero h1 .text-highlight {
-            color: #cbd5e1;
-        }
-
-        .hero-bio {
-            font-size: 1.15rem;
-            color: var(--text-body);
-            line-height: 1.75;
-            margin-bottom: 18px;
-            max-width: 760px;
-        }
-
-        .hero-status {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-        }
-
-        .hero-status-dot {
-            width: 6px;
-            height: 6px;
-            background: #10b981;
-            border-radius: 50%;
-        }
-
-        .hero-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Buttons & Actions */
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            background: var(--text-heading);
-            color: var(--bg);
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary:hover {
-            background: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        .link-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.15s ease;
-        }
-
-        .link-secondary:hover {
-            color: var(--text-heading);
-            text-decoration: underline;
-        }
-
-        /* Section Global */
-        section {
-            padding: 70px 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .section-header {
-            margin-bottom: 44px;
-        }
-
-        .section-title {
-            font-size: 2.1rem;
-            letter-spacing: -0.02em;
-        }
-
-        /* Project Cards */
-        .projects-feed {
-            display: flex;
-            flex-direction: column;
-            gap: 52px;
-        }
-
-        .editorial-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: border-color 0.25s ease, transform 0.25s ease;
-        }
-
-        .editorial-card:hover {
-            border-color: var(--border-light);
-            transform: translateY(-3px);
-        }
-
-        .card-image-wrap {
-            width: 100%;
-            height: 380px;
-            overflow: hidden;
-            background: #08090c;
-            position: relative;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .card-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-            transition: transform 0.4s ease;
-            filter: brightness(0.96);
-        }
-
-        .editorial-card:hover .card-image {
-            transform: scale(1.02);
-            filter: brightness(1);
-        }
-
-        .card-body {
-            padding: 34px 38px;
-        }
-
-        .card-header-line {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .card-title {
-            font-size: 1.65rem;
-        }
-
-        .card-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .card-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-heading);
-            background: var(--tag-bg);
-            border: 1px solid var(--border-light);
-            padding: 6px 14px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.15s ease;
-        }
-
-        .card-link:hover {
-            background: var(--surface-hover);
-            border-color: var(--text-muted);
-        }
-
-        .card-link.live {
-            background: #ffffff;
-            color: #0c0e12;
-            border-color: #ffffff;
-        }
-
-        .card-link.live:hover {
-            background: #e2e8f0;
-        }
-
-        .card-impact {
-            color: var(--text-body);
-            font-size: 1.02rem;
-            line-height: 1.7;
-            margin-bottom: 24px;
-        }
-
-        .card-impact-highlight {
-            color: var(--text-heading);
-            font-weight: 500;
-        }
-
-        .card-footer {
-            border-top: 1px solid var(--border);
-            padding-top: 20px;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tech-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--tag-text);
-            background: #151a24;
-            border: 1px solid #262f40;
-            padding: 5px 12px;
-            border-radius: 6px;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        /* About Section (Human & Narrative) */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.3fr;
-            gap: 48px;
-            align-items: start;
-        }
-
-        .about-photo-wrapper {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            background: var(--surface);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .about-photo {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 4 / 5;
-            object-fit: cover;
-            object-position: center 20%;
-            display: block;
-        }
-
-        .about-photo-caption {
-            padding: 12px 16px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border);
-            background: var(--surface);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        .about-content p strong {
-            color: var(--text-heading);
-            font-weight: 600;
-        }
-
-        .skills-grid-editorial {
-            margin-top: 16px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .skills-col h4 {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 6px;
-        }
-
-        .skills-context-desc {
-            font-size: 0.88rem;
-            color: var(--text-body);
-            line-height: 1.5;
-            margin-bottom: 12px;
-        }
-
-        .skills-col ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skills-col li {
-            font-size: 0.85rem;
-            color: var(--text-heading);
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 4px 10px;
-            border-radius: 6px;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 50px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .footer-socials {
-            display: flex;
-            gap: 20px;
-        }
-
-        .footer-socials a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.15s;
-        }
-
-        .footer-socials a:hover {
-            color: var(--text-heading);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .card-body {
-                padding: 24px;
-            }
-
-            .card-image-wrap {
-                height: 240px;
-            }
-
-            .skills-grid-editorial {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                display: none;
-            }
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 
-<body>
+<body class="selection:bg-accent selection:text-white min-h-screen flex flex-col">
 
-    <!-- Header Navigation -->
-    <nav>
-        <div class="container nav-content">
-            <a href="#" class="brand">
-                <img src="assets/img/profile.jpg" alt="David Silva" class="brand-avatar" />
-                <span>David Silva</span>
-            </a>
-            <div class="nav-links">
-                <a href="#projetos">Projetos</a>
-                <a href="#sobre">Sobre</a>
-                <a href="https://github.com/Davidds5" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/david-silva-17b2882bb" target="_blank">LinkedIn</a>
-                <a href="curriculo_david_pt.html" target="_blank" style="color: var(--text-heading);">Currículo ↗</a>
+    <!-- Top Status Indicator Bar -->
+    <div class="w-full hairline-b bg-canvas-soft/80 backdrop-blur-sm text-xs py-2 px-6">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-2 font-mono text-[11px] text-ink-muted">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>STATUS: <strong class="text-ink font-semibold">DISPONÍVEL PARA PROJETOS & VAGAS (CLT / PJ)</strong></span>
+            </div>
+            <div class="hidden sm:flex items-center gap-4 font-mono text-[11px] text-ink-faint">
+                <span>LOCAL: SÃO PAULO, BR</span>
+                <span>•</span>
+                <span>STACK: FULLSTACK & APIS</span>
             </div>
         </div>
-    </nav>
-
-    <div class="container">
-
-        <!-- Hero Section -->
-        <section class="hero" style="border-top: none;">
-            <h1>
-                Desenvolvo sistemas web com foco em <span class="text-highlight">arquitetura robusta</span> e usabilidade real.
-            </h1>
-
-            <p class="hero-bio">
-                Sou David Silva, estudante de Análise e Desenvolvimento de Sistemas (ADS) na Estácio. Construo aplicações completas ponta a ponta — do backend seguro em Java e Spring Boot a interfaces fluidas em Next.js e TypeScript.
-            </p>
-
-            <div class="hero-status">
-                <span class="hero-status-dot"></span>
-                <span>Disponível para novas oportunidades como desenvolvedor júnior</span>
-            </div>
-
-            <div class="hero-actions">
-                <a href="#projetos" class="btn-primary">
-                    <i data-lucide="arrow-down" style="width: 16px; height: 16px;"></i> Ver Projetos
-                </a>
-                <a href="curriculo_david_pt.html" target="_blank" class="link-secondary">
-                    Ver Currículo <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projetos">
-            <div class="section-header">
-                <h2 class="section-title">Projetos</h2>
-            </div>
-
-            <div class="projects-feed">
-
-                <!-- Projeto 1: Diário de Obra -->
-                <article class="editorial-card">
-                    <div class="card-image-wrap">
-                        <img src="assets/img/obrasync.png" alt="Diário de Obra - Gestão de Obras" class="card-image" />
-                    </div>
-                    <div class="card-body">
-                        <div class="card-header-line">
-                            <h3 class="card-title">Diário de Obra</h3>
-                            <div class="card-links">
-                                <a href="https://obrasync-bf1t.onrender.com" target="_blank" class="card-link live">
-                                    <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Ver Produção
-                                </a>
-                                <a href="https://github.com/Davidds5/obrasync" target="_blank" class="card-link">
-                                    <i data-lucide="github" style="width: 14px; height: 14px;"></i> Código
-                                </a>
-                            </div>
-                        </div>
-
-                        <p class="card-impact">
-                            <span class="card-impact-highlight">SaaS Multi-Tenant para escritórios de arquitetura e construtoras.</span> Elimina o ruído de grupos de mensagens ao centralizar diários fotográficos, cronogramas de avanço físico ponderado e geração de portal público via Magic Link seguro para clientes finais sem exigência de login.
-                        </p>
-
-                        <div class="card-footer">
-                            <div class="tech-tags">
-                                <span class="tech-tag">Next.js 16 (App Router) & React 19</span>
-                                <span class="tech-tag">Prisma ORM & PostgreSQL</span>
-                                <span class="tech-tag">Autenticação JWT com isolamento por tenantId</span>
-                                <span class="tech-tag">Magic Token público para clientes</span>
-                                <span class="tech-tag">Deploy no Render</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Projeto 2: Agenda Bela -->
-                <article class="editorial-card">
-                    <div class="card-image-wrap">
-                        <img src="assets/img/belasunhas.png" alt="Agenda Bela - Gestão de Salões" class="card-image" />
-                    </div>
-                    <div class="card-body">
-                        <div class="card-header-line">
-                            <h3 class="card-title">Agenda Bela</h3>
-                            <div class="card-links">
-                                <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank" class="card-link live">
-                                    <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Swagger API
-                                </a>
-                                <a href="https://github.com/Davidds5/manicure_api" target="_blank" class="card-link">
-                                    <i data-lucide="github" style="width: 14px; height: 14px;"></i> Código
-                                </a>
-                            </div>
-                        </div>
-
-                        <p class="card-impact">
-                            <span class="card-impact-highlight">Plataforma Fullstack Multi-Tenant de agendamento e gestão para salões de beleza.</span> Implementa isolamento rigoroso de banco via filtros globais do Hibernate com AspectJ, controle de assinaturas com limites automáticos (HTTP 402) e auto-onboarding self-service para novos salões.
-                        </p>
-
-                        <div class="card-footer">
-                            <div class="tech-tags">
-                                <span class="tech-tag">Java 21 & Spring Boot 3</span>
-                                <span class="tech-tag">Spring Security com JWT multi-tenant</span>
-                                <span class="tech-tag">Isolamento via Hibernate Filter dinâmico com AOP</span>
-                                <span class="tech-tag">PostgreSQL & Flyway Migrations</span>
-                                <span class="tech-tag">Testes com JUnit 5 e Mockito</span>
-                                <span class="tech-tag">Docker & Deploy no Render</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Projeto 3: Vaga Certa -->
-                <article class="editorial-card">
-                    <div class="card-image-wrap">
-                        <img src="assets/img/vaga_certa.png" alt="Vaga Certa - Agregador de Vagas e Otimizador de Currículos" class="card-image" />
-                    </div>
-                    <div class="card-body">
-                        <div class="card-header-line">
-                            <h3 class="card-title">Vaga Certa</h3>
-                            <div class="card-links">
-                                <a href="https://github.com/Davidds5/projeto-api-curricolo" target="_blank" class="card-link">
-                                    <i data-lucide="github" style="width: 14px; height: 14px;"></i> Código no GitHub
-                                </a>
-                            </div>
-                        </div>
-
-                        <p class="card-impact">
-                            <span class="card-impact-highlight">Agregador de vagas multicanal e otimizador de currículos com IA.</span> Sistema inteligente que consome vagas em tempo real (Gupy, Catho, Indeed, LinkedIn), analisa palavras-chave e reestrutura currículos com OpenAI (GPT-3.5) com zero alucinação, gerando PDFs e DOCX formatados nativamente.
-                        </p>
-
-                        <div class="card-footer">
-                            <div class="tech-tags">
-                                <span class="tech-tag">Next.js 14 & TypeScript</span>
-                                <span class="tech-tag">OpenAI API (GPT)</span>
-                                <span class="tech-tag">Prisma ORM & SQLite</span>
-                                <span class="tech-tag">PDF-Lib, Mammoth & Docx</span>
-                                <span class="tech-tag">Tailwind CSS (Dark Mode)</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="sobre">
-            <div class="section-header">
-                <h2 class="section-title">Sobre Mim</h2>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-photo-wrapper">
-                    <img src="assets/img/profile.jpg" alt="Foto de David Silva" class="about-photo" />
-                    <div class="about-photo-caption">
-                        <span>David Silva</span>
-                        <span>São Paulo — SP</span>
-                    </div>
-                </div>
-
-                <div class="about-content">
-                    <p>
-                        Escolhi me especializar em Java e Spring Boot pela solidez que a stack oferece em regras de negócio complexas: tipagem estrita, previsibilidade em concorrência e controle fino de transações. Sou estudante de Análise e Desenvolvimento de Sistemas (ADS) na Estácio.
-                    </p>
-                    <p>
-                        Um desafio real que me exigiu engenharia de verdade foi evitar vazamento de dados entre clientes em aplicações multi-tenant. Em vez de confiar que cada consulta manual conteria uma cláusula <code>where tenant_id = ?</code> — o que abre brecha para falhas humanas —, implementei um interceptor com AspectJ (AOP) e filtros globais dinâmicos no Hibernate. O filtro lê o tenant autenticado a partir do TenantContext (ThreadLocal) e restringe automaticamente todas as operações de leitura e escrita no PostgreSQL.
-                    </p>
-                    <p>
-                        Na camada visual, construo interfaces com Next.js 16, TypeScript e Tailwind CSS. Também compartilho minha rotina de desenvolvimento diariamente em transmissões ao vivo no canal Clovin DEV no YouTube, praticando resolução de problemas reais e documentação em público.
-                    </p>
-
-                    <div class="skills-grid-editorial">
-                        <div class="skills-col">
-                            <h4>Backend & Dados</h4>
-                            <p class="skills-context-desc">Onde passo a maior parte do tempo, focado em arquitetura multi-tenant, segurança e integridade transacional.</p>
-                            <ul>
-                                <li>Java 21</li>
-                                <li>Spring Boot 3</li>
-                                <li>Spring Security</li>
-                                <li>PostgreSQL</li>
-                                <li>Docker / Flyway</li>
-                                <li>JUnit 5 & Mockito</li>
-                            </ul>
-                        </div>
-
-                        <div class="skills-col">
-                            <h4>Frontend & Web</h4>
-                            <p class="skills-context-desc">Construção de interfaces de alta fidelidade, portais de autoatendimento e integração fluida com APIs.</p>
-                            <ul>
-                                <li>TypeScript</li>
-                                <li>Next.js (App Router)</li>
-                                <li>React 19</li>
-                                <li>Tailwind CSS</li>
-                                <li>Prisma ORM</li>
-                                <li>REST APIs / JWT</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>© 2026 David Silva · São Paulo, Brasil</p>
-            <div class="footer-socials">
-                <a href="https://github.com/Davidds5" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/david-silva-17b2882bb" target="_blank">LinkedIn</a>
-                <a href="https://youtube.com/@clovindev" target="_blank">YouTube</a>
-                <a href="mailto:davis.clovins@gmail.com">davis.clovins@gmail.com</a>
-            </div>
-        </footer>
-
     </div>
 
+    <!-- Header / Navbar Minimalista -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md hairline-b transition-editorial">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand / Logo -->
+            <a href="#" class="group flex items-center gap-3 text-ink no-underline">
+                <div class="relative w-10 h-10 rounded-full overflow-hidden hairline group-hover:border-accent transition-colors">
+                    <img src="../assets/img/profile.png" alt="David Silva" class="w-full h-full object-cover object-top" onerror="this.src='../assets/img/profile.jpg'">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-sans font-bold text-base tracking-tight leading-none group-hover:text-accent transition-colors">David Silva</span>
+                    <span class="font-mono text-[11px] text-ink-faint mt-1 tracking-wider uppercase">Clovin DEV</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-mono text-xs text-ink-muted">
+                <a href="#sobre" class="hover:text-ink hover:underline underline-offset-8 transition-colors">01. Sobre</a>
+                <a href="#projetos" class="hover:text-ink hover:underline underline-offset-8 transition-colors">02. Projetos</a>
+                <a href="#stack" class="hover:text-ink hover:underline underline-offset-8 transition-colors">03. Stack</a>
+                <a href="#formacao" class="hover:text-ink hover:underline underline-offset-8 transition-colors">04. Prática</a>
+                <a href="#contato" class="hover:text-ink hover:underline underline-offset-8 transition-colors">05. Contato</a>
+            </nav>
+
+            <!-- Actions Header -->
+            <div class="flex items-center gap-3">
+                <a href="curriculo_david_pt.html" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-md hairline hover:bg-canvas-soft text-xs font-mono font-medium text-ink transition-editorial">
+                    <span>Currículo</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-ink-muted"></i>
+                </a>
+                <a href="#contato" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-ink text-white hover:bg-accent text-xs font-mono font-medium transition-editorial shadow-sm">
+                    <span>Fale Comigo</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <!-- HERO SECTION -->
+            <section class="py-20 sm:py-28 hairline-b">
+                <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-canvas-soft hairline mb-8">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                    <span class="font-mono text-xs tracking-wider uppercase text-ink-muted font-medium">Software Developer // Fullstack & APIs</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-sans font-bold tracking-tight text-ink leading-[1.08] mb-8 max-w-5xl">
+                    Desenvolvendo sistemas robustos, <span class="font-serif italic font-normal text-ink/90">arquiteturas escaláveis</span> e produtos digitais orientados a código limpo.
+                </h1>
+
+                <p class="text-lg sm:text-xl text-ink-muted leading-relaxed font-sans max-w-3xl mb-12">
+                    Engenheiro de software focado no desenvolvimento full-stack ponta a ponta: da solidez de microsserviços e isolamento multi-tenant seguro em <strong class="text-ink font-semibold">Java 21 e Spring Boot 3</strong> até interfaces modernas, performáticas e tipadas com <strong class="text-ink font-semibold">Next.js, React e TypeScript</strong>.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4 mb-16">
+                    <a href="#projetos" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-ink text-white hover:bg-accent text-sm font-mono font-medium transition-editorial shadow-sm">
+                        <span>Explorar Projetos Selecionados</span>
+                        <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    </a>
+                    <button onclick="copyEmail()" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-lg hairline bg-white hover:bg-canvas-soft text-sm font-mono font-medium text-ink transition-editorial group">
+                        <i data-lucide="copy" class="w-4 h-4 text-ink-muted group-hover:text-accent transition-colors"></i>
+                        <span>Copiar E-mail</span>
+                    </button>
+                    <a href="curriculo_david_pt.html" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-3.5 text-sm font-mono text-ink-muted hover:text-ink transition-colors">
+                        <span>Ver Currículo Completo</span>
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 hairline-t font-mono text-xs text-ink-muted">
+                    <div class="flex flex-col gap-1">
+                        <span class="text-ink-faint uppercase text-[10px] tracking-wider">01. Especialidade</span>
+                        <strong class="text-ink text-sm font-medium font-sans">Multi-Tenant & APIs</strong>
+                        <span class="text-ink-faint text-[11px]">Isolamento dinâmico em banco</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-ink-faint uppercase text-[10px] tracking-wider">02. Stack Core</span>
+                        <strong class="text-ink text-sm font-medium font-sans">Java 21 + Next.js</strong>
+                        <span class="text-ink-faint text-[11px]">Spring Boot 3 & TypeScript</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-ink-faint uppercase text-[10px] tracking-wider">03. Metodologia</span>
+                        <strong class="text-ink text-sm font-medium font-sans">Código, Produto & UX</strong>
+                        <span class="text-ink-faint text-[11px]">Estudo diário em docs oficiais</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-ink-faint uppercase text-[10px] tracking-wider">04. Comunidade</span>
+                        <strong class="text-ink text-sm font-medium font-sans">Clovin DEV</strong>
+                        <span class="text-ink-faint text-[11px]">Live coding no YouTube & TikTok</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 01 // SOBRE MIM -->
+            <section id="sobre" class="py-24 hairline-b">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+                    <div>
+                        <div class="flex items-center gap-3 text-accent font-mono text-xs font-semibold tracking-wider uppercase mb-2">
+                            <span>01 //</span>
+                            <span>Engenharia & Trajetória</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
+                            Sobre Mim
+                        </h2>
+                    </div>
+                    <p class="text-sm font-mono text-ink-muted max-w-md">
+                        Construindo software de ponta a ponta com rigor técnico, simplicidade arquitetural e entrega contínua.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-5 flex flex-col gap-6">
+                        <div class="relative bg-canvas-soft hairline rounded-xl overflow-hidden p-3 group">
+                            <div class="aspect-[4/5] rounded-lg overflow-hidden relative bg-line/50">
+                                <img src="../assets/img/profile.png" alt="David Silva" class="w-full h-full object-cover object-center filter grayscale contrast-[1.05] group-hover:grayscale-0 transition-editorial duration-500" onerror="this.src='../assets/img/profile.jpg'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                    <span class="font-mono text-white text-xs">David Silva · São Paulo, Brasil</span>
+                                </div>
+                            </div>
+                            <div class="mt-3 px-1 py-1 flex items-center justify-between text-xs font-mono text-ink-muted">
+                                <span>Software Developer</span>
+                                <span class="text-accent font-semibold">SP // BR</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-xl bg-canvas-soft hairline border-l-4 border-l-accent flex flex-col gap-3">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-xs font-bold text-accent tracking-wider uppercase flex items-center gap-1.5">
+                                    <i data-lucide="radio" class="w-3.5 h-3.5"></i>
+                                    Clovin DEV Project
+                                </span>
+                                <span class="text-[11px] font-mono text-ink-faint">YouTube & TikTok</span>
+                            </div>
+                            <h4 class="font-sans font-bold text-base text-ink">
+                                Construção em Público & Live Coding
+                            </h4>
+                            <p class="text-xs text-ink-muted leading-relaxed">
+                                Crio conteúdo técnico avançado e realizo sessões diárias de live coding transmitindo a rotina real de resolução de problemas, desenvolvimento de arquiteturas e implementação de código limpo.
+                            </p>
+                            <div class="flex items-center gap-4 pt-2 font-mono text-xs">
+                                <a href="https://youtube.com/@clovindev" target="_blank" class="text-ink hover:text-accent font-medium inline-flex items-center gap-1 transition-colors">
+                                    <span>YouTube</span>
+                                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                                <a href="https://www.tiktok.com/@clovindev" target="_blank" class="text-ink hover:text-accent font-medium inline-flex items-center gap-1 transition-colors">
+                                    <span>TikTok</span>
+                                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 flex flex-col gap-6 text-base text-ink-muted leading-relaxed font-sans">
+                        <p class="text-lg text-ink font-medium leading-relaxed">
+                            Minha paixão está em entender como as coisas funcionam sob o capô. Estudo engenharia de software diariamente através de <strong class="text-ink font-semibold">documentações oficiais</strong> (Oracle JDK, Spring Framework, Next.js docs, RFCs de protocolos), evitando atalhos e buscando entregar código limpo, legível e altamente testável.
+                        </p>
+
+                        <p>
+                            Escolhi me aprofundar em <strong class="text-ink">Java 21 e Spring Boot 3</strong> pela robustez, tipagem estrita, controle transacional e previsibilidade de concorrência que oferecem para sistemas corporativos críticos. No ecossistema frontend, utilizo <strong class="text-ink">Next.js 16, React 19 e TypeScript</strong> para entregar interfaces elegantes, acessíveis e com excelente experiência de usuário.
+                        </p>
+
+                        <div class="p-6 my-2 rounded-xl bg-canvas-soft hairline">
+                            <h4 class="font-mono text-xs uppercase text-ink font-bold tracking-wider mb-2 flex items-center gap-2">
+                                <i data-lucide="cpu" class="w-4 h-4 text-accent"></i>
+                                Engenharia Aplicada: Isolamento Multi-Tenant
+                            </h4>
+                            <p class="text-sm text-ink-muted leading-relaxed">
+                                Em projetos multi-tenant como o <em>BelasUnhas</em>, rejeito soluções frágeis que dependem de cláusulas manuais <code>where tenant_id = ?</code>. Implementei isolamento dinâmico via <strong class="text-ink">TenantContext (ThreadLocal)</strong> orquestrado com interceptores AOP (AspectJ) e filtros nativos no Hibernate. Dessa forma, qualquer query de banco de dados tem o isolamento injetado automaticamente pelo framework, garantindo zero vazamento de dados entre empresas.
+                            </p>
+                        </div>
+
+                        <p>
+                            Sou graduando em <strong class="text-ink">Análise e Desenvolvimento de Sistemas (ADS)</strong> na Universidade Estácio de Sá, e mantenho uma rotina contínua de treino de algoritmos e estruturas de dados no LeetCode. Minha meta é gerar valor real para o produto e para o negócio com código sustentável.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 hairline-t font-mono text-xs">
+                            <div class="p-4 rounded-lg hairline bg-white">
+                                <span class="text-accent font-bold block mb-1">01. Rigor</span>
+                                <strong class="text-ink block font-sans font-semibold text-sm">Clean Architecture</strong>
+                                <span class="text-ink-faint text-[11px] mt-1 block">Separação de responsabilidades e desacoplamento.</span>
+                            </div>
+                            <div class="p-4 rounded-lg hairline bg-white">
+                                <span class="text-accent font-bold block mb-1">02. Segurança</span>
+                                <strong class="text-ink block font-sans font-semibold text-sm">Tenant Isolation</strong>
+                                <span class="text-ink-faint text-[11px] mt-1 block">ThreadLocal, JWT e Hibernate Filters.</span>
+                            </div>
+                            <div class="p-4 rounded-lg hairline bg-white">
+                                <span class="text-accent font-bold block mb-1">03. Experiência</span>
+                                <strong class="text-ink block font-sans font-semibold text-sm">High-Fidelity UI</strong>
+                                <span class="text-ink-faint text-[11px] mt-1 block">Next.js, Tailwind CSS e acessibilidade.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 02 // PROJETOS EM DESTAQUE -->
+            <section id="projetos" class="py-24 hairline-b">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+                    <div>
+                        <div class="flex items-center gap-3 text-accent font-mono text-xs font-semibold tracking-wider uppercase mb-2">
+                            <span>02 //</span>
+                            <span>Cases Selecionados</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
+                            Projetos Principais
+                        </h2>
+                    </div>
+                    <p class="text-sm font-mono text-ink-muted max-w-md">
+                        Aplicações reais em produção, projetadas com arquitetura limpa, segurança multi-tenant e experiência refinada.
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-16">
+                    <!-- Case 01: ObraSync -->
+                    <article class="hairline rounded-2xl overflow-hidden bg-white hover:border-line-dark transition-editorial group">
+                        <div class="grid grid-cols-1 lg:grid-cols-12">
+                            <div class="lg:col-span-7 bg-canvas-soft overflow-hidden relative hairline-b lg:hairline-b-0 lg:hairline-r">
+                                <a href="https://obrasync-bf1t.onrender.com" target="_blank" class="block aspect-[16/10] overflow-hidden">
+                                    <img src="../assets/img/obrasync.png" alt="ObraSync - Gestão de Obras" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-editorial duration-500" onerror="this.src='../assets/img/obrasync.jpg'">
+                                </a>
+                                <div class="absolute top-4 left-4">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 hairline text-ink text-[11px] font-mono font-medium backdrop-blur-sm shadow-sm">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                        Em Produção no Render
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between gap-2 mb-3">
+                                        <span class="font-mono text-xs font-semibold text-accent uppercase tracking-wider">Case 01 // SaaS Multi-Tenant</span>
+                                        <span class="font-mono text-[11px] text-ink-faint">2026</span>
+                                    </div>
+                                    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-ink mb-4">
+                                        ObraSync
+                                    </h3>
+                                    <p class="text-sm sm:text-base text-ink-muted leading-relaxed mb-6 font-sans">
+                                        Plataforma multi-tenant de gestão de projetos desenvolvida para escritórios de engenharia civil e arquitetura. Elimina a desorganização de grupos de mensagens ao centralizar diários de obras fotográficos, acompanhamento de cronograma com avanço físico ponderado e geração de portal público via <strong class="text-ink">Magic Link seguro</strong> para clientes finais sem exigência de login.
+                                    </p>
+
+                                    <div class="p-4 rounded-lg bg-canvas-soft hairline mb-6">
+                                        <span class="text-[11px] font-mono text-ink-faint uppercase block mb-1">Diferencial de Engenharia</span>
+                                        <p class="text-xs text-ink-muted leading-relaxed">
+                                            Isolamento rigoroso por <code>tenantId</code> na camada de modelo e autenticação JWT. Geração de tokens efêmeros para visualização pública de clientes com zero exposição de endpoints administrativos.
+                                        </p>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-1.5 mb-8 font-mono text-xs">
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Next.js 16</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">React 19</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">TypeScript</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Prisma ORM</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">PostgreSQL</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Tailwind CSS</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-3 pt-6 hairline-t font-mono text-xs">
+                                    <a href="https://obrasync-bf1t.onrender.com" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-ink text-white hover:bg-accent transition-editorial font-medium">
+                                        <span>Ver Produção</span>
+                                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                    <a href="https://github.com/Davidds5/obrasync" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md hairline hover:bg-canvas-soft text-ink transition-editorial font-medium">
+                                        <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                                        <span>Repositório</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Case 02: BelasUnhas -->
+                    <article class="hairline rounded-2xl overflow-hidden bg-white hover:border-line-dark transition-editorial group">
+                        <div class="grid grid-cols-1 lg:grid-cols-12">
+                            <div class="lg:col-span-7 bg-canvas-soft overflow-hidden relative hairline-b lg:hairline-b-0 lg:hairline-r">
+                                <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank" class="block aspect-[16/10] overflow-hidden">
+                                    <img src="../assets/img/belasunhas.png" alt="BelasUnhas - Gestão para Salões" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-editorial duration-500" onerror="this.src='../assets/img/bellasync.jpg'">
+                                </a>
+                                <div class="absolute top-4 left-4">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 hairline text-ink text-[11px] font-mono font-medium backdrop-blur-sm shadow-sm">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                                        Java 21 & Spring Boot 3 Core
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between gap-2 mb-3">
+                                        <span class="font-mono text-xs font-semibold text-accent uppercase tracking-wider">Case 02 // Enterprise Backend & Multi-Tenancy</span>
+                                        <span class="font-mono text-[11px] text-ink-faint">2026</span>
+                                    </div>
+                                    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-ink mb-4">
+                                        BelasUnhas (Agenda Bela)
+                                    </h3>
+                                    <p class="text-sm sm:text-base text-ink-muted leading-relaxed mb-6 font-sans">
+                                        Aplicação web completa multi-tenant voltada para salões de beleza e profissionais de estética. Conta com gestão de agendamentos, catálogo de serviços e controle de planos com bloqueio automático por limite (HTTP 402 Payment Required), além de fluxo automatizado de onboarding self-service para novos salões.
+                                    </p>
+
+                                    <div class="p-4 rounded-lg bg-canvas-soft hairline mb-6">
+                                        <span class="text-[11px] font-mono text-ink-faint uppercase block mb-1">Diferencial de Engenharia</span>
+                                        <p class="text-xs text-ink-muted leading-relaxed">
+                                            Isolamento multi-tenant dinâmico usando <strong class="text-ink">ThreadLocal</strong> com filtros globais do Hibernate ativados via interceptor AspectJ (AOP). Cobertura de testes unitários e de integração com JUnit 5 e Mockito.
+                                        </p>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-1.5 mb-8 font-mono text-xs">
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Java 21</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Spring Boot 3</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Spring Security (JWT)</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Hibernate Filter & AOP</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">PostgreSQL & Flyway</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Next.js Frontend</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-3 pt-6 hairline-t font-mono text-xs">
+                                    <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-ink text-white hover:bg-accent transition-editorial font-medium">
+                                        <span>Swagger Docs</span>
+                                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                    <a href="https://github.com/Davidds5/manicure_api" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md hairline hover:bg-canvas-soft text-ink transition-editorial font-medium">
+                                        <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                                        <span>Repositório</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Case 03: Vaga Certa -->
+                    <article class="hairline rounded-2xl overflow-hidden bg-white hover:border-line-dark transition-editorial group">
+                        <div class="grid grid-cols-1 lg:grid-cols-12">
+                            <div class="lg:col-span-7 bg-canvas-soft overflow-hidden relative hairline-b lg:hairline-b-0 lg:hairline-r">
+                                <a href="https://github.com/Davidds5/projeto-api-curricolo" target="_blank" class="block aspect-[16/10] overflow-hidden">
+                                    <img src="../assets/img/vaga_certa.png" alt="Vaga Certa - Otimizador de Currículos ATS" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-editorial duration-500" onerror="this.src='../assets/img/ats_resume.jpg'">
+                                </a>
+                                <div class="absolute top-4 left-4">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 hairline text-ink text-[11px] font-mono font-medium backdrop-blur-sm shadow-sm">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                                        OpenAI API Integration
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between gap-2 mb-3">
+                                        <span class="font-mono text-xs font-semibold text-accent uppercase tracking-wider">Case 03 // IA & Produtividade</span>
+                                        <span class="font-mono text-[11px] text-ink-faint">2026</span>
+                                    </div>
+                                    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-ink mb-4">
+                                        Vaga Certa
+                                    </h3>
+                                    <p class="text-sm sm:text-base text-ink-muted leading-relaxed mb-6 font-sans">
+                                        Aplicação que consome e agrega vagas de emprego em tempo real e utiliza a API da OpenAI para otimizar currículos para passar com nota máxima nos sistemas de triagem automática (ATS). Analisa palavras-chave da vaga versus experiência do candidato e reformata o currículo sem alucinações.
+                                    </p>
+
+                                    <div class="p-4 rounded-lg bg-canvas-soft hairline mb-6">
+                                        <span class="text-[11px] font-mono text-ink-faint uppercase block mb-1">Diferencial de Engenharia</span>
+                                        <p class="text-xs text-ink-muted leading-relaxed">
+                                            Engenharia de prompts com schemas estritos para parsing estruturado de dados. Geração nativa e dinâmica de arquivos PDF e DOCX através de bibliotecas de baixo nível (PDF-Lib e Mammoth).
+                                        </p>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-1.5 mb-8 font-mono text-xs">
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Next.js 14</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">TypeScript</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">OpenAI API</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Prisma ORM</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">PDF-Lib & Docx</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Tailwind CSS</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-3 pt-6 hairline-t font-mono text-xs">
+                                    <a href="https://github.com/Davidds5/projeto-api-curricolo" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-ink text-white hover:bg-accent transition-editorial font-medium">
+                                        <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                                        <span>Ver Repositório no GitHub</span>
+                                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 03 // STACK TECNOLÓGICA -->
+            <section id="stack" class="py-24 hairline-b">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+                    <div>
+                        <div class="flex items-center gap-3 text-accent font-mono text-xs font-semibold tracking-wider uppercase mb-2">
+                            <span>03 //</span>
+                            <span>Ferramentas & Tecnologias</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
+                            Stack Tecnológica
+                        </h2>
+                    </div>
+                    <p class="text-sm font-mono text-ink-muted max-w-md">
+                        Competências técnicas selecionadas com foco em confiabilidade, manutenibilidade e alta escala.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Backend -->
+                    <div class="p-8 rounded-2xl hairline bg-white flex flex-col justify-between hover:border-line-dark transition-editorial group">
+                        <div>
+                            <div class="flex items-center justify-between mb-6 pb-4 hairline-b">
+                                <span class="font-mono text-xs font-bold text-accent">01. CORE</span>
+                                <div class="w-8 h-8 rounded-full bg-canvas-soft hairline flex items-center justify-center text-ink group-hover:text-accent transition-colors">
+                                    <i data-lucide="server" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-serif font-bold text-ink mb-2">
+                                Backend & APIs
+                            </h3>
+                            <p class="text-xs text-ink-muted mb-6 leading-relaxed">
+                                Domínio de microsserviços, isolamento multi-tenant, segurança transacional e arquiteturas limpas em Java.
+                            </p>
+
+                            <ul class="space-y-3 font-mono text-xs text-ink">
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>Java 21 (LTS)</span>
+                                    <span class="text-ink-faint text-[11px]">Modern Features</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>Spring Boot 3</span>
+                                    <span class="text-ink-faint text-[11px]">MVC & REST</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>Spring Security</span>
+                                    <span class="text-ink-faint text-[11px]">JWT & Filters</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>Hibernate & JPA</span>
+                                    <span class="text-ink-faint text-[11px]">Dynamic Filters</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>JUnit 5 & Mockito</span>
+                                    <span class="text-ink-faint text-[11px]">Unit & Integration</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5">
+                                    <span>Flyway Migrations</span>
+                                    <span class="text-ink-faint text-[11px]">Schema Versioning</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Frontend -->
+                    <div class="p-8 rounded-2xl hairline bg-white flex flex-col justify-between hover:border-line-dark transition-editorial group">
+                        <div>
+                            <div class="flex items-center justify-between mb-6 pb-4 hairline-b">
+                                <span class="font-mono text-xs font-bold text-accent">02. INTERFACE</span>
+                                <div class="w-8 h-8 rounded-full bg-canvas-soft hairline flex items-center justify-center text-ink group-hover:text-accent transition-colors">
+                                    <i data-lucide="layout" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-serif font-bold text-ink mb-2">
+                                Frontend & Web
+                            </h3>
+                            <p class="text-xs text-ink-muted mb-6 leading-relaxed">
+                                Interfaces reativas de alta fidelidade, Server Components, tipagem estrita e sistemas de design modernos.
+                            </p>
+
+                            <ul class="space-y-3 font-mono text-xs text-ink">
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>Next.js 15 & 16</span>
+                                    <span class="text-ink-faint text-[11px]">App Router & RSC</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>React 19</span>
+                                    <span class="text-ink-faint text-[11px]">Hooks & Actions</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>TypeScript</span>
+                                    <span class="text-ink-faint text-[11px]">Zero 'any'</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>Tailwind CSS</span>
+                                    <span class="text-ink-faint text-[11px]">Utility-First</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>HTML5 & Semantic UI</span>
+                                    <span class="text-ink-faint text-[11px]">Accessibility</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5">
+                                    <span>State & Form Handlers</span>
+                                    <span class="text-ink-faint text-[11px]">Zod / React Hook Form</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Infra -->
+                    <div class="p-8 rounded-2xl hairline bg-white flex flex-col justify-between hover:border-line-dark transition-editorial group">
+                        <div>
+                            <div class="flex items-center justify-between mb-6 pb-4 hairline-b">
+                                <span class="font-mono text-xs font-bold text-accent">03. INFRA</span>
+                                <div class="w-8 h-8 rounded-full bg-canvas-soft hairline flex items-center justify-center text-ink group-hover:text-accent transition-colors">
+                                    <i data-lucide="database" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-serif font-bold text-ink mb-2">
+                                Dados & Infraestrutura
+                            </h3>
+                            <p class="text-xs text-ink-muted mb-6 leading-relaxed">
+                                Modelagem relacional normalizada, migrações seguras, conteinerização e automação de deploy contínuo.
+                            </p>
+
+                            <ul class="space-y-3 font-mono text-xs text-ink">
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>PostgreSQL</span>
+                                    <span class="text-ink-faint text-[11px]">Relational / ACID</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>Prisma ORM</span>
+                                    <span class="text-ink-faint text-[11px]">Schema & Types</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>Docker & Compose</span>
+                                    <span class="text-ink-faint text-[11px]">Containers</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>Git & GitHub Actions</span>
+                                    <span class="text-ink-faint text-[11px]">CI / CD</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5 hairline-b">
+                                    <span>Render & Vercel</span>
+                                    <span class="text-ink-faint text-[11px]">Cloud Deployment</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1.5">
+                                    <span>OpenAI API</span>
+                                    <span class="text-ink-faint text-[11px]">LLM Integration</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 04 // FORMAÇÃO & PRÁTICA CONTÍNUA -->
+            <section id="formacao" class="py-24 hairline-b">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+                    <div>
+                        <div class="flex items-center gap-3 text-accent font-mono text-xs font-semibold tracking-wider uppercase mb-2">
+                            <span>04 //</span>
+                            <span>Evolução & Fundamentos</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
+                            Formação & Prática
+                        </h2>
+                    </div>
+                    <p class="text-sm font-mono text-ink-muted max-w-md">
+                        Compromisso diário com a base da ciência da computação e engenharia de software sólida.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-2xl hairline bg-canvas-soft flex flex-col justify-between">
+                        <div>
+                            <span class="font-mono text-xs font-bold text-accent uppercase tracking-wider block mb-3">01. Graduação</span>
+                            <h3 class="text-xl font-serif font-bold text-ink mb-3">
+                                Análise e Desenvolvimento de Sistemas
+                            </h3>
+                            <p class="text-xs font-mono text-ink-faint mb-4">
+                                Universidade Estácio de Sá · Em andamento
+                            </p>
+                            <p class="text-sm text-ink-muted leading-relaxed font-sans">
+                                Foco nas disciplinas fundamentais de engenharia: estruturas de dados, arquitetura de computadores, governança de TI, modelagem de banco de dados e sistemas operacionais.
+                            </p>
+                        </div>
+                        <div class="mt-8 pt-4 hairline-t flex items-center gap-2 font-mono text-xs text-ink-muted">
+                            <i data-lucide="graduation-cap" class="w-4 h-4 text-accent"></i>
+                            <span>Ensino Superior em Tecnologia</span>
+                        </div>
+                    </div>
+
+                    <div class="p-8 rounded-2xl hairline bg-canvas-soft flex flex-col justify-between">
+                        <div>
+                            <span class="font-mono text-xs font-bold text-accent uppercase tracking-wider block mb-3">02. Resolução de Algoritmos</span>
+                            <h3 class="text-xl font-serif font-bold text-ink mb-3">
+                                Prática Ativa no LeetCode
+                            </h3>
+                            <p class="text-xs font-mono text-ink-faint mb-4">
+                                Resolução Diária de Problemas
+                            </p>
+                            <p class="text-sm text-ink-muted leading-relaxed font-sans">
+                                Treinamento consistente focado em estruturas essenciais: Arrays, Two Pointers, Sliding Window, Árvores Binárias, Hash Maps e análise formal de complexidade temporal e espacial (<strong class="text-ink">Big-O</strong>).
+                            </p>
+                        </div>
+                        <div class="mt-8 pt-4 hairline-t flex items-center gap-2 font-mono text-xs text-ink-muted">
+                            <i data-lucide="code" class="w-4 h-4 text-accent"></i>
+                            <span>Eficiência & Raciocínio Lógico</span>
+                        </div>
+                    </div>
+
+                    <div class="p-8 rounded-2xl hairline bg-canvas-soft flex flex-col justify-between">
+                        <div>
+                            <span class="font-mono text-xs font-bold text-accent uppercase tracking-wider block mb-3">03. Estudo Metodológico</span>
+                            <h3 class="text-xl font-serif font-bold text-ink mb-3">
+                                Roadmap.sh & Docs Oficiais
+                            </h3>
+                            <p class="text-xs font-mono text-ink-faint mb-4">
+                                Leitura Direta das Fontes
+                            </p>
+                            <p class="text-sm text-ink-muted leading-relaxed font-sans">
+                                Aprofundamento guiado pelas trilhas de Backend, Java Developer e Software Architecture do <a href="https://roadmap.sh" target="_blank" class="text-ink underline hover:text-accent font-medium">roadmap.sh</a>, complementado pela leitura direta das documentações oficiais e RFCs.
+                            </p>
+                        </div>
+                        <div class="mt-8 pt-4 hairline-t flex items-center gap-2 font-mono text-xs text-ink-muted">
+                            <i data-lucide="book-open" class="w-4 h-4 text-accent"></i>
+                            <span>Conhecimento de Primeiro Princípio</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 05 // CONTATO -->
+            <section id="contato" class="py-24">
+                <div class="mb-16">
+                    <div class="flex items-center gap-3 text-accent font-mono text-xs font-semibold tracking-wider uppercase mb-2">
+                        <span>05 //</span>
+                        <span>Contato & Conexão</span>
+                    </div>
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-ink tracking-tight mb-4">
+                        Vamos construir algo <span class="italic font-normal">sólido juntos?</span>
+                    </h2>
+                    <p class="text-base sm:text-lg text-ink-muted max-w-2xl font-sans">
+                        Estou aberto para conversar sobre posições como desenvolvedor de software, projetos desafiadores ou troca de ideias sobre arquitetura e tecnologia.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <div class="lg:col-span-7 p-8 sm:p-12 rounded-2xl hairline bg-white flex flex-col justify-between">
+                        <div>
+                            <span class="font-mono text-xs uppercase text-ink-faint block mb-2">Canal Direto de Comunicação</span>
+                            <h3 class="text-2xl sm:text-3xl font-mono font-bold text-ink tracking-tight mb-4 select-all break-all">
+                                davis.clovins@gmail.com
+                            </h3>
+                            <p class="text-sm text-ink-muted leading-relaxed font-sans mb-8">
+                                Sinta-se à vontade para enviar um e-mail sobre propostas profissionais, feedbacks ou dúvidas. Respondo prontamente.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-4">
+                            <button onclick="copyEmail()" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-ink text-white hover:bg-accent text-xs font-mono font-medium transition-editorial shadow-sm">
+                                <i data-lucide="copy" class="w-4 h-4"></i>
+                                <span>Copiar Endereço de E-mail</span>
+                            </button>
+                            <a href="mailto:davis.clovins@gmail.com" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-lg hairline hover:bg-canvas-soft text-xs font-mono font-medium text-ink transition-editorial">
+                                <i data-lucide="mail" class="w-4 h-4 text-ink-muted"></i>
+                                <span>Abrir no seu E-mail</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 grid grid-cols-1 gap-3">
+                        <a href="https://github.com/Davidds5" target="_blank" class="p-5 rounded-xl hairline bg-white hover:bg-canvas-soft hover:border-line-dark transition-editorial flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-canvas-soft hairline flex items-center justify-center text-ink group-hover:text-accent transition-colors">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <strong class="block text-sm font-sans font-bold text-ink">GitHub</strong>
+                                    <span class="text-xs font-mono text-ink-faint">@Davidds5</span>
+                                </div>
+                            </div>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-faint group-hover:text-ink transition-colors"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/david-silva-17b2882bb" target="_blank" class="p-5 rounded-xl hairline bg-white hover:bg-canvas-soft hover:border-line-dark transition-editorial flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-canvas-soft hairline flex items-center justify-center text-ink group-hover:text-accent transition-colors">
+                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <strong class="block text-sm font-sans font-bold text-ink">LinkedIn</strong>
+                                    <span class="text-xs font-mono text-ink-faint">David Silva</span>
+                                </div>
+                            </div>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-faint group-hover:text-ink transition-colors"></i>
+                        </a>
+
+                        <a href="https://youtube.com/@clovindev" target="_blank" class="p-5 rounded-xl hairline bg-white hover:bg-canvas-soft hover:border-line-dark transition-editorial flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-canvas-soft hairline flex items-center justify-center text-ink group-hover:text-accent transition-colors">
+                                    <i data-lucide="youtube" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <strong class="block text-sm font-sans font-bold text-ink">YouTube</strong>
+                                    <span class="text-xs font-mono text-ink-faint">@clovindev · Live Coding</span>
+                                </div>
+                            </div>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-faint group-hover:text-ink transition-colors"></i>
+                        </a>
+
+                        <a href="https://www.tiktok.com/@clovindev" target="_blank" class="p-5 rounded-xl hairline bg-white hover:bg-canvas-soft hover:border-line-dark transition-editorial flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-canvas-soft hairline flex items-center justify-center text-ink group-hover:text-accent transition-colors">
+                                    <i data-lucide="video" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <strong class="block text-sm font-sans font-bold text-ink">TikTok</strong>
+                                    <span class="text-xs font-mono text-ink-faint">@clovindev</span>
+                                </div>
+                            </div>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-faint group-hover:text-ink transition-colors"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full hairline-t bg-canvas-soft py-12 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 font-mono text-xs text-ink-muted">
+            <div class="flex items-center gap-3">
+                <span class="font-bold text-ink">David Silva</span>
+                <span>•</span>
+                <span>© 2026 Clovin DEV</span>
+                <span class="hidden md:inline">•</span>
+                <span class="hidden md:inline text-ink-faint">Código, Produto & Experiência</span>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="curriculo_david_pt.html" target="_blank" class="hover:text-ink transition-colors">Currículo ↗</a>
+                <a href="https://github.com/Davidds5/portfolio_clovin" target="_blank" class="hover:text-ink transition-colors">Código deste Portfólio ↗</a>
+                <a href="#" class="text-accent hover:underline flex items-center gap-1">
+                    <span>Voltar ao topo</span>
+                    <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Flutuante -->
+    <div id="toast" class="fixed bottom-8 right-8 z-50 flex items-center gap-3 px-5 py-3.5 rounded-xl bg-ink text-white font-mono text-xs shadow-2xl border border-line-dark">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span>E-mail copiado para a área de transferência!</span>
+    </div>
+
+    <!-- Scripts Interativos -->
     <script>
         lucide.createIcons();
+
+        function copyEmail() {
+            const email = "davis.clovins@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const toast = document.getElementById("toast");
+                toast.classList.add("show");
+                setTimeout(() => {
+                    toast.classList.remove("show");
+                }, 3200);
+            }).catch(err => {
+                console.error("Falha ao copiar e-mail:", err);
+            });
+        }
     </script>
 </body>
 

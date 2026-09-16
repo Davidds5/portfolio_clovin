@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #090909;
+    font-family: var(--font-dm-sans), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.18;
+    background-image: radial-gradient(rgba(9, 9, 9, 0.16) 0.65px, transparent 0.65px);
+    background-size: 6px 6px;
+  }
+}
+
+@layer utilities {
+  .hairline-b {
+    border-bottom: 1px solid #e5e5e0;
+  }
+
+  .hairline-t {
+    border-top: 1px solid #e5e5e0;
+  }
+
+  .hairline-l {
+    border-left: 1px solid #e5e5e0;
+  }
+
+  .hairline-r {
+    border-right: 1px solid #e5e5e0;
+  }
+
+  .hairline {
+    border: 1px solid #e5e5e0;
+  }
+
+  .transition-editorial {
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
