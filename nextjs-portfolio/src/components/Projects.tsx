@@ -109,7 +109,7 @@ const projects: ProjectCase[] = [
       "Zod",
       "308 Testes Automatizados",
     ],
-    image: "/obrasync.jpg",
+    image: "/eloped.png",
     badgeText: "308 Testes Aprovados",
     badgeColor: "bg-blue-500",
     liveUrl: "https://eloped.com.br",
