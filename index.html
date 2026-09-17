@@ -372,7 +372,72 @@
                 <!-- Projects Feed / Grid -->
                 <div class="flex flex-col gap-16">
 
-                    <!-- PROJETO 01: ObraSync -->
+                    <!-- PROJETO 01: BarberPro -->
+                    <article class="hairline rounded-2xl overflow-hidden bg-white hover:border-line-dark transition-editorial group">
+                        <div class="grid grid-cols-1 lg:grid-cols-12">
+                            <!-- Image Wrap (7 cols) -->
+                            <div class="lg:col-span-7 bg-canvas-soft overflow-hidden relative hairline-b lg:hairline-b-0 lg:hairline-r">
+                                <a href="https://barberpro-rose.vercel.app" target="_blank" class="block aspect-[16/10] overflow-hidden">
+                                    <img src="assets/img/barberpro.jpg" alt="BarberPro - SaaS de Agendamento Profissional" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-editorial duration-500">
+                                </a>
+                                <div class="absolute top-4 left-4">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 hairline text-ink text-[11px] font-mono font-medium backdrop-blur-sm shadow-sm">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                                        Em Produção na Vercel
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Content Info (5 cols) -->
+                            <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between gap-2 mb-3">
+                                        <span class="font-mono text-xs font-semibold text-accent uppercase tracking-wider">Case 01 // SaaS Single-Tenant & Concorrência</span>
+                                        <span class="font-mono text-[11px] text-ink-faint">2026</span>
+                                    </div>
+                                    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-ink mb-4">
+                                        BarberPro
+                                    </h3>
+                                    <p class="text-sm sm:text-base text-ink-muted leading-relaxed mb-6 font-sans">
+                                        Plataforma de agendamento online de alto padrão para barbearias individuais. Permite que clientes agendem horários livres em tempo real sem fricção de cadastro prévio, com integração direta para envio de ticket VIP formatado no WhatsApp do barbeiro (<strong class="text-ink">wa.me</strong>) e painel administrativo protegido com métricas e bloqueios de agenda.
+                                    </p>
+
+                                    <!-- Architectural Highlights -->
+                                    <div class="p-4 rounded-lg bg-canvas-soft hairline mb-6">
+                                        <span class="text-[11px] font-mono text-ink-faint uppercase block mb-1">Diferencial de Engenharia</span>
+                                        <p class="text-xs text-ink-muted leading-relaxed">
+                                            Motor de agendamento com transações atômicas serializáveis homologado sob teste de estresse de 370+ requisições simultâneas com zero double-bookings. Cancelamento self-service com tolerância de arrependimento (15 min) e revogação instantânea de sessões com <code>tokenVersion</code>.
+                                        </p>
+                                    </div>
+
+                                    <!-- Tech Tags -->
+                                    <div class="flex flex-wrap gap-1.5 mb-8 font-mono text-xs">
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Next.js 16</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">React 19</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">TypeScript</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Prisma ORM</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Neon PostgreSQL</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">JWT HttpOnly</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Vercel</span>
+                                    </div>
+                                </div>
+
+                                <!-- CTAs -->
+                                <div class="flex items-center gap-3 pt-6 hairline-t font-mono text-xs">
+                                    <a href="https://barberpro-rose.vercel.app" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-ink text-white hover:bg-accent transition-editorial font-medium">
+                                        <span>Ver Produção</span>
+                                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                    <a href="https://github.com/Davidds5/barberpro" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md hairline hover:bg-canvas-soft text-ink transition-editorial font-medium">
+                                        <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                                        <span>Repositório</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJETO 02: ObraSync -->
                     <article class="hairline rounded-2xl overflow-hidden bg-white hover:border-line-dark transition-editorial group">
                         <div class="grid grid-cols-1 lg:grid-cols-12">
                             <!-- Image Wrap (7 cols) -->
@@ -392,7 +457,7 @@
                             <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
                                 <div>
                                     <div class="flex items-center justify-between gap-2 mb-3">
-                                        <span class="font-mono text-xs font-semibold text-accent uppercase tracking-wider">Case 01 // SaaS Multi-Tenant</span>
+                                        <span class="font-mono text-xs font-semibold text-accent uppercase tracking-wider">Case 02 // SaaS Multi-Tenant & AppSec</span>
                                         <span class="font-mono text-[11px] text-ink-faint">2026</span>
                                     </div>
                                     <h3 class="text-2xl sm:text-3xl font-serif font-bold text-ink mb-4">
@@ -406,7 +471,7 @@
                                     <div class="p-4 rounded-lg bg-canvas-soft hairline mb-6">
                                         <span class="text-[11px] font-mono text-ink-faint uppercase block mb-1">Diferencial de Engenharia</span>
                                         <p class="text-xs text-ink-muted leading-relaxed">
-                                            Isolamento rigoroso por <code>tenantId</code> na camada de modelo e autenticação JWT. Geração de tokens efêmeros para visualização pública de clientes com zero exposição de endpoints administrativos.
+                                            Isolamento rigoroso por <code>tenantId</code> via Prisma Client Extensions cobrindo todos os sub-recursos (Zero IDOR), validação de upload por Magic Bytes, Edge Caching com SWR (&lt; 30ms) e homologação sob teste de estresse com 1.000 VUs concorrentes com atuação de Rate Limiter.
                                         </p>
                                     </div>
 
@@ -416,7 +481,7 @@
                                         <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">React 19</span>
                                         <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">TypeScript</span>
                                         <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Prisma ORM</span>
-                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">PostgreSQL</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Neon PostgreSQL</span>
                                         <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Tailwind CSS</span>
                                     </div>
                                 </div>
@@ -436,7 +501,7 @@
                         </div>
                     </article>
 
-                    <!-- PROJETO 02: BelasUnhas (Agenda Bela) -->
+                    <!-- PROJETO 03: BelasUnhas (Agenda Bela) -->
                     <article class="hairline rounded-2xl overflow-hidden bg-white hover:border-line-dark transition-editorial group">
                         <div class="grid grid-cols-1 lg:grid-cols-12">
                             <!-- Image Wrap (7 cols) -->
@@ -456,7 +521,7 @@
                             <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
                                 <div>
                                     <div class="flex items-center justify-between gap-2 mb-3">
-                                        <span class="font-mono text-xs font-semibold text-accent uppercase tracking-wider">Case 02 // Enterprise Backend & Multi-Tenancy</span>
+                                        <span class="font-mono text-xs font-semibold text-accent uppercase tracking-wider">Case 03 // Enterprise Backend & Multi-Tenancy</span>
                                         <span class="font-mono text-[11px] text-ink-faint">2026</span>
                                     </div>
                                     <h3 class="text-2xl sm:text-3xl font-serif font-bold text-ink mb-4">
@@ -470,7 +535,7 @@
                                     <div class="p-4 rounded-lg bg-canvas-soft hairline mb-6">
                                         <span class="text-[11px] font-mono text-ink-faint uppercase block mb-1">Diferencial de Engenharia</span>
                                         <p class="text-xs text-ink-muted leading-relaxed">
-                                            Isolamento multi-tenant dinâmico usando <strong class="text-ink">ThreadLocal</strong> com filtros globais do Hibernate ativados via interceptor AspectJ (AOP). Cobertura de testes unitários e de integração com JUnit 5 e Mockito.
+                                            Isolamento multi-tenant dinâmico usando <strong class="text-ink">ThreadLocal</strong> com filtros globais do Hibernate ativados via interceptor AspectJ (AOP). Cobertura de testes unitários com JUnit 5 e Mockito, Rate Limiting em memória e SecurityValidator Fail-Closed.
                                         </p>
                                     </div>
 
@@ -480,8 +545,8 @@
                                         <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Spring Boot 3</span>
                                         <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Spring Security (JWT)</span>
                                         <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Hibernate Filter & AOP</span>
-                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">PostgreSQL & Flyway</span>
-                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Next.js Frontend</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">PostgreSQL & Flyway (v16)</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Docker</span>
                                     </div>
                                 </div>
 
@@ -500,18 +565,18 @@
                         </div>
                     </article>
 
-                    <!-- PROJETO 03: Vaga Certa -->
+                    <!-- PROJETO 04: Eloped / EstudaBR -->
                     <article class="hairline rounded-2xl overflow-hidden bg-white hover:border-line-dark transition-editorial group">
                         <div class="grid grid-cols-1 lg:grid-cols-12">
                             <!-- Image Wrap (7 cols) -->
                             <div class="lg:col-span-7 bg-canvas-soft overflow-hidden relative hairline-b lg:hairline-b-0 lg:hairline-r">
-                                <a href="https://github.com/Davidds5/projeto-api-curricolo" target="_blank" class="block aspect-[16/10] overflow-hidden">
-                                    <img src="assets/img/vaga_certa.png" alt="Vaga Certa - Otimizador de Currículos ATS" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-editorial duration-500" onerror="this.src='assets/img/ats_resume.jpg'">
+                                <a href="https://eloped.com.br" target="_blank" class="block aspect-[16/10] overflow-hidden">
+                                    <img src="assets/img/obrasync.jpg" alt="Eloped / EstudaBR - Plataforma EdTech" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-editorial duration-500">
                                 </a>
                                 <div class="absolute top-4 left-4">
                                     <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 hairline text-ink text-[11px] font-mono font-medium backdrop-blur-sm shadow-sm">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                                        OpenAI API Integration
+                                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                                        308 Testes Automatizados Aprovados
                                     </span>
                                 </div>
                             </div>
@@ -520,41 +585,44 @@
                             <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
                                 <div>
                                     <div class="flex items-center justify-between gap-2 mb-3">
-                                        <span class="font-mono text-xs font-semibold text-accent uppercase tracking-wider">Case 03 // IA & Produtividade</span>
+                                        <span class="font-mono text-xs font-semibold text-accent uppercase tracking-wider">Case 04 // EdTech & Qualidade de Software</span>
                                         <span class="font-mono text-[11px] text-ink-faint">2026</span>
                                     </div>
                                     <h3 class="text-2xl sm:text-3xl font-serif font-bold text-ink mb-4">
-                                        Vaga Certa
+                                        Eloped / EstudaBR
                                     </h3>
                                     <p class="text-sm sm:text-base text-ink-muted leading-relaxed mb-6 font-sans">
-                                        Aplicação que consome e agrega vagas de emprego em tempo real e utiliza a API da OpenAI para otimizar currículos para passar com nota máxima nos sistemas de triagem automática (ATS). Analisa palavras-chave da vaga versus experiência do candidato e reformata o currículo sem alucinações.
+                                        Plataforma educacional completa para integração da comunidade escolar (Secretaria Municipal de Educação, Diretores, Professores e Alunos), com trilhas alinhadas à BNCC, simulados interativos e dashboards de rendimento pedagógico.
                                     </p>
 
                                     <!-- Architectural Highlights -->
                                     <div class="p-4 rounded-lg bg-canvas-soft hairline mb-6">
                                         <span class="text-[11px] font-mono text-ink-faint uppercase block mb-1">Diferencial de Engenharia</span>
                                         <p class="text-xs text-ink-muted leading-relaxed">
-                                            Engenharia de prompts com schemas estritos para parsing estruturado de dados. Geração nativa e dinâmica de arquivos PDF e DOCX através de bibliotecas de baixo nível (PDF-Lib e Mammoth).
+                                            Segmentação RBAC em 4 perfis de acesso, geração dinâmica de relatórios e boletins em PDF com jsPDF/pdf-lib e suíte com 308 testes automatizados 100% determinísticos e aprovados cobrindo formulários, segurança e jornadas E2E.
                                         </p>
                                     </div>
 
                                     <!-- Tech Tags -->
                                     <div class="flex flex-wrap gap-1.5 mb-8 font-mono text-xs">
-                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Next.js 14</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Next.js 16</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">React 19</span>
                                         <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">TypeScript</span>
-                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">OpenAI API</span>
-                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Prisma ORM</span>
-                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">PDF-Lib & Docx</span>
-                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Tailwind CSS</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Tailwind CSS v4</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">Zod</span>
+                                        <span class="px-2.5 py-1 rounded bg-canvas-soft text-ink-muted hairline">308 Testes</span>
                                     </div>
                                 </div>
 
                                 <!-- CTAs -->
                                 <div class="flex items-center gap-3 pt-6 hairline-t font-mono text-xs">
-                                    <a href="https://github.com/Davidds5/projeto-api-curricolo" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-ink text-white hover:bg-accent transition-editorial font-medium">
-                                        <i data-lucide="github" class="w-3.5 h-3.5"></i>
-                                        <span>Ver Repositório no GitHub</span>
+                                    <a href="https://eloped.com.br" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-ink text-white hover:bg-accent transition-editorial font-medium">
+                                        <span>Ver Produção</span>
                                         <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                    <a href="https://github.com/Davidds5" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md hairline hover:bg-canvas-soft text-ink transition-editorial font-medium">
+                                        <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                                        <span>GitHub</span>
                                     </a>
                                 </div>
                             </div>
