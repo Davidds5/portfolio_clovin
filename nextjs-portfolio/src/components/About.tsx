@@ -91,25 +91,22 @@ export default function About() {
         {/* Narrative Column (7 cols) */}
         <div className="lg:col-span-7 flex flex-col gap-6 text-base text-ink-muted leading-relaxed font-sans">
           <p className="text-lg text-ink font-medium leading-relaxed">
-            Minha paixão está em entender como as coisas funcionam sob o capô.
-            Estudo engenharia de software diariamente através de{" "}
+            Não vim de berço na tecnologia e nunca busquei atalhos. Minha trajetória como desenvolvedor é construída na base da disciplina diária: conciliando a rotina de trabalho em{" "}
+            <strong className="text-ink font-semibold">escala 7x1</strong>, treinos físicos e estudos focados logo pela manhã. Aprendi a programar mergulhando direto em{" "}
             <strong className="text-ink font-semibold">
               documentações oficiais
             </strong>{" "}
-            (Oracle JDK, Spring Framework, Next.js docs, RFCs de protocolos),
-            evitando atalhos e buscando entregar código limpo, legível e
-            altamente testável.
+            (Oracle JDK, Spring Framework, Next.js docs e RFCs), sempre movido pela obsessão de entender o que acontece{" "}
+            <strong className="text-ink font-semibold">sob o capô</strong> — do gerenciamento de memória e concorrência ao ciclo de renderização no navegador.
           </p>
 
           <p>
             Escolhi me aprofundar em{" "}
             <strong className="text-ink">Java 21 e Spring Boot 3</strong> pela
-            robustez, tipagem estrita, controle transacional e previsibilidade de
-            concorrência que oferecem para sistemas corporativos críticos. No
+            solidez, tipagem estrita e controle transacional que sistemas corporativos críticos exigem. No
             ecossistema frontend, utilizo{" "}
             <strong className="text-ink">Next.js 16, React 19 e TypeScript</strong>{" "}
-            para entregar interfaces elegantes, acessíveis e com excelente
-            experiência de usuário.
+            para construir interfaces elegantes, reativas e com experiência de usuário de alto padrão.
           </p>
 
           {/* Deep Technical Case Box */}
@@ -119,14 +116,13 @@ export default function About() {
               Engenharia Aplicada: Isolamento Multi-Tenant
             </h4>
             <p className="text-sm text-ink-muted leading-relaxed">
-              Em projetos multi-tenant como o <em>BelasUnhas</em>, rejeito
-              soluções frágeis que dependem de cláusulas manuais{" "}
-              <code>where tenant_id = ?</code>. Implementei isolamento dinâmico
+              No desenvolvimento do <em>BelasUnhas</em>, recusei abordagens frágeis que dependem de cláusulas manuais{" "}
+              <code>where tenant_id = ?</code>. Projetei um isolamento dinâmico
               via <strong className="text-ink">TenantContext (ThreadLocal)</strong>{" "}
               orquestrado com interceptores AOP (AspectJ) e filtros nativos no
-              Hibernate. Dessa forma, qualquer query de banco de dados tem o
-              isolamento injetado automaticamente pelo framework, garantindo
-              zero vazamento de dados entre empresas.
+              Hibernate. Assim, qualquer consulta ao banco tem o
+              filtro injetado automaticamente pelo framework, garantindo
+              zero vazamento de dados entre clientes por falha humana.
             </p>
           </div>
 
@@ -135,10 +131,8 @@ export default function About() {
             <strong className="text-ink">
               Análise e Desenvolvimento de Sistemas (ADS)
             </strong>{" "}
-            na Universidade Estácio de Sá, e mantenho uma rotina contínua de
-            treino de algoritmos e estruturas de dados no LeetCode. Minha meta é
-            gerar valor real para o produto e para o negócio com código
-            sustentável.
+            na Estácio e pratico algoritmos e estruturas de dados de forma contínua.{" "}
+            <strong className="text-ink">Aonde quero chegar?</strong> Quero ser o engenheiro de software em quem você confia para colocar arquiteturas críticas em produção — alguém que assume responsabilidade de ponta a ponta, resolve problemas complexos e gera valor real de negócio com código limpo e sustentável.
           </p>
 
           {/* Core Pillars */}
