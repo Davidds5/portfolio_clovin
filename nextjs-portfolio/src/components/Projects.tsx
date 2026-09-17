@@ -36,7 +36,7 @@ const projects: ProjectCase[] = [
       "JWT HttpOnly",
       "Vercel",
     ],
-    image: "/barberpro.jpg",
+    image: "/barberpro.png",
     badgeText: "Em Produção na Vercel",
     badgeColor: "bg-amber-500",
     liveUrl: "https://barberpro-rose.vercel.app",
