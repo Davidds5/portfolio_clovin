@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 interface ProjectCase {
   id: string;
@@ -14,7 +14,7 @@ interface ProjectCase {
   badgeColor: string;
   liveUrl?: string;
   liveLabel?: string;
-  githubUrl: string;
+  githubUrl?: string;
 }
 
 const projects: ProjectCase[] = [
@@ -216,7 +216,7 @@ export default function Projects() {
                 </div>
 
                 {/* CTAs */}
-                <div className="flex items-center gap-3 pt-6 hairline-t font-mono text-xs">
+                <div className="flex items-center justify-between gap-3 pt-6 hairline-t font-mono text-xs">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
@@ -228,19 +228,10 @@ export default function Projects() {
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>
                   )}
-
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md hairline hover:bg-canvas-soft text-ink transition-editorial font-medium"
-                  >
-                    <Github className="w-3.5 h-3.5" />
-                    <span>Repositório</span>
-                    {!project.liveUrl && (
-                      <ArrowUpRight className="w-3.5 h-3.5 text-ink-faint" />
-                    )}
-                  </a>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-canvas-soft hairline text-[11px] text-ink-muted">
+                    <span className="w-1.5 h-1.5 rounded-full bg-ink-faint"></span>
+                    Código Proprietário / Cliente
+                  </span>
                 </div>
               </div>
             </div>
