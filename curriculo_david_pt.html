@@ -248,7 +248,7 @@
 
     <div class="header">
         <h1>David Silva</h1>
-        <div class="subtitle">Estudante de ADS · Desenvolvedor Fullstack (Node.js · React/Next.js · Java/Spring Boot)</div>
+        <div class="subtitle">Estudante de ADS · Desenvolvedor Fullstack (Java/Spring Boot · Next.js · TypeScript · Node.js)</div>
         <div class="contact-info">
             <span>São Paulo, SP</span>
             <span class="dot-separator">·</span>
@@ -269,7 +269,7 @@
     <section class="summary">
         <h2>Resumo Profissional</h2>
         <p>
-            Estudante de Análise e Desenvolvimento de Sistemas (Estácio) focado no desenvolvimento de software com React/Next.js, Node.js e ecossistema Java/Spring Boot. Experiência na construção de arquiteturas SaaS Multi-Tenant com isolamento estrito de dados por design (Spring Security, Hibernate Filter AOP e Prisma ORM), prototipação ágil de soluções completas e deploy em Cloud/Docker. Perfil autodidata e consistente: desenvolvo e mantenho aplicações reais em produção e realizo transmissões técnicas diárias no canal Clovin DEV, consolidando código limpo, segurança, boas práticas e comunicação assertiva.
+            Estudante de Análise e Desenvolvimento de Sistemas (Estácio) focado no desenvolvimento de software com o ecossistema Java 21 / Spring Boot 3 e Next.js 16 (React 19 / TypeScript / Node.js). Experiência sólida na construção de arquiteturas SaaS Multi-Tenant e Single-Tenant com isolamento estrito de dados por design (Spring Security, Hibernate Filter AOP e Prisma Client Extensions), AppSec, testes automatizados e deploy contínuo em nuvem (Vercel, Render e Docker). Perfil autodidata e consistente: desenvolvo aplicações reais em produção, homologadas sob testes de estresse de alta concorrência, e realizo transmissões técnicas diárias no canal Clovin DEV.
         </p>
     </section>
 
@@ -293,27 +293,40 @@
 
         <div class="item-entry">
             <div class="item-header">
-                <span class="item-title">Diário de Obra — SaaS Multi-Tenant de Gestão de Obras <a href="https://obrasync-bf1t.onrender.com" target="_blank">obrasync-bf1t.onrender.com</a></span>
+                <span class="item-title">BarberPro — SaaS de Agendamento & Motor de Concorrência <a href="https://barberpro-rose.vercel.app" target="_blank">barberpro-rose.vercel.app</a></span>
                 <span class="item-date">Em Produção</span>
             </div>
-            <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Node.js · Tailwind CSS · Prisma ORM · Multi-Tenancy · JWT & Magic Tokens · Cloud (Render)</div>
+            <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Neon PostgreSQL · JWT HttpOnly · Vercel</div>
             <ul>
-                <li><strong>Arquitetura Multi-Tenant & Magic Link:</strong> Plataforma SaaS com isolamento de dados por escritório/construtora e geração de portal público via Magic Link para acompanhamento de clientes finais em tempo real.</li>
-                <li><strong>Métricas & Diário de Obras:</strong> Cálculo de progresso ponderado por complexidade de etapas, linha do tempo com fotos de evolução e gestão de arquivos/plantas em PDF.</li>
-                <li><strong>Engenharia Ágil com IA:</strong> Projeto integralmente arquitetado, codificado e colocado em produção com Pair Programming orientado a Agentes de IA.</li>
+                <li><strong>Motor de Concorrência Atômica:</strong> Cálculo de horários livres em tempo real com proteção contra race conditions. Homologado sob teste de estresse de 370+ requisições simultâneas (50 VUs disputando o mesmo milissegundo com 0 double-bookings e retorno HTTP 409 Conflict).</li>
+                <li><strong>UX, Regras de Negócio & WhatsApp:</strong> Agendamento self-service sem cadastro prévio, cancelamento com tolerância de arrependimento (15 min) e geração de ticket VIP formatado para WhatsApp do barbeiro (`wa.me`).</li>
+                <li><strong>Segurança Administrativa:</strong> Painel protegido por JWT assinado em cookies HttpOnly, Bcrypt, expiração de reservas pendentes e revogação instantânea de sessões via `tokenVersion`.</li>
             </ul>
         </div>
 
         <div class="item-entry">
             <div class="item-header">
-                <span class="item-title">Agenda Bela — SaaS Multi-Tenant de Salões <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank">manicure-api-vi63.onrender.com</a></span>
+                <span class="item-title">ObraSync / Diário de Obra — SaaS Multi-Tenant de Gestão de Obras <a href="https://obrasync-bf1t.onrender.com" target="_blank">obrasync-bf1t.onrender.com</a></span>
+                <span class="item-date">Em Produção</span>
+            </div>
+            <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Multi-Tenancy · JWT & Magic Tokens · Cloud (Render)</div>
+            <ul>
+                <li><strong>Isolamento Multi-Tenant & AppSec:</strong> Isolamento por `tenantId` com Prisma Client Extensions cobrindo todas as operações e sub-recursos (Zero IDOR), validação de upload por Magic Bytes e anonimização de dados conforme LGPD.</li>
+                <li><strong>Performance, Edge Caching & Carga:</strong> Edge Caching com SWR (&lt; 30ms), Connection Pooling e homologação sob teste de carga com 1.000 VUs concorrentes com atuação de Rate Limiter (HTTP 429).</li>
+                <li><strong>Métricas & Engenharia com IA:</strong> Linha do tempo com progresso ponderado de etapas e gestão de plantas em PDF, integralmente desenvolvido com Pair Programming orientado a Agentes de IA.</li>
+            </ul>
+        </div>
+
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">BelasUnhas / Manicure SaaS — SaaS Multi-Tenant de Salões <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank">manicure-api-vi63.onrender.com</a></span>
                 <span class="item-date">Em Produção</span>
             </div>
             <div class="item-tech">Java 21 · Spring Boot 3 · Spring Security · JWT Multi-Tenant · Hibernate Filter (AOP) · PostgreSQL · Docker · Flyway · JUnit 5 · Cloud</div>
             <ul>
-                <li><strong>Isolamento de Dados Estrito:</strong> Implementação de arquitetura multi-tenant com auto-onboarding (`POST /tenants/signup`), `TenantContext` (ThreadLocal) e filtros globais no Hibernate via AOP.</li>
-                <li><strong>Gestão de Planos & Assinaturas:</strong> Validação de limites com retorno HTTP 402 (Payment Required) e painel SUPER_ADMIN para monitoramento de métricas e receita recorrente (MRR).</li>
-                <li><strong>Qualidade & CI/CD:</strong> Cobertura de testes de isolamento com JUnit 5/Mockito e automação de build/deploy via Docker Multi-stage e GitHub Actions no Render.</li>
+                <li><strong>Isolamento de Dados & Segurança Fail-Closed:</strong> Arquitetura multi-tenant com auto-onboarding (`POST /tenants/signup`), `TenantContext` (ThreadLocal), filtros globais AOP no Hibernate e `SecurityValidator` blindado contra acessos nulos.</li>
+                <li><strong>Cache & Rate Limiting:</strong> Cache em memória particionado por tenant via SpEL, Rate Limiting em janela deslizante por IP e índices de alta performance em banco relacional.</li>
+                <li><strong>Qualidade & CI/CD:</strong> Suíte de testes automatizados com JUnit 5/Mockito, schema evolutivo com 16 migrations Flyway e deploy automatizado via Docker no Render.</li>
             </ul>
         </div>
     </section>
@@ -321,11 +334,11 @@
     <section>
         <h2>Competências Técnicas</h2>
         <div class="competencies-list">
-            <p><strong>Linguagens & Backend:</strong> JavaScript (ES6+), TypeScript, Node.js, Java 21, Spring Boot 3, REST APIs, POO, SOLID, Arquitetura de Software.</p>
-            <p><strong>Frontend & Web:</strong> React 19, Next.js (App Router), HTML5, CSS3, Tailwind CSS, Componentização, Prototipação Ágil.</p>
-            <p><strong>Segurança & Banco de Dados:</strong> Spring Security, JWT, PostgreSQL, Prisma ORM, Hibernate/JPA, Flyway (Migrations).</p>
-            <p><strong>Cloud, DevOps & Infra:</strong> Docker, Cloud Deployment (Render, Vercel), Git/GitHub, CI/CD (GitHub Actions), Code Review.</p>
-            <p><strong>Testes & Qualidade:</strong> JUnit 5, Mockito, Swagger/OpenAPI (SpringDoc), Slf4j (Logging), QA & Debugging.</p>
+            <p><strong>Linguagens & Backend:</strong> Java 21, Spring Boot 3, TypeScript, JavaScript (ES6+), Node.js, REST APIs, POO, SOLID, Arquitetura Limpa.</p>
+            <p><strong>Frontend & Web:</strong> React 19, Next.js 16 (App Router / Server Actions), HTML5, CSS3, Tailwind CSS, Componentização, Responsividade, Acessibilidade.</p>
+            <p><strong>Segurança & Banco de Dados:</strong> Spring Security, JWT (HttpOnly Cookies), Rate Limiting, Validação por Magic Bytes, Prevenção IDOR, PostgreSQL, Prisma ORM, Hibernate/JPA, Flyway.</p>
+            <p><strong>Cloud, DevOps & Infra:</strong> Docker, Vercel, Render Cloud, Neon Serverless, Git/GitHub, CI/CD (GitHub Actions), Code Review.</p>
+            <p><strong>Testes & Qualidade:</strong> JUnit 5, Mockito, Testes de Carga/Estresse (Alta Concorrência), Swagger/OpenAPI (SpringDoc), Slf4j (Logging), QA & Debugging.</p>
         </div>
     </section>
 
