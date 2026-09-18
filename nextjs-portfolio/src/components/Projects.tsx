@@ -41,7 +41,6 @@ const projects: ProjectCase[] = [
     badgeColor: "bg-amber-500",
     liveUrl: "https://barberpro-rose.vercel.app",
     liveLabel: "Ver Produção",
-    githubUrl: "https://github.com/Davidds5/barberpro",
   },
   {
     id: "02",
@@ -66,7 +65,6 @@ const projects: ProjectCase[] = [
     badgeColor: "bg-emerald-500",
     liveUrl: "https://obrasync-bf1t.onrender.com",
     liveLabel: "Ver Produção",
-    githubUrl: "https://github.com/Davidds5/obrasync",
   },
   {
     id: "03",
@@ -88,9 +86,8 @@ const projects: ProjectCase[] = [
     image: "/belasunhas.png",
     badgeText: "Java 21 & Spring Boot 3 Core",
     badgeColor: "bg-accent",
-    liveUrl: "https://manicure-api-vi63.onrender.com/swagger-ui/index.html",
-    liveLabel: "Swagger Docs",
-    githubUrl: "https://github.com/Davidds5/manicure_api",
+    liveUrl: "https://belasunhas.onrender.com",
+    liveLabel: "Ver Produção",
   },
   {
     id: "04",
