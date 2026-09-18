@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Silva - Desenvolvedor Java Backend | Fullstack</title>
+    <title>David Silva - Desenvolvedor Fullstack (Java/Spring Boot · Next.js · TypeScript)</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
@@ -18,22 +18,22 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.28;
+            line-height: 1.26;
             color: var(--text-primary);
             max-width: 820px;
             margin: 0 auto;
-            padding: 8px 35px;
+            padding: 8px 32px;
             background-color: #fff;
         }
 
         /* Header */
         .header {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 23px;
             font-weight: 700;
             color: var(--text-primary);
             letter-spacing: -0.5px;
@@ -46,14 +46,14 @@
             text-transform: uppercase;
             letter-spacing: 0.8px;
             margin-top: 3px;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .contact-info {
-            font-size: 11px;
+            font-size: 10.5px;
             color: var(--text-muted);
             display: flex;
-            gap: 6px;
+            gap: 5px;
             flex-wrap: wrap;
             align-items: center;
         }
@@ -70,26 +70,26 @@
 
         .dot-separator {
             color: var(--border-color);
-            margin: 0 2px;
+            margin: 0 1px;
         }
 
         hr.header-line {
             border: 0;
             border-top: 1px solid var(--border-color);
-            margin: 6px 0 10px 0;
+            margin: 5px 0 8px 0;
         }
 
         /* Sections */
         section {
-            margin-bottom: 8px;
+            margin-bottom: 7px;
         }
 
         h2 {
-            font-size: 11.5px;
+            font-size: 11px;
             color: var(--text-primary);
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 2px;
-            margin-top: 8px;
+            margin-top: 7px;
             margin-bottom: 3px;
             text-transform: uppercase;
             font-weight: 700;
@@ -99,14 +99,15 @@
         .summary p {
             margin: 0;
             text-align: justify;
-            font-size: 11.5px;
+            font-size: 11px;
             color: var(--text-secondary);
+            line-height: 1.35;
         }
 
         /* Competencies */
         .competencies-list {
-            font-size: 11.5px;
-            line-height: 1.4;
+            font-size: 11px;
+            line-height: 1.38;
         }
 
         .competencies-list p {
@@ -119,7 +120,7 @@
 
         /* Items (Experiences / Projects) */
         .item-entry {
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             page-break-inside: avoid;
         }
 
@@ -133,7 +134,7 @@
 
         .item-title {
             font-weight: 700;
-            font-size: 12px;
+            font-size: 11.5px;
             color: var(--text-primary);
         }
 
@@ -141,8 +142,8 @@
             color: var(--link-color);
             text-decoration: none;
             font-weight: 500;
-            font-size: 11px;
-            margin-left: 6px;
+            font-size: 10.5px;
+            margin-left: 5px;
         }
 
         .item-title a:hover {
@@ -150,14 +151,14 @@
         }
 
         .item-date {
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 600;
             color: var(--text-muted);
             white-space: nowrap;
         }
 
         .item-subtitle {
-            font-size: 11px;
+            font-size: 10.5px;
             font-style: italic;
             color: var(--text-secondary);
             margin-top: 1px;
@@ -165,22 +166,23 @@
         }
 
         .item-tech {
-            font-size: 10.5px;
+            font-size: 10px;
             color: var(--text-muted);
             font-weight: 500;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         ul {
             margin: 0;
-            padding-left: 18px;
+            padding-left: 17px;
         }
 
         li {
-            margin-bottom: 0px;
+            margin-bottom: 1px;
             color: var(--text-secondary);
-            font-size: 11.5px;
+            font-size: 11px;
             text-align: justify;
+            line-height: 1.3;
         }
 
         li strong {
@@ -191,23 +193,25 @@
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px 12px;
+            gap: 6px 12px;
         }
 
         .grid-item {
-            font-size: 11px;
+            font-size: 10.5px;
             page-break-inside: avoid;
         }
 
         .grid-item strong {
             display: block;
             color: var(--text-primary);
-            font-size: 11.5px;
+            font-size: 11px;
             margin-bottom: 1px;
         }
 
         .grid-item span {
             color: var(--text-secondary);
+            line-height: 1.25;
+            display: block;
         }
 
         .grid-item a {
@@ -221,25 +225,58 @@
 
         @media print {
             body {
-                padding: 10px 20px;
-                font-size: 11px;
+                padding: 6px 16px;
+                font-size: 10px;
+                line-height: 1.24;
             }
-            .item-entry {
-                margin-bottom: 6px;
+            .header {
+                margin-bottom: 4px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            .subtitle {
+                font-size: 10px;
+                margin-bottom: 3px;
+            }
+            .contact-info {
+                font-size: 9.5px;
+            }
+            hr.header-line {
+                margin: 4px 0 6px 0;
+            }
+            section {
+                margin-bottom: 5px;
             }
             h2 {
-                margin-top: 10px;
-                margin-bottom: 5px;
-                font-size: 11px;
+                margin-top: 6px;
+                margin-bottom: 2px;
+                font-size: 10.5px;
+            }
+            .item-entry {
+                margin-bottom: 4px;
+                page-break-inside: avoid;
             }
             .item-title {
-                font-size: 11.5px;
+                font-size: 11px;
             }
-            .item-subtitle {
-                font-size: 10.5px;
+            .item-tech {
+                font-size: 9px;
+                margin-bottom: 1px;
             }
             li {
+                font-size: 10px;
+                line-height: 1.25;
+            }
+            .competencies-list {
+                font-size: 10px;
+                line-height: 1.3;
+            }
+            .grid-item strong {
                 font-size: 10.5px;
+            }
+            .grid-item span {
+                font-size: 9.5px;
             }
         }
     </style>
@@ -248,7 +285,7 @@
 
     <div class="header">
         <h1>David Silva</h1>
-        <div class="subtitle">Estudante de ADS · Desenvolvedor Fullstack (Java/Spring Boot · Next.js · TypeScript · Node.js)</div>
+        <div class="subtitle">Estudante de ADS · Desenvolvedor Fullstack (Java 21 / Spring Boot 3 · Next.js 16 · TypeScript · React 19 · Node.js)</div>
         <div class="contact-info">
             <span>São Paulo, SP</span>
             <span class="dot-separator">·</span>
@@ -269,7 +306,7 @@
     <section class="summary">
         <h2>Resumo Profissional</h2>
         <p>
-            Estudante de Análise e Desenvolvimento de Sistemas (Estácio) focado no desenvolvimento de software com o ecossistema Java 21 / Spring Boot 3 e Next.js 16 (React 19 / TypeScript / Node.js). Experiência sólida na construção de arquiteturas SaaS Multi-Tenant e Single-Tenant com isolamento estrito de dados por design (Spring Security, Hibernate Filter AOP e Prisma Client Extensions), AppSec, testes automatizados e deploy contínuo em nuvem (Vercel, Render e Docker). Perfil autodidata e consistente: desenvolvo aplicações reais em produção, homologadas sob testes de estresse de alta concorrência, e realizo transmissões técnicas diárias no canal Clovin DEV.
+            Estudante de Análise e Desenvolvimento de Sistemas (Estácio) focado no desenvolvimento de software com o ecossistema Java 21 / Spring Boot 3 e Next.js 16 (React 19 / TypeScript / Node.js). Experiência sólida na construção de arquiteturas SaaS Multi-Tenant e Single-Tenant com isolamento estrito de dados por design (Spring Security, Hibernate Filter AOP e Prisma Client Extensions), AppSec (blindagem Fail-Closed contra IDOR, rate limiting em memória, sanitização LGPD), suítes com 300+ testes automatizados determinísticos e deploy contínuo em nuvem (Vercel, Render e Docker). Perfil autodidata e consistente: desenvolvo aplicações reais em produção, homologadas sob testes de estresse de alta concorrência (370+ a 1.000 VUs), e realizo transmissões técnicas diárias no canal Clovin DEV.
         </p>
     </section>
 
@@ -293,40 +330,53 @@
 
         <div class="item-entry">
             <div class="item-header">
-                <span class="item-title">BarberPro — SaaS de Agendamento & Motor de Concorrência <a href="https://barberpro-rose.vercel.app" target="_blank">barberpro-rose.vercel.app</a></span>
+                <span class="item-title">BarberPro — SaaS de Agendamento & Concorrência Atômica <a href="https://barberpro-rose.vercel.app" target="_blank">barberpro-rose.vercel.app</a> · <a href="https://github.com/Davidds5/barberpro" target="_blank">github.com/Davidds5/barberpro</a></span>
                 <span class="item-date">Em Produção</span>
             </div>
             <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Neon PostgreSQL · JWT HttpOnly · Vercel</div>
             <ul>
-                <li><strong>Motor de Concorrência Atômica:</strong> Cálculo de horários livres em tempo real com proteção contra race conditions. Homologado sob teste de estresse de 370+ requisições simultâneas (50 VUs disputando o mesmo milissegundo com 0 double-bookings e retorno HTTP 409 Conflict).</li>
-                <li><strong>UX, Regras de Negócio & WhatsApp:</strong> Agendamento self-service sem cadastro prévio, cancelamento com tolerância de arrependimento (15 min) e geração de ticket VIP formatado para WhatsApp do barbeiro (`wa.me`).</li>
-                <li><strong>Segurança Administrativa:</strong> Painel protegido por JWT assinado em cookies HttpOnly, Bcrypt, expiração de reservas pendentes e revogação instantânea de sessões via `tokenVersion`.</li>
+                <li><strong>Motor de Concorrência Atômica:</strong> Cálculo de horários livres em tempo real com transações atômicas serializáveis. Homologado sob teste de estresse com <strong>370+ requisições simultâneas em produção</strong> (50 VUs disputando o mesmo milissegundo com 0 double-bookings e retorno HTTP 409 Conflict).</li>
+                <li><strong>UX, Regras de Negócio & WhatsApp:</strong> Agendamento self-service sem cadastro prévio, cancelamento com tolerância de arrependimento (grace period de 15 min) e geração de ticket VIP formatado para WhatsApp do barbeiro (`wa.me`).</li>
+                <li><strong>Segurança Administrativa:</strong> Painel protegido por JWT assinado em cookies HttpOnly, Bcrypt, expiração de reservas pendentes (5 min) e revogação instantânea de sessões via `tokenVersion`.</li>
             </ul>
         </div>
 
         <div class="item-entry">
             <div class="item-header">
-                <span class="item-title">ObraSync / Diário de Obra — SaaS Multi-Tenant de Gestão de Obras <a href="https://obrasync-bf1t.onrender.com" target="_blank">obrasync-bf1t.onrender.com</a></span>
+                <span class="item-title">ObraSync / Diário de Obra — SaaS Multi-Tenant de Gestão de Obras <a href="https://obrasync-bf1t.onrender.com" target="_blank">obrasync-bf1t.onrender.com</a> · <a href="https://github.com/Davidds5/obrasync" target="_blank">github.com/Davidds5/obrasync</a></span>
                 <span class="item-date">Em Produção</span>
             </div>
             <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Multi-Tenancy · JWT & Magic Tokens · Cloud (Render)</div>
             <ul>
-                <li><strong>Isolamento Multi-Tenant & AppSec:</strong> Isolamento por `tenantId` com Prisma Client Extensions cobrindo todas as operações e sub-recursos (Zero IDOR), validação de upload por Magic Bytes e anonimização de dados conforme LGPD.</li>
-                <li><strong>Performance, Edge Caching & Carga:</strong> Edge Caching com SWR (&lt; 30ms), Connection Pooling e homologação sob teste de carga com 1.000 VUs concorrentes com atuação de Rate Limiter (HTTP 429).</li>
-                <li><strong>Métricas & Engenharia com IA:</strong> Linha do tempo com progresso ponderado de etapas e gestão de plantas em PDF, integralmente desenvolvido com Pair Programming orientado a Agentes de IA.</li>
+                <li><strong>Isolamento Multi-Tenant & AppSec:</strong> Isolamento estrito por `tenantId` com Prisma Client Extensions cobrindo todas as operações e sub-recursos (Zero IDOR), validação de upload por Magic Bytes e anonimização de dados conforme LGPD.</li>
+                <li><strong>Performance, Edge Caching & Carga:</strong> Edge Caching CDN com SWR (&lt; 30ms), Connection Pooling e homologação sob teste de carga com <strong>1.000 VUs concorrentes</strong> com atuação precisa de Rate Limiter (HTTP 429).</li>
+                <li><strong>Métricas & Engenharia com IA:</strong> Linha do tempo com progresso ponderado de etapas e portal do cliente via Magic Link público, integralmente desenvolvido com Pair Programming orientado a Agentes de IA.</li>
             </ul>
         </div>
 
         <div class="item-entry">
             <div class="item-header">
-                <span class="item-title">BelasUnhas / Manicure SaaS — SaaS Multi-Tenant de Salões <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank">manicure-api-vi63.onrender.com</a></span>
+                <span class="item-title">BelasUnhas / Manicure SaaS — SaaS Multi-Tenant de Salões <a href="https://manicure-api-vi63.onrender.com/swagger-ui/index.html" target="_blank">manicure-api-vi63.onrender.com</a> · <a href="https://github.com/Davidds5/manicure_api" target="_blank">github.com/Davidds5/manicure_api</a></span>
                 <span class="item-date">Em Produção</span>
             </div>
-            <div class="item-tech">Java 21 · Spring Boot 3 · Spring Security · JWT Multi-Tenant · Hibernate Filter (AOP) · PostgreSQL · Docker · Flyway · JUnit 5 · Cloud</div>
+            <div class="item-tech">Java 21 · Spring Boot 3 · Spring Security · JWT Multi-Tenant · Hibernate Filter (AOP) · PostgreSQL · Docker · Flyway · JUnit 5 · Next.js 16</div>
             <ul>
-                <li><strong>Isolamento de Dados & Segurança Fail-Closed:</strong> Arquitetura multi-tenant com auto-onboarding (`POST /tenants/signup`), `TenantContext` (ThreadLocal), filtros globais AOP no Hibernate e `SecurityValidator` blindado contra acessos nulos.</li>
-                <li><strong>Cache & Rate Limiting:</strong> Cache em memória particionado por tenant via SpEL, Rate Limiting em janela deslizante por IP e índices de alta performance em banco relacional.</li>
-                <li><strong>Qualidade & CI/CD:</strong> Suíte de testes automatizados com JUnit 5/Mockito, schema evolutivo com 16 migrations Flyway e deploy automatizado via Docker no Render.</li>
+                <li><strong>Isolamento de Dados & Segurança Fail-Closed:</strong> Arquitetura multi-tenant com auto-onboarding (`POST /tenants/signup`), `TenantContext` (ThreadLocal), filtros globais AOP no Hibernate e `SecurityValidator` blindado contra acessos nulos e IDOR.</li>
+                <li><strong>Cache & Rate Limiting:</strong> Cache em memória particionado por tenant via SpEL, Rate Limiting em janela deslizante por IP e índices compostos de alta performance com 16 migrations Flyway.</li>
+                <li><strong>Qualidade, HATEOAS & CI/CD:</strong> Suíte de testes automatizados com JUnit 5/Mockito, integração frontend Next.js com Spring HATEOAS e deploy automatizado via Docker no Render.</li>
+            </ul>
+        </div>
+
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">Eloped / EstudaBR — EdTech Multi-Perfil & Qualidade de Software <a href="https://eloped.com.br" target="_blank">eloped.com.br</a></span>
+                <span class="item-date">Em Produção</span>
+            </div>
+            <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · Shadcn UI · Zod · jsPDF · 308 Testes Automatizados</div>
+            <ul>
+                <li><strong>Qualidade & Suíte de Testes Automatizados:</strong> Cobertura de <strong>308 testes automatizados determinísticos e aprovados</strong> cobrindo integridade de formulários, relatórios em PDF, segurança (blindagem RBAC/XSS) e jornadas E2E.</li>
+                <li><strong>Segmentação Multi-Perfil & Gestão Escolar:</strong> Arquitetura para 4 perfis de usuário (Secretaria Municipal de Educação, Diretores, Professores e Alunos) com trilhas alinhadas à BNCC e relatórios analíticos de rendimento.</li>
+                <li><strong>Motor de Documentos & Inovação:</strong> Geração dinâmica de boletins e relatórios pedagógicos em PDF com `jsPDF`/`pdf-lib`, suporte a PWA, notificações push e acessibilidade em conformidade com WCAG AA.</li>
             </ul>
         </div>
     </section>
@@ -335,10 +385,11 @@
         <h2>Competências Técnicas</h2>
         <div class="competencies-list">
             <p><strong>Linguagens & Backend:</strong> Java 21, Spring Boot 3, TypeScript, JavaScript (ES6+), Node.js, REST APIs, POO, SOLID, Arquitetura Limpa.</p>
-            <p><strong>Frontend & Web:</strong> React 19, Next.js 16 (App Router / Server Actions), HTML5, CSS3, Tailwind CSS, Componentização, Responsividade, Acessibilidade.</p>
-            <p><strong>Segurança & Banco de Dados:</strong> Spring Security, JWT (HttpOnly Cookies), Rate Limiting, Validação por Magic Bytes, Prevenção IDOR, PostgreSQL, Prisma ORM, Hibernate/JPA, Flyway.</p>
-            <p><strong>Cloud, DevOps & Infra:</strong> Docker, Vercel, Render Cloud, Neon Serverless, Git/GitHub, CI/CD (GitHub Actions), Code Review.</p>
-            <p><strong>Testes & Qualidade:</strong> JUnit 5, Mockito, Testes de Carga/Estresse (Alta Concorrência), Swagger/OpenAPI (SpringDoc), Slf4j (Logging), QA & Debugging.</p>
+            <p><strong>Frontend & Web:</strong> React 19, Next.js 16 (App Router / Server Actions), Tailwind CSS v4, Shadcn UI, HTML5, CSS3, Componentização, Acessibilidade (WCAG AA).</p>
+            <p><strong>Segurança & AppSec:</strong> Blindagem Fail-Closed (Anti-IDOR), Spring Security, JWT (HttpOnly Cookies), Prisma Client Extensions Multi-Tenant, Rate Limiting por IP, Validação por Magic Bytes, Conformidade LGPD.</p>
+            <p><strong>Bancos de Dados & ORMs:</strong> PostgreSQL, Neon Serverless (Connection Pooling), Prisma ORM, Hibernate / JPA, Flyway (v16 Migrations), Modelagem Relacional, Índices de Performance.</p>
+            <p><strong>Qualidade & Testes:</strong> Suíte com 300+ Testes Automatizados (Vitest, JUnit 5, Mockito), Testes de Carga/Estresse (Alta Concorrência), Swagger/OpenAPI (SpringDoc), Slf4j, Skeletons e Error Boundaries.</p>
+            <p><strong>Cloud, DevOps & Ferramentas:</strong> Docker, Vercel, Render Cloud, Git/GitHub, CI/CD (GitHub Actions), PWA, jsPDF / pdf-lib, Pair Programming orientado a Agentes de IA.</p>
         </div>
     </section>
 
@@ -354,15 +405,15 @@
                 <span><em>Em Andamento</em> | Fundamentos avançados de JS (ES6+), TypeScript, POO, Design Patterns e ecossistema Node.</span>
             </div>
             <div class="grid-item">
-                <strong>Spring Boot, Docker, K8s e Nuvem AWS/GCP — Udemy / Leandro Costa (54,5h)</strong>
+                <strong>Spring Boot, Docker, K8s e Nuvem AWS/GCP — Leandro Costa (54,5h)</strong>
                 <span>APIs RESTful, autenticação JWT, Spring Security, Swagger, testes (JUnit 5, Mockito) e CI/CD.</span>
             </div>
             <div class="grid-item">
-                <strong>Java COMPLETO e Orientação a Objetos — Udemy / Nelio Alves (54h)</strong>
+                <strong>Java COMPLETO e Orientação a Objetos — Nelio Alves (54h)</strong>
                 <span>Domínio de POO, diagramas UML, acesso a bancos relacionais (JDBC, JPA/Hibernate) e web services.</span>
             </div>
             <div class="grid-item">
-                <strong>Inglês Extremo — Udemy / Paulo Botelho (17,5h)</strong>
+                <strong>Inglês Extremo — Paulo Botelho (17,5h)</strong>
                 <span><em>Em Andamento</em> | Desenvolvimento de escuta, fala e leitura sem traduções mecânicas.</span>
             </div>
             <div class="grid-item">
