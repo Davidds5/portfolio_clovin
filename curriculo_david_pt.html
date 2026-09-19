@@ -13,51 +13,53 @@
             --text-muted: #64748b; /* slate-500 */
             --link-color: #2563eb; /* blue-600 */
             --border-color: #cbd5e1; /* slate-300 */
-            --border-light: #e2e8f0; /* slate-200 */
         }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.32;
+            line-height: 1.25;
             color: var(--text-primary);
             max-width: 820px;
             margin: 0 auto;
-            padding: 12px 36px;
+            padding: 10px 28px;
             background-color: #fff;
+            font-size: 10px;
         }
 
         /* Header */
         .header {
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         h1 {
-            margin: 0;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             color: var(--text-primary);
             letter-spacing: -0.5px;
+            line-height: 1.1;
         }
 
         .subtitle {
-            font-size: 11.5px;
+            font-size: 10px;
             font-weight: 700;
             color: var(--text-secondary);
             text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-top: 3px;
-            margin-bottom: 5px;
+            letter-spacing: 0.6px;
+            margin-top: 2px;
+            margin-bottom: 3px;
         }
 
         .contact-info {
-            font-size: 11px;
+            font-size: 9.5px;
             color: var(--text-muted);
             display: flex;
-            gap: 6px;
+            gap: 5px;
             flex-wrap: wrap;
             align-items: center;
         }
@@ -80,53 +82,50 @@
         hr.header-line {
             border: 0;
             border-top: 1px solid var(--border-color);
-            margin: 6px 0 10px 0;
+            margin: 4px 0 6px 0;
         }
 
         /* Sections */
         section {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         h2 {
-            font-size: 11.5px;
+            font-size: 10.5px;
             color: var(--text-primary);
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 2px;
-            margin-top: 10px;
-            margin-bottom: 5px;
+            padding-bottom: 1px;
+            margin-top: 5px;
+            margin-bottom: 3px;
             text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.5px;
         }
 
         .summary p {
-            margin: 0;
             text-align: justify;
-            font-size: 11px;
+            font-size: 9.8px;
             color: var(--text-secondary);
-            line-height: 1.4;
+            line-height: 1.32;
         }
 
         /* Competencies */
         .competencies-list {
-            font-size: 11px;
-            line-height: 1.42;
+            font-size: 9.8px;
+            line-height: 1.3;
         }
 
         .competencies-list p {
-            margin: 2px 0;
+            margin: 1px 0;
         }
 
         .competencies-list strong {
             color: var(--text-primary);
         }
 
-        /* Items (Experiences / Projects) */
+        /* Projects / Items */
         .item-entry {
-            margin-bottom: 7px;
-            page-break-inside: avoid;
-            break-inside: avoid;
+            margin-bottom: 4px;
         }
 
         .item-header {
@@ -139,7 +138,7 @@
 
         .item-title {
             font-weight: 700;
-            font-size: 11.8px;
+            font-size: 10.8px;
             color: var(--text-primary);
         }
 
@@ -147,8 +146,8 @@
             color: var(--link-color);
             text-decoration: none;
             font-weight: 500;
-            font-size: 10.8px;
-            margin-left: 5px;
+            font-size: 10px;
+            margin-left: 4px;
         }
 
         .item-title a:hover {
@@ -156,190 +155,122 @@
         }
 
         .item-date {
-            font-size: 10.8px;
+            font-size: 9.5px;
             font-weight: 600;
             color: var(--text-muted);
             white-space: nowrap;
         }
 
         .item-subtitle {
-            font-size: 10.8px;
+            font-size: 9.5px;
             font-style: italic;
             color: var(--text-secondary);
-            margin-top: 1px;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
 
         .item-tech {
-            font-size: 10.2px;
+            font-size: 9.2px;
             color: var(--text-muted);
             font-weight: 500;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         ul {
-            margin: 0;
-            padding-left: 17px;
+            padding-left: 15px;
         }
 
         li {
-            margin-bottom: 1.5px;
+            margin-bottom: 1px;
             color: var(--text-secondary);
-            font-size: 11px;
+            font-size: 9.8px;
             text-align: justify;
-            line-height: 1.34;
+            line-height: 1.28;
         }
 
         li strong {
             color: var(--text-primary);
         }
 
-        /* Grid (Education / Languages) */
-        .grid-container {
+        /* Two Column Layout for Bottom (Education + Experience) */
+        .bottom-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px 14px;
+            gap: 12px;
+            align-items: start;
         }
 
-        .grid-item {
-            font-size: 10.8px;
-            page-break-inside: avoid;
-            break-inside: avoid;
+        .edu-item {
+            margin-bottom: 3px;
         }
 
-        .grid-item strong {
+        .edu-item strong {
             display: block;
             color: var(--text-primary);
-            font-size: 11.2px;
-            margin-bottom: 1px;
+            font-size: 9.8px;
+            line-height: 1.2;
         }
 
-        .grid-item span {
+        .edu-item span {
             color: var(--text-secondary);
-            line-height: 1.3;
+            font-size: 9.2px;
+            line-height: 1.2;
             display: block;
-        }
-
-        .grid-item a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        .grid-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Page Break Controller */
-        .page-break {
-            page-break-after: always;
-            break-after: page;
-        }
-
-        @media screen {
-            .page-break {
-                margin: 28px 0;
-                border: 0;
-                border-top: 1.5px dashed var(--border-color);
-                position: relative;
-                text-align: center;
-            }
-            .page-break::after {
-                content: "— PÁGINA 2 —";
-                font-size: 10px;
-                color: var(--text-muted);
-                background: #fff;
-                padding: 0 12px;
-                position: relative;
-                top: -9px;
-                font-family: monospace;
-                letter-spacing: 1px;
-            }
         }
 
         @media print {
             @page {
                 size: A4 portrait;
-                margin: 10mm 15mm;
+                margin: 6mm 10mm;
             }
             body {
                 padding: 0;
                 max-width: 100%;
-                font-size: 10.2px;
-                line-height: 1.28;
-            }
-            .header {
-                margin-bottom: 5px;
+                font-size: 9.5px;
+                line-height: 1.22;
             }
             h1 {
-                font-size: 21px;
+                font-size: 18px;
             }
             .subtitle {
-                font-size: 10.5px;
-                margin-bottom: 3px;
+                font-size: 9.5px;
             }
             .contact-info {
-                font-size: 9.8px;
-            }
-            hr.header-line {
-                margin: 4px 0 7px 0;
-            }
-            section {
-                margin-bottom: 7px;
+                font-size: 9px;
             }
             h2 {
-                margin-top: 7px;
-                margin-bottom: 3px;
-                font-size: 10.8px;
-            }
-            .item-entry {
-                margin-bottom: 5px;
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-            .item-title {
-                font-size: 11.2px;
-            }
-            .item-tech {
-                font-size: 9.5px;
+                font-size: 10px;
+                margin-top: 4px;
                 margin-bottom: 2px;
             }
-            li {
+            .summary p, li, .competencies-list {
+                font-size: 9.4px;
+                line-height: 1.24;
+            }
+            .item-title {
                 font-size: 10.2px;
-                line-height: 1.28;
             }
-            .competencies-list {
-                font-size: 10.2px;
-                line-height: 1.34;
+            .item-tech {
+                font-size: 8.8px;
             }
-            .grid-container {
-                gap: 6px 12px;
+            .edu-item strong {
+                font-size: 9.4px;
             }
-            .grid-item strong {
-                font-size: 10.8px;
+            .edu-item span {
+                font-size: 8.8px;
             }
-            .grid-item span {
-                font-size: 9.8px;
-            }
-            .page-break {
-                page-break-after: always;
-                break-after: page;
-                height: 0;
-                margin: 0;
-                border: none;
-                visibility: hidden;
-            }
-            .page-break::after {
-                display: none;
+            * {
+                page-break-inside: avoid;
+                break-inside: avoid;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ==================== PÁGINA 1 ==================== -->
+    <!-- Header -->
     <div class="header">
         <h1>David Silva</h1>
-        <div class="subtitle">Estudante de ADS · Desenvolvedor Fullstack (Java 21 / Spring Boot 3 · Next.js 16 · TypeScript · React 19 · Node.js)</div>
+        <div class="subtitle">Estudante de ADS · Desenvolvedor Fullstack (Java 21 / Spring Boot 3 · Next.js 16 · TypeScript · React 19)</div>
         <div class="contact-info">
             <span>São Paulo, SP</span>
             <span class="dot-separator">·</span>
@@ -357,25 +288,28 @@
     
     <hr class="header-line">
 
+    <!-- Resumo Profissional -->
     <section class="summary">
         <h2>Resumo Profissional</h2>
         <p>
-            Estudante de Análise e Desenvolvimento de Sistemas (Estácio) focado no desenvolvimento de software com o ecossistema Java 21 / Spring Boot 3 e Next.js 16 (React 19 / TypeScript / Node.js). Experiência sólida na construção de arquiteturas SaaS Multi-Tenant e Single-Tenant com isolamento estrito de dados por design (Spring Security, Hibernate Filter AOP e Prisma Client Extensions), AppSec (blindagem Fail-Closed contra IDOR, rate limiting em memória, sanitização LGPD), suítes com 300+ testes automatizados determinísticos e deploy contínuo em nuvem (Vercel, Render e Docker). Perfil autodidata e consistente: desenvolvo aplicações reais em produção, homologadas sob testes de estresse de alta concorrência (370+ a 1.000 VUs), e realizo transmissões técnicas diárias no canal Clovin DEV.
+            Estudante de Análise e Desenvolvimento de Sistemas (Estácio) focado no desenvolvimento Fullstack com Java 21 / Spring Boot 3 e Next.js 16 (React 19 / TypeScript). Experiência sólida na concepção de arquiteturas SaaS Multi-Tenant e Single-Tenant com isolamento estrito de dados por design (Spring Security, Hibernate Filter AOP e Prisma Client Extensions), AppSec (blindagem Fail-Closed contra IDOR, rate limiting, LGPD), suítes com 300+ testes automatizados determinísticos e deploy em nuvem (Vercel, Render e Docker). Produtor diário de conteúdo técnico no canal Clovin DEV com foco em código limpo, resiliência e alta concorrência.
         </p>
     </section>
 
+    <!-- Competências Técnicas -->
     <section>
         <h2>Competências Técnicas</h2>
         <div class="competencies-list">
-            <p><strong>Linguagens & Backend:</strong> Java 21, Spring Boot 3, TypeScript, JavaScript (ES6+), Node.js, REST APIs, POO, SOLID, Arquitetura Limpa.</p>
-            <p><strong>Frontend & Web:</strong> React 19, Next.js 16 (App Router / Server Actions), Tailwind CSS v4, Shadcn UI, HTML5, CSS3, Componentização, Acessibilidade (WCAG AA).</p>
-            <p><strong>Segurança & AppSec:</strong> Blindagem Fail-Closed (Anti-IDOR), Spring Security, JWT (HttpOnly Cookies), Prisma Client Extensions Multi-Tenant, Rate Limiting por IP, Validação por Magic Bytes, Conformidade LGPD.</p>
-            <p><strong>Bancos de Dados & ORMs:</strong> PostgreSQL, Neon Serverless (Connection Pooling), Prisma ORM, Hibernate / JPA, Flyway (v16 Migrations), Modelagem Relacional, Índices de Performance.</p>
-            <p><strong>Qualidade & Testes:</strong> Suíte com 300+ Testes Automatizados (Vitest, JUnit 5, Mockito), Testes de Carga/Estresse (Alta Concorrência), Swagger/OpenAPI (SpringDoc), Slf4j, Skeletons e Error Boundaries.</p>
-            <p><strong>Cloud, DevOps & Ferramentas:</strong> Docker, Vercel, Render Cloud, Git/GitHub, CI/CD (GitHub Actions), PWA, jsPDF / pdf-lib, Pair Programming orientado a Agentes de IA.</p>
+            <p><strong>Linguagens & Backend:</strong> Java 21, Spring Boot 3, TypeScript, JavaScript (ES6+), Node.js, REST APIs, POO, SOLID, Clean Architecture.</p>
+            <p><strong>Frontend & Web:</strong> React 19, Next.js 16 (App Router / Server Actions), Tailwind CSS v4, Shadcn UI, HTML5, CSS3, Acessibilidade (WCAG AA).</p>
+            <p><strong>Segurança & AppSec:</strong> Blindagem Fail-Closed (Anti-IDOR), Spring Security, JWT (Cookies HttpOnly), Prisma Extensions Multi-Tenant, Rate Limiting, LGPD.</p>
+            <p><strong>Bancos de Dados & ORMs:</strong> PostgreSQL, Neon Serverless (Connection Pooling), Prisma ORM, Hibernate / JPA, Flyway (v16 Migrations), Índices Compostos.</p>
+            <p><strong>Qualidade & Testes:</strong> Suíte com 300+ Testes Automatizados (Vitest, JUnit 5, Mockito), Testes de Carga/Estresse (370+ a 1.000 VUs), Swagger/OpenAPI.</p>
+            <p><strong>DevOps & Ferramentas:</strong> Docker, Vercel, Render Cloud, Git/GitHub, CI/CD (GitHub Actions), PWA, jsPDF / pdf-lib, IA Pair Programming.</p>
         </div>
     </section>
 
+    <!-- Diferencial & Comunicação -->
     <section>
         <h2>Diferencial & Comunicação</h2>
         <div class="item-entry">
@@ -383,17 +317,18 @@
                 <span class="item-title">Criador de Conteúdo Técnico — Canal Clovin DEV <a href="https://youtube.com/@clovindev" target="_blank">youtube.com/@clovindev</a></span>
                 <span class="item-date">2026 – Presente</span>
             </div>
-            <div class="item-subtitle">YouTube | Live Coding & Documentação em Público</div>
+            <div class="item-subtitle">YouTube & TikTok | Live Coding Diário & Documentação Pública</div>
             <ul>
-                <li><strong>Comunicação e Didática:</strong> Realização de transmissões ao vivo diárias dedicadas ao estudo e prática de programação (Java, Spring Boot, React, Next.js e TypeScript), construindo aplicações práticas publicamente e engajando uma comunidade ativa de <strong>200+ inscritos</strong>.</li>
-                <li><strong>Resolução de Problemas em Público:</strong> Demonstração de soft skills essenciais ao vivo, como adaptabilidade para debug de erros, capacidade de explicação técnica estruturada de conceitos e construção de documentação em tempo real.</li>
+                <li><strong>Comunicação e Didática:</strong> Transmissões ao vivo diárias de código e arquitetura (Java, Spring Boot, React, Next.js, TS), engajando <strong>200+ inscritos</strong> com resolução prática de problemas em tempo real.</li>
             </ul>
         </div>
     </section>
 
+    <!-- Projetos em Destaque -->
     <section>
-        <h2>Projetos em Destaque</h2>
+        <h2>Projetos em Destaque (SaaS em Produção)</h2>
 
+        <!-- BarberPro -->
         <div class="item-entry">
             <div class="item-header">
                 <span class="item-title">BarberPro — SaaS de Agendamento & Concorrência Atômica <a href="https://barberpro-rose.vercel.app" target="_blank">barberpro-rose.vercel.app</a></span>
@@ -401,12 +336,12 @@
             </div>
             <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Neon PostgreSQL · JWT HttpOnly · Vercel</div>
             <ul>
-                <li><strong>Motor de Concorrência Atômica:</strong> Cálculo de horários livres em tempo real com transações atômicas serializáveis. Homologado sob teste de estresse com <strong>370+ requisições simultâneas em produção</strong> (50 VUs disputando o mesmo milissegundo com 0 double-bookings e retorno HTTP 409 Conflict).</li>
-                <li><strong>UX, Regras de Negócio & WhatsApp:</strong> Agendamento self-service sem cadastro prévio, cancelamento com tolerância de arrependimento (grace period de 15 min) e geração de ticket VIP formatado para WhatsApp do barbeiro (`wa.me`).</li>
-                <li><strong>Segurança Administrativa:</strong> Painel protegido por JWT assinado em cookies HttpOnly, Bcrypt, expiração de reservas pendentes (5 min) e revogação instantânea de sessões via `tokenVersion`.</li>
+                <li><strong>Concorrência Atômica & Alta Carga:</strong> Cálculo de horários livres em tempo real com transações serializáveis. Homologado sob teste de estresse de <strong>370+ reqs simultâneas (50 VUs) com 0 double-bookings</strong> (HTTP 409 Conflict).</li>
+                <li><strong>UX, Regras de Negócio & Segurança:</strong> Agendamento self-service sem cadastro, cancelamento com tolerância de arrependimento (15 min), tickets VIP no WhatsApp (`wa.me`) e revogação de sessões via `tokenVersion`.</li>
             </ul>
         </div>
 
+        <!-- ObraSync -->
         <div class="item-entry">
             <div class="item-header">
                 <span class="item-title">ObraSync / Diário de Obra — SaaS Multi-Tenant de Gestão de Obras <a href="https://obrasync-bf1t.onrender.com" target="_blank">obrasync-bf1t.onrender.com</a></span>
@@ -414,33 +349,25 @@
             </div>
             <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Multi-Tenancy · JWT & Magic Tokens · Cloud (Render)</div>
             <ul>
-                <li><strong>Isolamento Multi-Tenant & AppSec:</strong> Isolamento estrito por `tenantId` com Prisma Client Extensions cobrindo todas as operações e sub-recursos (Zero IDOR), validação de upload por Magic Bytes e anonimização de dados conforme LGPD.</li>
-                <li><strong>Performance, Edge Caching & Carga:</strong> Edge Caching CDN com SWR (&lt; 30ms), Connection Pooling e homologação sob teste de carga com <strong>1.000 VUs concorrentes</strong> com atuação precisa de Rate Limiter (HTTP 429).</li>
-                <li><strong>Métricas & Engenharia com IA:</strong> Linha do tempo com progresso ponderado de etapas e portal do cliente via Magic Link público, integralmente desenvolvido com Pair Programming orientado a Agentes de IA.</li>
+                <li><strong>Multi-Tenancy & AppSec LGPD:</strong> Isolamento estrito por `tenantId` com Prisma Client Extensions cobrindo todos os sub-recursos (<strong>Zero IDOR</strong>), validação por Magic Bytes e anonimização de dados pessoais (LGPD).</li>
+                <li><strong>Performance & Carga Extrema:</strong> Edge Caching CDN com SWR (&lt; 30ms) e homologação sob teste de carga com <strong>1.000 VUs concorrentes</strong> com atuação precisa de Rate Limiter (HTTP 429).</li>
             </ul>
         </div>
-    </section>
 
-    <!-- ==================== QUEBRA EXATA DE PÁGINA ==================== -->
-    <div class="page-break"></div>
-
-    <!-- ==================== PÁGINA 2 ==================== -->
-    <section>
-        <h2>Projetos em Destaque (Continuação)</h2>
-
+        <!-- BelasUnhas -->
         <div class="item-entry">
             <div class="item-header">
                 <span class="item-title">BelasUnhas / Manicure SaaS — SaaS Multi-Tenant de Salões <a href="https://belasunhas.onrender.com" target="_blank">belasunhas.onrender.com</a></span>
                 <span class="item-date">Em Produção</span>
             </div>
-            <div class="item-tech">Java 21 · Spring Boot 3 · Spring Security · JWT Multi-Tenant · Hibernate Filter (AOP) · PostgreSQL · Docker · Flyway · JUnit 5 · Next.js 16</div>
+            <div class="item-tech">Java 21 · Spring Boot 3 · Spring Security · JWT Multi-Tenant · Hibernate Filter (AOP) · PostgreSQL · Docker · Flyway (v16) · JUnit 5 · Next.js 16</div>
             <ul>
-                <li><strong>Isolamento de Dados & Segurança Fail-Closed:</strong> Arquitetura multi-tenant com auto-onboarding (`POST /tenants/signup`), `TenantContext` (ThreadLocal), filtros globais AOP no Hibernate e `SecurityValidator` blindado contra acessos nulos e IDOR.</li>
-                <li><strong>Cache & Rate Limiting:</strong> Cache em memória particionado por tenant via SpEL, Rate Limiting em janela deslizante por IP e índices compostos de alta performance com 16 migrations Flyway.</li>
-                <li><strong>Qualidade, HATEOAS & CI/CD:</strong> Suíte de testes automatizados com JUnit 5/Mockito, integração frontend Next.js com Spring HATEOAS e deploy automatizado via Docker no Render.</li>
+                <li><strong>Segurança Fail-Closed & Cache SpEL:</strong> Auto-onboarding (`POST /tenants/signup`), filtros globais AOP no Hibernate, `SecurityValidator` blindado contra acessos nulos e cache em memória isolado por tenant via SpEL.</li>
+                <li><strong>Qualidade, Índices & Deploy:</strong> 16 migrations Flyway com índices compostos de alta performance, suíte de testes JUnit 5/Mockito, integração Spring HATEOAS e deploy automatizado no Render.</li>
             </ul>
         </div>
 
+        <!-- Eloped -->
         <div class="item-entry">
             <div class="item-header">
                 <span class="item-title">Eloped / EstudaBR — EdTech Multi-Perfil & Qualidade de Software <a href="https://eloped.com.br" target="_blank">eloped.com.br</a></span>
@@ -448,70 +375,64 @@
             </div>
             <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · Shadcn UI · Zod · jsPDF · 308 Testes Automatizados</div>
             <ul>
-                <li><strong>Qualidade & Suíte de Testes Automatizados:</strong> Cobertura de <strong>308 testes automatizados determinísticos e aprovados</strong> cobrindo integridade de formulários, relatórios em PDF, segurança (blindagem RBAC/XSS) e jornadas E2E.</li>
-                <li><strong>Segmentação Multi-Perfil & Gestão Escolar:</strong> Arquitetura para 4 perfis de usuário (Secretaria Municipal de Educação, Diretores, Professores e Alunos) com trilhas alinhadas à BNCC e relatórios analíticos de rendimento.</li>
-                <li><strong>Motor de Documentos & Inovação:</strong> Geração dinâmica de boletins e relatórios pedagógicos em PDF com `jsPDF`/`pdf-lib`, suporte a PWA, notificações push e acessibilidade em conformidade com WCAG AA.</li>
+                <li><strong>Qualidade & Suíte de 308 Testes:</strong> Cobertura de <strong>308 testes automatizados determinísticos e aprovados</strong> cobrindo integridade de formulários, relatórios em PDF, segurança RBAC/XSS e jornadas E2E.</li>
+                <li><strong>Segmentação Multi-Perfil & PDFs:</strong> 4 perfis de acesso (Secretaria, Diretores, Professores e Alunos), trilhas alinhadas à BNCC e emissão dinâmica de boletins escolares em PDF com `jsPDF`/`pdf-lib`.</li>
             </ul>
         </div>
     </section>
 
-    <section>
-        <h2>Formação Acadêmica & Cursos</h2>
-        <div class="grid-container">
-            <div class="grid-item">
+    <!-- Grid Inferior: Formação & Experiência lado a lado -->
+    <div class="bottom-grid">
+        <!-- Formação Acadêmica & Cursos -->
+        <section>
+            <h2>Formação Acadêmica & Cursos</h2>
+            <div class="edu-item">
                 <strong>Análise e Desenvolvimento de Sistemas (ADS)</strong>
-                <span>Estácio — Graduação Tecnológica</span>
+                <span>Estácio — Graduação Tecnológica (Em andamento)</span>
             </div>
-            <div class="grid-item">
-                <strong>JavaScript e TypeScript do Básico ao Avançado — Luiz Otávio Miranda (Udemy)</strong>
-                <span><em>Em Andamento</em> | Fundamentos avançados de JS (ES6+), TypeScript, POO, Design Patterns e ecossistema Node.</span>
+            <div class="edu-item">
+                <strong>JS e TypeScript do Básico ao Avançado — Luiz Otávio Miranda</strong>
+                <span>ES6+, POO, Design Patterns e ecossistema Node.</span>
             </div>
-            <div class="grid-item">
+            <div class="edu-item">
                 <strong>Spring Boot, Docker, K8s e Nuvem AWS/GCP — Leandro Costa (54,5h)</strong>
-                <span>APIs RESTful, autenticação JWT, Spring Security, Swagger, testes (JUnit 5, Mockito) e CI/CD.</span>
+                <span>APIs RESTful, autenticação JWT, Spring Security, Swagger e JUnit 5.</span>
             </div>
-            <div class="grid-item">
+            <div class="edu-item">
                 <strong>Java COMPLETO e Orientação a Objetos — Nelio Alves (54h)</strong>
-                <span>Domínio de POO, diagramas UML, acesso a bancos relacionais (JDBC, JPA/Hibernate) e web services.</span>
+                <span>POO, UML, JDBC, JPA/Hibernate e web services.</span>
             </div>
-            <div class="grid-item">
-                <strong>Inglês Extremo — Paulo Botelho (17,5h)</strong>
-                <span><em>Em Andamento</em> | Desenvolvimento de escuta, fala e leitura sem traduções mecânicas.</span>
+            <div class="edu-item">
+                <strong>Idiomas:</strong>
+                <span>Português (Nativo) · Inglês (Intermediário - documentação técnica).</span>
             </div>
-            <div class="grid-item">
-                <strong>Idiomas & Comunicação</strong>
-                <span>Português (Nativo) · Inglês (Intermediário - leitura técnica de documentação e APIs).</span>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <h2>Experiência Profissional</h2>
-        
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">Pizzaiolo e Atendimento Operacional</span>
-                <span class="item-date">2023 – Presente</span>
+        <!-- Experiência Profissional -->
+        <section>
+            <h2>Experiência Profissional</h2>
+            <div class="item-entry">
+                <div class="item-header">
+                    <span class="item-title" style="font-size: 9.8px;">Pizzaiolo e Atendimento Operacional</span>
+                    <span class="item-date">2023 – Presente</span>
+                </div>
+                <div class="item-subtitle">Padaria e Confeitaria · São Paulo, SP</div>
+                <ul>
+                    <li>Atendimento via WhatsApp Business e pedidos iFood no PDV com agilidade e consistência sob alta demanda.</li>
+                </ul>
             </div>
-            <div class="item-subtitle">Padaria e Confeitaria / Alimentação · São Paulo, SP</div>
-            <ul>
-                <li>Atendimento direto ao cliente via WhatsApp Business e processamento digital de pedidos via iFood, operando o sistema de PDV e garantindo a eficiência no fluxo de entregas.</li>
-                <li>Trabalho dinâmico sob alta demanda com foco na organização de processos, consistência e agilidade no alcance de metas diárias.</li>
-            </ul>
-        </div>
-
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">Instrutor de Academia</span>
-                <span class="item-date">2021 – 2022</span>
+            <div class="item-entry" style="margin-top: 3px;">
+                <div class="item-header">
+                    <span class="item-title" style="font-size: 9.8px;">Instrutor de Academia</span>
+                    <span class="item-date">2021 – 2022</span>
+                </div>
+                <div class="item-subtitle">Academia · Bahia</div>
+                <ul>
+                    <li>Atendimento ao público, elaboração de rotinas de treino e desenvolvimento de comunicação interpessoal.</li>
+                </ul>
             </div>
-            <div class="item-subtitle">Academia · Bahia</div>
-            <ul>
-                <li>Atendimento e orientação física de alunos, elaboração de rotinas de treinamento e acompanhamento prático.</li>
-                <li>Desenvolvimento diário de comunicação interpessoal, escuta ativa e motivação, impulsionando a fidelização dos membros da academia.</li>
-            </ul>
-        </div>
-    </section>
+        </section>
+    </div>
 
 </body>
 </html>
