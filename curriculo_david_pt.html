@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Silva - Desenvolvedor Fullstack (Java/Spring Boot · Next.js · TypeScript)</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+
         :root {
-            --text-primary: #0f172a; /* slate-900 */
-            --text-secondary: #334155; /* slate-700 */
-            --text-muted: #64748b; /* slate-500 */
-            --link-color: #2563eb; /* blue-600 */
-            --border-color: #cbd5e1; /* slate-300 */
+            --text-primary: #0f172a;
+            /* slate-900 */
+            --text-secondary: #334155;
+            /* slate-700 */
+            --text-muted: #64748b;
+            /* slate-500 */
+            --link-color: #2563eb;
+            /* blue-600 */
+            --border-color: #cbd5e1;
+            /* slate-300 */
         }
 
         * {
@@ -222,42 +228,55 @@
                 size: A4 portrait;
                 margin: 6mm 10mm;
             }
+
             body {
                 padding: 0;
                 max-width: 100%;
                 font-size: 9.5px;
                 line-height: 1.22;
             }
+
             h1 {
                 font-size: 18px;
             }
+
             .subtitle {
                 font-size: 9.5px;
             }
+
             .contact-info {
                 font-size: 9px;
             }
+
             h2 {
                 font-size: 10px;
                 margin-top: 4px;
                 margin-bottom: 2px;
             }
-            .summary p, li, .competencies-list {
+
+            .summary p,
+            li,
+            .competencies-list {
                 font-size: 9.4px;
                 line-height: 1.24;
             }
+
             .item-title {
                 font-size: 10.2px;
             }
+
             .item-tech {
                 font-size: 8.8px;
             }
+
             .edu-item strong {
                 font-size: 9.4px;
             }
+
             .edu-item span {
                 font-size: 8.8px;
             }
+
             * {
                 page-break-inside: avoid;
                 break-inside: avoid;
@@ -265,12 +284,14 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header -->
     <div class="header">
         <h1>David Silva</h1>
-        <div class="subtitle">Estudante de ADS · Desenvolvedor Fullstack (Java 21 / Spring Boot 3 · Next.js 16 · TypeScript · React 19)</div>
+        <div class="subtitle">Desenvolvedor Full Stack · Área de Inteligência Artificial (Next.js · React · TypeScript ·
+            Node.js · APIs de LLMs)</div>
         <div class="contact-info">
             <span>São Paulo, SP</span>
             <span class="dot-separator">·</span>
@@ -278,21 +299,28 @@
             <span class="dot-separator">·</span>
             <a href="mailto:davis.clovins@gmail.com">davis.clovins@gmail.com</a>
             <span class="dot-separator">·</span>
-            <a href="https://www.linkedin.com/in/david-silva-17b2882bb" target="_blank">linkedin.com/in/david-silva-17b2882bb</a>
+            <a href="https://www.linkedin.com/in/david-silva-17b2882bb"
+                target="_blank">linkedin.com/in/david-silva-17b2882bb</a>
             <span class="dot-separator">·</span>
             <a href="https://github.com/Davidds5" target="_blank">github.com/Davidds5</a>
             <span class="dot-separator">·</span>
-            <a href="https://davidds5.github.io/portfolio_clovin" target="_blank">davidds5.github.io/portfolio_clovin</a>
+            <a href="https://davidds5.github.io/portfolio_clovin"
+                target="_blank">davidds5.github.io/portfolio_clovin</a>
         </div>
     </div>
-    
+
     <hr class="header-line">
 
     <!-- Resumo Profissional -->
     <section class="summary">
         <h2>Resumo Profissional</h2>
         <p>
-            Estudante de Análise e Desenvolvimento de Sistemas (Estácio) focado no desenvolvimento Fullstack com Java 21 / Spring Boot 3 e Next.js 16 (React 19 / TypeScript). Experiência sólida na concepção de arquiteturas SaaS Multi-Tenant e Single-Tenant com isolamento estrito de dados por design (Spring Security, Hibernate Filter AOP e Prisma Client Extensions), AppSec (blindagem Fail-Closed contra IDOR, rate limiting, LGPD), suítes com 300+ testes automatizados determinísticos e deploy em nuvem (Vercel, Render e Docker). Produtor diário de conteúdo técnico no canal Clovin DEV com foco em código limpo, resiliência e alta concorrência.
+            Desenvolvedor Full Stack focado na construção de aplicações web modernas e interfaces para integração de
+            Inteligência Artificial e modelos LLMs em produção, graduando em Análise e Desenvolvimento de Sistemas
+            (Estácio). Domínio em React 19, Next.js 16, TypeScript, Node.js e APIs RESTful, com experiência prática na
+            integração de APIs de LLMs (OpenAI/Gemini), engenharia de prompts e processamento de dados. Sólida vivência
+            com bancos relacionais (PostgreSQL/SQL), autenticação (JWT), conteinerização em Docker e deploy contínuo em
+            nuvem (Render e Vercel). Criador de conteúdo técnico no canal Clovin DEV.
         </p>
     </section>
 
@@ -300,12 +328,18 @@
     <section>
         <h2>Competências Técnicas</h2>
         <div class="competencies-list">
-            <p><strong>Linguagens & Backend:</strong> Java 21, Spring Boot 3, TypeScript, JavaScript (ES6+), Node.js, REST APIs, POO, SOLID, Clean Architecture.</p>
-            <p><strong>Frontend & Web:</strong> React 19, Next.js 16 (App Router / Server Actions), Tailwind CSS v4, Shadcn UI, HTML5, CSS3, Acessibilidade (WCAG AA).</p>
-            <p><strong>Segurança & AppSec:</strong> Blindagem Fail-Closed (Anti-IDOR), Spring Security, JWT (Cookies HttpOnly), Prisma Extensions Multi-Tenant, Rate Limiting, LGPD.</p>
-            <p><strong>Bancos de Dados & ORMs:</strong> PostgreSQL, Neon Serverless (Connection Pooling), Prisma ORM, Hibernate / JPA, Flyway (v16 Migrations), Índices Compostos.</p>
-            <p><strong>Qualidade & Testes:</strong> Suíte com 300+ Testes Automatizados (Vitest, JUnit 5, Mockito), Testes de Carga/Estresse (370+ a 1.000 VUs), Swagger/OpenAPI.</p>
-            <p><strong>DevOps & Ferramentas:</strong> Docker, Vercel, Render Cloud, Git/GitHub, CI/CD (GitHub Actions), PWA, jsPDF / pdf-lib, IA Pair Programming.</p>
+            <p><strong>Inteligência Artificial & LLMs:</strong> Integração de APIs de IA (OpenAI API, Gemini), Prompt
+                Engineering, Parsing de Dados, RAG Básico, IA Pair Programming.</p>
+            <p><strong>Frontend & Web:</strong> React 19, Next.js 16 (App Router / Server Actions), TypeScript, Tailwind
+                CSS v4, Shadcn UI, HTML5, CSS3, Gerenciamento de Estado.</p>
+            <p><strong>Backend & APIs:</strong> Node.js, Express, Java 21 / Spring Boot 3, REST APIs, POO, SOLID, Clean
+                Architecture.</p>
+            <p><strong>Bancos de Dados & Caching:</strong> PostgreSQL, Neon Serverless, Prisma ORM, Hibernate / JPA,
+                Flyway (Migrations), Caching (SWR / Edge Caching).</p>
+            <p><strong>DevOps, Cloud & Infra:</strong> Docker (Containers), Render Cloud, Vercel, Git/GitHub, CI/CD
+                (GitHub Actions), Swagger/OpenAPI.</p>
+            <p><strong>Qualidade & Segurança:</strong> Testes Automatizados (Vitest, JUnit 5), Blindagem contra
+                IDOR/LGPD, JWT (Cookies HttpOnly), Rate Limiting.</p>
         </div>
     </section>
 
@@ -314,69 +348,91 @@
         <h2>Diferencial & Comunicação</h2>
         <div class="item-entry">
             <div class="item-header">
-                <span class="item-title">Criador de Conteúdo Técnico — Canal Clovin DEV <a href="https://youtube.com/@clovindev" target="_blank">youtube.com/@clovindev</a></span>
+                <span class="item-title">Criador de Conteúdo Técnico — Canal Clovin DEV <a
+                        href="https://youtube.com/@clovindev" target="_blank">youtube.com/@clovindev</a></span>
                 <span class="item-date">2026 – Presente</span>
             </div>
             <div class="item-subtitle">YouTube & TikTok | Live Coding Diário & Documentação Pública</div>
             <ul>
-                <li><strong>Comunicação e Didática:</strong> Transmissões ao vivo diárias de código e arquitetura (Java, Spring Boot, React, Next.js, TS), engajando <strong>200+ inscritos</strong> com resolução prática de problemas em tempo real.</li>
+                <li><strong>Comunicação e Didática:</strong> Transmissões ao vivo diárias de código e arquitetura (Java,
+                    Spring Boot, React, Next.js, TS), engajando <strong>200+ inscritos</strong> com resolução prática de
+                    problemas em tempo real.</li>
             </ul>
         </div>
     </section>
 
     <!-- Projetos em Destaque -->
     <section>
-        <h2>Projetos em Destaque (SaaS em Produção)</h2>
+        <h2>Projetos em Destaque (Aplicações em Produção)</h2>
 
-        <!-- BarberPro -->
+        <!-- Vaga Certa -->
         <div class="item-entry">
             <div class="item-header">
-                <span class="item-title">BarberPro — SaaS de Agendamento & Concorrência Atômica <a href="https://barberpro-rose.vercel.app" target="_blank">barberpro-rose.vercel.app</a></span>
-                <span class="item-date">Em Produção</span>
+                <span class="item-title">Vaga Certa — Plataforma de Otimização & Integração com IA (OpenAI) <a
+                        href="https://github.com/Davidds5/projeto-api-curricolo"
+                        target="_blank">github.com/Davidds5/projeto-api-curricolo</a></span>
+                <span class="item-date">Projeto em Destaque</span>
             </div>
-            <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Neon PostgreSQL · JWT HttpOnly · Vercel</div>
+            <div class="item-tech">Next.js 14 · React 18 · TypeScript · Tailwind CSS · OpenAI API · Prisma ORM ·
+                PostgreSQL · PDF-Lib</div>
             <ul>
-                <li><strong>Concorrência Atômica & Alta Carga:</strong> Cálculo de horários livres em tempo real com transações serializáveis. Homologado sob teste de estresse de <strong>370+ reqs simultâneas (50 VUs) com 0 double-bookings</strong> (HTTP 409 Conflict).</li>
-                <li><strong>UX, Regras de Negócio & Segurança:</strong> Agendamento self-service sem cadastro, cancelamento com tolerância de arrependimento (15 min), tickets VIP no WhatsApp (`wa.me`) e revogação de sessões via `tokenVersion`.</li>
+                <li><strong>Pipeline de LLM & Engenharia de Prompts:</strong> Integração direta com OpenAI API para
+                    análise contextual de vagas e adaptação curricular inteligente sem alucinação, processando dados
+                    estruturados em tempo real.</li>
+                <li><strong>Extração de Texto & Geração de Arquivos:</strong> Parsing automatizado de currículos
+                    (PDF/DOCX), scoring semântico para sistemas ATS e exportação dinâmica com interface moderna e
+                    responsiva.</li>
             </ul>
         </div>
 
         <!-- ObraSync -->
         <div class="item-entry">
             <div class="item-header">
-                <span class="item-title">ObraSync / Diário de Obra — SaaS Multi-Tenant de Gestão de Obras <a href="https://obrasync-bf1t.onrender.com" target="_blank">obrasync-bf1t.onrender.com</a></span>
+                <span class="item-title">ObraSync / Diário de Obra — SaaS Multi-Tenant de Gestão de Obras <a
+                        href="https://obrasync-bf1t.onrender.com" target="_blank">obrasync-bf1t.onrender.com</a></span>
                 <span class="item-date">Em Produção</span>
             </div>
-            <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Multi-Tenancy · JWT & Magic Tokens · Cloud (Render)</div>
+            <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · Prisma ORM ·
+                PostgreSQL · Docker · Cloud (Render)</div>
             <ul>
-                <li><strong>Multi-Tenancy & AppSec LGPD:</strong> Isolamento estrito por `tenantId` com Prisma Client Extensions cobrindo todos os sub-recursos (<strong>Zero IDOR</strong>), validação por Magic Bytes e anonimização de dados pessoais (LGPD).</li>
-                <li><strong>Performance & Carga Extrema:</strong> Edge Caching CDN com SWR (&lt; 30ms) e homologação sob teste de carga com <strong>1.000 VUs concorrentes</strong> com atuação precisa de Rate Limiter (HTTP 429).</li>
+                <li><strong>Multi-Tenancy & AppSec LGPD:</strong> Isolamento estrito por `tenantId` com Prisma Client
+                    Extensions (Zero IDOR), validação por Magic Bytes e anonimização de dados pessoais (LGPD).</li>
+                <li><strong>Performance & Carga:</strong> Edge Caching CDN com SWR (&lt; 30ms) e homologação sob teste
+                    de carga com <strong>1.000 VUs concorrentes</strong> com atuação de Rate Limiter (HTTP 429).</li>
+            </ul>
+        </div>
+
+        <!-- BarberPro -->
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">BarberPro — SaaS de Agendamento & Concorrência Atômica <a
+                        href="https://barberpro-rose.vercel.app" target="_blank">barberpro-rose.vercel.app</a></span>
+                <span class="item-date">Em Produção</span>
+            </div>
+            <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Neon
+                PostgreSQL · JWT HttpOnly · Vercel</div>
+            <ul>
+                <li><strong>Concorrência Atômica & Alta Carga:</strong> Cálculo de horários livres em tempo real com
+                    transações serializáveis no banco relacional. Homologado com <strong>370+ reqs simultâneas sem
+                        double-booking</strong>.</li>
+                <li><strong>UX, Regras de Negócio & Segurança:</strong> Agendamento self-service, integração via
+                    WhatsApp (`wa.me`) e revogação de sessões via `tokenVersion`.</li>
             </ul>
         </div>
 
         <!-- BelasUnhas -->
         <div class="item-entry">
             <div class="item-header">
-                <span class="item-title">BelasUnhas / Manicure SaaS — SaaS Multi-Tenant de Salões <a href="https://belasunhas.onrender.com" target="_blank">belasunhas.onrender.com</a></span>
+                <span class="item-title">BelasUnhas / Manicure SaaS — SaaS Multi-Tenant de Gestão <a
+                        href="https://belasunhas.onrender.com" target="_blank">belasunhas.onrender.com</a></span>
                 <span class="item-date">Em Produção</span>
             </div>
-            <div class="item-tech">Java 21 · Spring Boot 3 · Spring Security · JWT Multi-Tenant · Hibernate Filter (AOP) · PostgreSQL · Docker · Flyway (v16) · JUnit 5 · Next.js 16</div>
+            <div class="item-tech">Java 21 · Spring Boot 3 · Spring Security · PostgreSQL · Docker · Flyway (v16) ·
+                JUnit 5 · Swagger</div>
             <ul>
-                <li><strong>Segurança Fail-Closed & Cache SpEL:</strong> Auto-onboarding (`POST /tenants/signup`), filtros globais AOP no Hibernate, `SecurityValidator` blindado contra acessos nulos e cache em memória isolado por tenant via SpEL.</li>
-                <li><strong>Qualidade, Índices & Deploy:</strong> 16 migrations Flyway com índices compostos de alta performance, suíte de testes JUnit 5/Mockito, integração Spring HATEOAS e deploy automatizado no Render.</li>
-            </ul>
-        </div>
-
-        <!-- Eloped -->
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">Eloped / EstudaBR — EdTech Multi-Perfil & Qualidade de Software <a href="https://eloped.com.br" target="_blank">eloped.com.br</a></span>
-                <span class="item-date">Em Produção</span>
-            </div>
-            <div class="item-tech">Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · Shadcn UI · Zod · jsPDF · 308 Testes Automatizados</div>
-            <ul>
-                <li><strong>Qualidade & Suíte de 308 Testes:</strong> Cobertura de <strong>308 testes automatizados determinísticos e aprovados</strong> cobrindo integridade de formulários, relatórios em PDF, segurança RBAC/XSS e jornadas E2E.</li>
-                <li><strong>Segmentação Multi-Perfil & PDFs:</strong> 4 perfis de acesso (Secretaria, Diretores, Professores e Alunos), trilhas alinhadas à BNCC e emissão dinâmica de boletins escolares em PDF com `jsPDF`/`pdf-lib`.</li>
+                <li><strong>Arquitetura RESTful, Docker & Deploy:</strong> API REST com isolamento estrito por tenant,
+                    documentação Swagger ativa, suíte de testes JUnit 5/Mockito e deploy automatizado em Docker no
+                    Render.</li>
             </ul>
         </div>
     </section>
@@ -418,7 +474,8 @@
                 </div>
                 <div class="item-subtitle">Padaria e Confeitaria · São Paulo, SP</div>
                 <ul>
-                    <li>Atendimento via WhatsApp Business e pedidos iFood no PDV com agilidade e consistência sob alta demanda.</li>
+                    <li>Atendimento via WhatsApp Business e pedidos iFood no PDV com agilidade e consistência sob alta
+                        demanda.</li>
                 </ul>
             </div>
             <div class="item-entry" style="margin-top: 3px;">
@@ -428,11 +485,13 @@
                 </div>
                 <div class="item-subtitle">Academia · Bahia</div>
                 <ul>
-                    <li>Atendimento ao público, elaboração de rotinas de treino e desenvolvimento de comunicação interpessoal.</li>
+                    <li>Atendimento ao público, elaboração de rotinas de treino e desenvolvimento de comunicação
+                        interpessoal.</li>
                 </ul>
             </div>
         </section>
     </div>
 
 </body>
+
 </html>

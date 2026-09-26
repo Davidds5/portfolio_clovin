@@ -7,6 +7,7 @@ interface ProjectCase {
   year: string;
   title: string;
   description: string;
+  problemSolved: string;
   engineeringDiff: string;
   stack: string[];
   image: string;
@@ -20,37 +21,72 @@ interface ProjectCase {
 const projects: ProjectCase[] = [
   {
     id: "01",
-    tag: "Case 01 // SaaS Single-Tenant & Concorrência",
+    tag: "Case 01 // Open Finance & Gestão Orçamentária",
     year: "2026",
-    title: "BarberPro",
+    title: "Clovin Finanças",
     description:
-      "Plataforma de agendamento online de alto padrão para barbearias individuais. Permite que clientes agendem horários livres em tempo real sem fricção de cadastro prévio, com integração direta para envio de ticket VIP formatado no WhatsApp do barbeiro (wa.me) e painel administrativo protegido com métricas e bloqueios de agenda.",
+      "Plataforma de inteligência financeira pessoal e orçamentação dinâmica sob a regra 50/30/20, projetada no padrão oficial Clovin Tátil (design editorial de alto contraste com física de botões e cartões em relevo). Criada para uso próprio no controle de despesas e planejamento orçamentário mensal e disponibilizada para usuários convidados.",
+    problemSolved:
+      "Elimina a perda de tempo e as falhas humanas do preenchimento manual de planilhas. Conecta contas e cartões bancários automaticamente via Open Finance e acaba com a 'caixa preta' de compras parceladas, calculando exatamente quanto da renda dos meses seguintes já está comprometido.",
     engineeringDiff:
-      "Motor de agendamento com transações atômicas serializáveis homologado sob teste de estresse de 370+ requisições simultâneas com zero double-bookings. Cancelamento self-service com tolerância de arrependimento (15 min) e revogação instantânea de sessões com tokenVersion.",
+      "Integração com Open Finance Brasil via API Pluggy com Webhooks criptografados (HMAC-SHA256). Motor de compras parceladas com agrupamento atômico por UUID e parcelamento em cascata, orçamentação mensal independente com suporte a rendas extras e parser semântico em TypeScript para extração de gastos via linguagem natural.",
     stack: [
       "Next.js 16",
       "React 19",
       "TypeScript",
-      "Prisma ORM",
+      "Tailwind CSS",
+      "Prisma ORM 6",
+      "Neon PostgreSQL",
+      "Auth.js (v5)",
+      "Pluggy API",
+      "Upstash Redis",
+    ],
+    image: "/clovin_financas.png",
+    badgeText: "Open Finance Brasil & Tátil",
+    badgeColor: "bg-orange-500",
+    liveUrl: "https://projeto-financas-rouge.vercel.app",
+    liveLabel: "Ver Produção",
+    githubUrl: "https://github.com/Davidds5/projeto-financas",
+  },
+  {
+    id: "02",
+    tag: "Case 02 // SaaS Single-Tenant & Concorrência",
+    year: "2026",
+    title: "BarberPro",
+    description:
+      "Plataforma de agendamento online de alto padrão desenvolvida sob medida para o cabeleireiro autônomo Wesley. Permite que clientes agendem horários livres em tempo real pelo celular sem fricção de cadastro prévio, integrando tickets formatados direto no WhatsApp.",
+    problemSolved:
+      "Resolve o problema crônico de double-booking (conflito de horários nos sábados e dias de pico), interrupções constantes durante atendimentos para responder mensagens e ausências de clientes sem aviso prévio (no-show).",
+    engineeringDiff:
+      "Motor de agendamento com transações atômicas serializáveis homologado sob teste de estresse de concorrência com 50 requisições simultâneas no mesmo milissegundo para o mesmo horário (1 confirmação e 49 conflitos HTTP 409 / zero double-bookings), além de 200 consultas de disponibilidade (50 VUs). Cancelamento self-service com tolerância de arrependimento (15 min) e revogação instantânea de sessões com tokenVersion.",
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Prisma ORM 6",
       "Neon PostgreSQL",
       "JWT HttpOnly",
       "Vercel",
     ],
     image: "/barberpro.png",
-    badgeText: "Em Produção na Vercel",
+    badgeText: "Concorrência Atômica Homologada",
     badgeColor: "bg-amber-500",
     liveUrl: "https://barberpro-rose.vercel.app",
     liveLabel: "Ver Produção",
+    githubUrl: "https://github.com/Davidds5/barberpro",
   },
   {
-    id: "02",
-    tag: "Case 02 // SaaS Multi-Tenant & AppSec",
+    id: "03",
+    tag: "Case 03 // SaaS Multi-Tenant & AppSec",
     year: "2026",
     title: "ObraSync",
     description:
-      "Plataforma SaaS multi-tenant de gestão de obras e projetos para arquitetos e construtoras. Centraliza diários de obras fotográficos, acompanhamento de cronograma com avanço físico ponderado e geração de portal do cliente via Magic Link público e responsivo sem exigência de login.",
+      "Plataforma SaaS multi-tenant de gestão de obras e reformas para escritórios de arquitetura e engenheiros de interiores. Centraliza o registro diário fotográfico, evolução ponderada de cronogramas e oferece aos clientes das obras um portal exclusivo para acompanhamento pelo celular.",
+    problemSolved:
+      "Acaba com o estresse de clientes ligando diariamente para saber o andamento da obra e a perda de fotos em grupos de WhatsApp. Dá transparência total aos proprietários via link seguro sem necessidade de login ou senhas complexas.",
     engineeringDiff:
-      "Isolamento rigoroso por tenantId via Prisma Client Extensions cobrindo todos os sub-recursos (Zero IDOR), validação de upload por Magic Bytes, Edge Caching com SWR (< 30ms) e homologação sob teste de estresse com 1.000 VUs concorrentes com atuação precisa de Rate Limiter.",
+      "Isolamento rigoroso por tenantId via Prisma Client Extensions cobrindo todos os sub-recursos (Zero IDOR), validação de upload por Magic Bytes, Edge Caching com SWR (< 30ms) homologado sob teste de estresse com 1.000 VUs concorrentes com atuação precisa de Rate Limiter, relatórios executivos em PDF gerados server-side e suporte offline via PWA.",
     stack: [
       "Next.js 16",
       "React 19",
@@ -65,22 +101,27 @@ const projects: ProjectCase[] = [
     badgeColor: "bg-emerald-500",
     liveUrl: "https://obrasync-bf1t.onrender.com",
     liveLabel: "Ver Produção",
+    githubUrl: "https://github.com/Davidds5/obrasync",
   },
   {
-    id: "03",
-    tag: "Case 03 // Enterprise Backend & Multi-Tenancy",
+    id: "04",
+    tag: "Case 04 // Enterprise Backend & Multi-Tenancy",
     year: "2026",
-    title: "BelasUnhas (Agenda Bela)",
+    title: "BelasUnhas / Manicure API",
     description:
-      "Aplicação web completa multi-tenant voltada para salões de beleza e esmalterias. Conta com gestão de agendamentos, catálogo de serviços e controle de planos com bloqueio automático por limite (HTTP 402 Payment Required), além de fluxo automatizado de onboarding self-service.",
+      "Aplicação web completa multi-tenant voltada para salões de beleza e esmalterias. Desenvolvida sob medida para a mãe do candidato gerenciar de forma autônoma os agendamentos, clientes, serviços e recebimentos do seu negócio de manicure.",
+    problemSolved:
+      "Elimina atrasos e conflitos de agenda causados por procedimentos com durações totalmente distintas (manicure simples de 30 min vs alongamento em gel de 2h), automatizando o agendamento público e a cobrança Pix sem interromper o atendimento.",
     engineeringDiff:
-      "Isolamento multi-tenant via ThreadLocal e filtros nativos no Hibernate orquestrados por AOP. Blindagem Fail-Closed no SecurityValidator contra IDOR, Rate Limiting em memória e cache SpEL particionado por tenant.",
+      "Backend em Java 21 e Spring Boot 3 com algoritmo matemático de sobreposição por duração real de serviço (validateTimeConflict). Isolamento multi-tenant via ThreadLocal e filtros nativos no Hibernate orquestrados por AOP, blindagem Fail-Closed no SecurityValidator contra IDOR, 17 migrations Flyway, testes automatizados JUnit 5/Mockito e documentação OpenAPI / Swagger.",
     stack: [
       "Java 21",
       "Spring Boot 3",
       "Spring Security (JWT)",
       "Hibernate Filter & AOP",
-      "PostgreSQL & Flyway (v16)",
+      "PostgreSQL",
+      "Flyway (v17)",
+      "JUnit 5",
       "Docker",
     ],
     image: "/belasunhas.png",
@@ -88,14 +129,17 @@ const projects: ProjectCase[] = [
     badgeColor: "bg-accent",
     liveUrl: "https://belasunhas.onrender.com",
     liveLabel: "Ver Produção",
+    githubUrl: "https://github.com/Davidds5/manicure_api",
   },
   {
-    id: "04",
-    tag: "Case 04 // EdTech & Qualidade de Software",
+    id: "05",
+    tag: "Case 05 // EdTech & Qualidade de Software",
     year: "2026",
     title: "Eloped / EstudaBR",
     description:
       "Plataforma educacional completa para integração da comunidade escolar (Secretaria Municipal de Educação, Diretores, Professores e Alunos), com trilhas alinhadas à BNCC, simulados interativos e dashboards de rendimento pedagógico.",
+    problemSolved:
+      "Resolve a fragmentação de ferramentas e o uso de papel nas escolas, unificando comunicados escolares, diários de classe, simulados com correção automática e emissão de boletins oficiais em um só lugar.",
     engineeringDiff:
       "Segmentação RBAC em 4 perfis de acesso, geração dinâmica de relatórios e boletins em PDF com jsPDF/pdf-lib e suíte com 308 testes automatizados 100% determinísticos e aprovados cobrindo formulários, segurança e jornadas E2E.",
     stack: [
@@ -131,7 +175,7 @@ export default function Projects() {
         </div>
         <p className="text-sm font-mono text-ink-muted max-w-md">
           Aplicações reais em produção, projetadas com arquitetura limpa,
-          segurança multi-tenant e experiência refinada.
+          segurança multi-tenant e foco na resolução de dores concretas de usuários reais.
         </p>
       </div>
 
@@ -185,9 +229,19 @@ export default function Projects() {
                     {project.title}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-ink-muted leading-relaxed mb-6 font-sans">
+                  <p className="text-sm sm:text-base text-ink-muted leading-relaxed mb-4 font-sans">
                     {project.description}
                   </p>
+
+                  {/* Problema que Resolve */}
+                  <div className="p-3.5 rounded-lg bg-accent-soft/70 hairline border-accent/20 mb-4">
+                    <span className="text-[11px] font-mono text-accent font-semibold uppercase block mb-1">
+                      Problema Real que Resolve
+                    </span>
+                    <p className="text-xs text-ink-muted leading-relaxed">
+                      {project.problemSolved}
+                    </p>
+                  </div>
 
                   {/* Architectural Highlights */}
                   <div className="p-4 rounded-lg bg-canvas-soft hairline mb-6">
@@ -214,20 +268,37 @@ export default function Projects() {
 
                 {/* CTAs */}
                 <div className="flex items-center justify-between gap-3 pt-6 hairline-t font-mono text-xs">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-ink text-white hover:bg-accent transition-editorial font-medium"
-                    >
-                      <span>{project.liveLabel || "Ver Produção"}</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </a>
-                  )}
+                  <div className="flex items-center gap-2">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-ink text-white hover:bg-accent transition-editorial font-medium"
+                      >
+                        <span>{project.liveLabel || "Ver Produção"}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-md bg-canvas-soft text-ink hover:text-accent hairline transition-editorial font-medium"
+                      >
+                        <span>GitHub</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </a>
+                    )}
+                  </div>
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-canvas-soft hairline text-[11px] text-ink-muted">
-                    <span className="w-1.5 h-1.5 rounded-full bg-ink-faint"></span>
-                    Código Proprietário / Cliente
+                    <span
+                      className={`w-1.5 h-1.5 rounded-full ${
+                        project.githubUrl ? "bg-emerald-500" : "bg-ink-faint"
+                      }`}
+                    ></span>
+                    {project.githubUrl ? "Código Aberto" : "Código Proprietário"}
                   </span>
                 </div>
               </div>
@@ -238,3 +309,4 @@ export default function Projects() {
     </section>
   );
 }
+
