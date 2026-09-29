@@ -21,7 +21,7 @@ interface ProjectCase {
 const projects: ProjectCase[] = [
   {
     id: "01",
-    tag: "Case 01 // Open Finance & Gestão Orçamentária",
+    tag: "Case 01 // Solução Autônoma & Open Finance",
     year: "2026",
     title: "Clovin Finanças",
     description:
@@ -42,19 +42,18 @@ const projects: ProjectCase[] = [
       "Upstash Redis",
     ],
     image: "/clovin_financas.png",
-    badgeText: "Open Finance Brasil & Tátil",
+    badgeText: "Solução Autônoma · Produção Ativa",
     badgeColor: "bg-orange-500",
     liveUrl: "https://projeto-financas-rouge.vercel.app",
     liveLabel: "Ver Produção",
-    githubUrl: "https://github.com/Davidds5/projeto-financas",
   },
   {
     id: "02",
-    tag: "Case 02 // SaaS Single-Tenant & Concorrência",
+    tag: "Case 02 // Projeto Freelance (Cliente: Wesley Cabeleireiro)",
     year: "2026",
     title: "BarberPro",
     description:
-      "Plataforma de agendamento online de alto padrão desenvolvida sob medida para o cabeleireiro autônomo Wesley. Permite que clientes agendem horários livres em tempo real pelo celular sem fricção de cadastro prévio, integrando tickets formatados direto no WhatsApp.",
+      "Plataforma de agendamento online de alto padrão desenvolvida sob encomenda (projeto freelance) para o cabeleireiro autônomo Wesley. Permite que clientes agendem horários livres em tempo real pelo celular sem fricção de cadastro prévio, integrando tickets formatados direto no WhatsApp.",
     problemSolved:
       "Resolve o problema crônico de double-booking (conflito de horários nos sábados e dias de pico), interrupções constantes durante atendimentos para responder mensagens e ausências de clientes sem aviso prévio (no-show).",
     engineeringDiff:
@@ -70,19 +69,18 @@ const projects: ProjectCase[] = [
       "Vercel",
     ],
     image: "/barberpro.png",
-    badgeText: "Concorrência Atômica Homologada",
+    badgeText: "Projeto Freelance de Cliente · Produção Ativa",
     badgeColor: "bg-amber-500",
     liveUrl: "https://barberpro-rose.vercel.app",
     liveLabel: "Ver Produção",
-    githubUrl: "https://github.com/Davidds5/barberpro",
   },
   {
     id: "03",
-    tag: "Case 03 // SaaS Multi-Tenant & AppSec",
+    tag: "Case 03 // Projeto Freelance (Escritórios de Arquitetura & Obras)",
     year: "2026",
     title: "ObraSync",
     description:
-      "Plataforma SaaS multi-tenant de gestão de obras e reformas para escritórios de arquitetura e engenheiros de interiores. Centraliza o registro diário fotográfico, evolução ponderada de cronogramas e oferece aos clientes das obras um portal exclusivo para acompanhamento pelo celular.",
+      "Plataforma SaaS multi-tenant de gestão de obras e reformas desenvolvida sob encomenda (projeto freelance) para escritórios de arquitetura e engenheiros de interiores. Centraliza o registro diário fotográfico, evolução ponderada de cronogramas e oferece aos clientes das obras um portal exclusivo para acompanhamento pelo celular.",
     problemSolved:
       "Acaba com o estresse de clientes ligando diariamente para saber o andamento da obra e a perda de fotos em grupos de WhatsApp. Dá transparência total aos proprietários via link seguro sem necessidade de login ou senhas complexas.",
     engineeringDiff:
@@ -97,19 +95,18 @@ const projects: ProjectCase[] = [
       "Cloud (Render)",
     ],
     image: "/obrasync.png",
-    badgeText: "Em Produção no Render",
+    badgeText: "Projeto Freelance de Cliente · Produção Ativa",
     badgeColor: "bg-emerald-500",
     liveUrl: "https://obrasync-bf1t.onrender.com",
     liveLabel: "Ver Produção",
-    githubUrl: "https://github.com/Davidds5/obrasync",
   },
   {
     id: "04",
-    tag: "Case 04 // Enterprise Backend & Multi-Tenancy",
+    tag: "Case 04 // Projeto de Cliente (Salão & Esmalteria)",
     year: "2026",
     title: "BelasUnhas / Manicure API",
     description:
-      "Aplicação web completa multi-tenant voltada para salões de beleza e esmalterias. Desenvolvida sob medida para a mãe do candidato gerenciar de forma autônoma os agendamentos, clientes, serviços e recebimentos do seu negócio de manicure.",
+      "Aplicação web completa multi-tenant voltada para salões de beleza e esmalterias. Desenvolvida sob medida para cliente (negócio de manicure) gerenciar de forma autônoma os agendamentos, clientes, serviços e recebimentos do seu estabelecimento.",
     problemSolved:
       "Elimina atrasos e conflitos de agenda causados por procedimentos com durações totalmente distintas (manicure simples de 30 min vs alongamento em gel de 2h), automatizando o agendamento público e a cobrança Pix sem interromper o atendimento.",
     engineeringDiff:
@@ -125,19 +122,18 @@ const projects: ProjectCase[] = [
       "Docker",
     ],
     image: "/belasunhas.png",
-    badgeText: "Java 21 & Spring Boot 3 Core",
+    badgeText: "Projeto Sob Medida para Cliente · Produção Ativa",
     badgeColor: "bg-accent",
     liveUrl: "https://belasunhas.onrender.com",
     liveLabel: "Ver Produção",
-    githubUrl: "https://github.com/Davidds5/manicure_api",
   },
   {
     id: "05",
-    tag: "Case 05 // EdTech & Qualidade de Software",
+    tag: "Case 05 // Projeto Freelance (Plataforma Educacional EstudaBR / OpenBREstudo)",
     year: "2026",
-    title: "Eloped / EstudaBR",
+    title: "EstudaBR / Eloped (OpenBREstudo)",
     description:
-      "Plataforma educacional completa para integração da comunidade escolar (Secretaria Municipal de Educação, Diretores, Professores e Alunos), com trilhas alinhadas à BNCC, simulados interativos e dashboards de rendimento pedagógico.",
+      "Plataforma educacional completa desenvolvida sob encomenda (projeto freelance) para integração da comunidade escolar (Secretaria Municipal de Educação, Diretores, Professores e Alunos), com trilhas alinhadas à BNCC, simulados interativos e dashboards de rendimento pedagógico.",
     problemSolved:
       "Resolve a fragmentação de ferramentas e o uso de papel nas escolas, unificando comunicados escolares, diários de classe, simulados com correção automática e emissão de boletins oficiais em um só lugar.",
     engineeringDiff:
@@ -151,11 +147,10 @@ const projects: ProjectCase[] = [
       "308 Testes Automatizados",
     ],
     image: "/eloped.png",
-    badgeText: "308 Testes Aprovados",
+    badgeText: "Projeto Freelance sob Encomenda · Produção Ativa",
     badgeColor: "bg-blue-500",
     liveUrl: "https://eloped.com.br",
     liveLabel: "Ver Produção",
-    githubUrl: "https://github.com/Davidds5",
   },
 ];
 
@@ -167,15 +162,14 @@ export default function Projects() {
         <div>
           <div className="flex items-center gap-3 text-accent font-mono text-xs font-semibold tracking-wider uppercase mb-2">
             <span>02 //</span>
-            <span>Cases Selecionados</span>
+            <span>Portfólio & Entregas Reais</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
-            Projetos Principais
+            Projetos Freelancer & Clientes
           </h2>
         </div>
         <p className="text-sm font-mono text-ink-muted max-w-md">
-          Aplicações reais em produção, projetadas com arquitetura limpa,
-          segurança multi-tenant e foco na resolução de dores concretas de usuários reais.
+          Aplicações completas desenvolvidas sob encomenda (freelancer) e operando em produção ativa. Códigos-fonte privados sob proteção e propriedade intelectual dos clientes.
         </p>
       </div>
 

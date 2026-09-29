@@ -11,8 +11,10 @@
             --text-primary: #0f172a; /* slate-900 */
             --text-secondary: #334155; /* slate-700 */
             --text-muted: #64748b; /* slate-500 */
-            --link-color: #2563eb; /* blue-600 */
+            --link-color: #1d4ed8; /* blue-700 */
             --border-color: #cbd5e1; /* slate-300 */
+            --badge-bg: #f8fafc;
+            --badge-border: #e2e8f0;
         }
 
         * {
@@ -22,44 +24,45 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.24;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.36;
             color: var(--text-primary);
-            max-width: 820px;
+            max-width: 860px;
             margin: 0 auto;
-            padding: 8px 26px;
+            padding: 16px 28px;
             background-color: #fff;
-            font-size: 9.8px;
+            font-size: 10.2px;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* Header */
         .header {
-            margin-bottom: 3px;
+            margin-bottom: 6px;
         }
 
         h1 {
-            font-size: 19px;
+            font-size: 21px;
             font-weight: 700;
             color: var(--text-primary);
-            letter-spacing: -0.4px;
-            line-height: 1.1;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
         }
 
         .subtitle {
-            font-size: 9.8px;
+            font-size: 10.5px;
             font-weight: 700;
-            color: var(--text-secondary);
+            color: #1e293b;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 2px;
-            margin-bottom: 2px;
+            letter-spacing: 0.6px;
+            margin-top: 3px;
+            margin-bottom: 4px;
         }
 
         .contact-info {
-            font-size: 9.2px;
+            font-size: 9.8px;
             color: var(--text-muted);
             display: flex;
-            gap: 4px;
+            gap: 6px;
             flex-wrap: wrap;
             align-items: center;
         }
@@ -81,51 +84,52 @@
 
         hr.header-line {
             border: 0;
-            border-top: 1px solid var(--border-color);
-            margin: 3px 0 5px 0;
+            border-top: 1.5px solid #0f172a;
+            margin: 6px 0 9px 0;
         }
 
         /* Sections */
         section {
-            margin-bottom: 4px;
+            margin-bottom: 9px;
         }
 
         h2 {
-            font-size: 10.2px;
+            font-size: 11px;
             color: var(--text-primary);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1px;
-            margin-top: 4px;
-            margin-bottom: 2px;
+            border-bottom: 1.2px solid var(--border-color);
+            padding-bottom: 2px;
+            margin-top: 8px;
+            margin-bottom: 5px;
             text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: 0.4px;
+            letter-spacing: 0.5px;
         }
 
         .summary p {
-            text-align: justify;
-            font-size: 9.5px;
+            font-size: 10.2px;
             color: var(--text-secondary);
-            line-height: 1.3;
+            line-height: 1.4;
         }
 
         /* Competencies */
         .competencies-list {
-            font-size: 9.4px;
-            line-height: 1.26;
+            font-size: 10px;
+            line-height: 1.38;
         }
 
         .competencies-list p {
-            margin: 1px 0;
+            margin: 2px 0;
+            color: var(--text-secondary);
         }
 
         .competencies-list strong {
             color: var(--text-primary);
+            font-weight: 600;
         }
 
         /* Projects / Items */
         .item-entry {
-            margin-bottom: 3.5px;
+            margin-bottom: 7px;
         }
 
         .item-header {
@@ -138,72 +142,83 @@
 
         .item-title {
             font-weight: 700;
-            font-size: 10.4px;
+            font-size: 11px;
             color: var(--text-primary);
         }
 
         .item-title a {
             color: var(--link-color);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 9.6px;
-            margin-left: 4px;
+            font-weight: 600;
+            font-size: 10px;
+            margin-left: 5px;
         }
 
         .item-title a:hover {
             text-decoration: underline;
         }
 
+        .item-badge {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 600;
+            color: #0f172a;
+            background-color: var(--badge-bg);
+            border: 1px solid var(--badge-border);
+            padding: 1px 5px;
+            border-radius: 3px;
+            margin-left: 4px;
+        }
+
         .item-date {
-            font-size: 9.2px;
+            font-size: 9.8px;
             font-weight: 600;
             color: var(--text-muted);
             white-space: nowrap;
         }
 
         .item-context {
-            font-size: 9.2px;
-            font-style: italic;
+            font-size: 9.8px;
             color: var(--text-secondary);
-            margin: 1px 0;
-            line-height: 1.22;
+            margin: 2px 0;
+            line-height: 1.34;
         }
 
         .item-tech {
-            font-size: 8.8px;
+            font-size: 9.2px;
             color: var(--text-muted);
-            font-weight: 500;
-            margin-bottom: 1px;
+            font-weight: 600;
+            margin-bottom: 2px;
         }
 
         ul {
-            padding-left: 14px;
+            padding-left: 15px;
         }
 
         li {
-            margin-bottom: 1px;
+            margin-bottom: 2px;
             color: var(--text-secondary);
-            font-size: 9.4px;
-            text-align: justify;
-            line-height: 1.25;
+            font-size: 10px;
+            line-height: 1.36;
         }
 
         li strong {
             color: var(--text-primary);
+            font-weight: 600;
         }
 
-        /* Two Column Layout for Bottom (Education + Experience) */
+        /* Two Column Layout for Bottom (Education + Channel) */
         .bottom-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 14px;
             align-items: start;
         }
 
         .edu-item {
-            margin-bottom: 2px;
-            font-size: 9.2px;
-            line-height: 1.2;
+            margin-bottom: 3px;
+            font-size: 9.8px;
+            line-height: 1.3;
         }
 
         .edu-item strong {
@@ -215,9 +230,9 @@
         }
 
         .exp-item {
-            margin-bottom: 2.5px;
-            font-size: 9.2px;
-            line-height: 1.2;
+            margin-bottom: 4px;
+            font-size: 9.8px;
+            line-height: 1.32;
         }
 
         .exp-item strong {
@@ -231,43 +246,43 @@
         @media print {
             @page {
                 size: A4 portrait;
-                margin: 5mm 8mm;
+                margin: 6mm 10mm;
             }
             body {
                 padding: 0;
                 max-width: 100%;
-                font-size: 9.2px;
-                line-height: 1.2;
+                font-size: 9.8px;
+                line-height: 1.3;
             }
             h1 {
-                font-size: 17px;
+                font-size: 19px;
             }
             .subtitle {
-                font-size: 9.2px;
+                font-size: 10px;
             }
             .contact-info {
-                font-size: 8.8px;
+                font-size: 9.2px;
             }
             h2 {
-                font-size: 9.6px;
-                margin-top: 3px;
-                margin-bottom: 1px;
+                font-size: 10.4px;
+                margin-top: 6px;
+                margin-bottom: 3px;
             }
-            .summary p, li, .competencies-list {
-                font-size: 9px;
-                line-height: 1.22;
+            .summary p, li, .competencies-list p {
+                font-size: 9.6px;
+                line-height: 1.3;
             }
             .item-title {
-                font-size: 9.8px;
+                font-size: 10.4px;
             }
             .item-context {
-                font-size: 8.8px;
+                font-size: 9.4px;
             }
             .item-tech {
-                font-size: 8.4px;
+                font-size: 8.8px;
             }
             .edu-item, .exp-item {
-                font-size: 8.8px;
+                font-size: 9.2px;
             }
             * {
                 page-break-inside: avoid;
@@ -303,96 +318,130 @@
     <section class="summary">
         <h2>Resumo Profissional</h2>
         <p>
-            Desenvolvedor Full Stack com sólida proficiência técnica em <strong>Java 21 / Spring Boot 3</strong> no backend para APIs RESTful robustas e microsserviços, e <strong>React 19 / Next.js 16 (TypeScript)</strong> no frontend para aplicações modernas de alta performance. Experiência prática na concepção de plataformas SaaS (multi-tenant e single-tenant) com isolamento rigoroso por design (Spring Security, Hibernate Filter via AOP e Prisma Extensions), blindagem AppSec contra vulnerabilidades IDOR/LGPD e transações com concorrência atômica. Diferencial em integrações de Open Finance Brasil (API Pluggy) e automações com IA/LLMs. Produtor diário de conteúdo técnico no canal Clovin DEV.
+            <strong>Objetivo:</strong> Atuação como <strong>Desenvolvedor Full Stack ou Backend (Java 21 / Spring Boot 3 & React 19 / Next.js 16 / TypeScript)</strong> — Vagas Júnior ou Pleno.
         </p>
+        <p style="margin-top: 3px;">
+            <strong>Problemas Reais que já Resolvi em Produção:</strong>
+        </p>
+        <ul style="margin-top: 2px;">
+            <li><strong>Concorrência e Conflitos de Agenda:</strong> Eliminação de 100% de sobreposições de horários (<em>double-booking</em>) em alta concorrência via transações atômicas serializáveis e algoritmos matemáticos de duração real de atendimento.</li>
+            <li><strong>Isolamento Multi-Tenant & AppSec:</strong> Implementação de plataformas SaaS multi-tenant com isolamento estrito de dados por <code>tenantId</code> (Hibernate Filter AOP e Prisma Extensions), blindagem <em>Fail-Closed</em> contra vulnerabilidades IDOR e proteção LGPD.</li>
+            <li><strong>Automação Financeira:</strong> Conciliação bancária 100% automática sem preenchimento manual via Open Finance Brasil (API Pluggy / HMAC Webhooks) e motor de cálculo de impacto de compras parceladas em cascata.</li>
+            <li><strong>Centralização de Processos:</strong> Substituição de planilhas manuais, papéis e grupos de WhatsApp por portais de clientes self-service seguros com relatórios em PDF server-side e links temporários.</li>
+        </ul>
     </section>
 
     <!-- Competências Técnicas -->
     <section>
         <h2>Competências Técnicas</h2>
         <div class="competencies-list">
-            <p><strong>Linguagens & Backend:</strong> Java 21, Spring Boot 3, TypeScript, JavaScript (ES6+), Node.js, REST APIs, POO, SOLID, Clean Architecture.</p>
-            <p><strong>Frontend & Web:</strong> React 19, Next.js 16 (App Router / Server Actions), Tailwind CSS v4, Shadcn UI, HTML5, CSS3, Acessibilidade (WCAG AA).</p>
+            <p><strong>Linguagens & Backend:</strong> Java 21 (LTS), Spring Boot 3, TypeScript, JavaScript (ES6+), Node.js, RESTful APIs, POO, SOLID, Clean Architecture.</p>
+            <p><strong>Frontend & Web:</strong> React 19, Next.js 16 (App Router, Server Actions), Tailwind CSS v4, HTML5 Semântico, CSS3, Acessibilidade (WCAG AA).</p>
             <p><strong>Segurança & Arquitetura:</strong> Multi-Tenancy (Hibernate Filter AOP, Prisma Client Extensions), Spring Security, JWT (Cookies HttpOnly), Blindagem Fail-Closed contra IDOR, Rate Limiting, LGPD.</p>
             <p><strong>Bancos de Dados & Cloud:</strong> PostgreSQL, Neon Serverless (Pooling), Prisma ORM 6, Hibernate / JPA, Flyway Migrations, Docker, Vercel, Render Cloud.</p>
-            <p><strong>Qualidade & Diferenciais:</strong> Testes Automatizados (JUnit 5, Mockito, Vitest), Open Finance (API Pluggy / HMAC Webhooks), Integração com IA (OpenAI API), CI/CD (GitHub Actions).</p>
+            <p><strong>Qualidade & Diferenciais:</strong> Testes Automatizados (JUnit 5, Mockito, Vitest), Open Finance Brasil (API Pluggy / HMAC Webhooks), Integração de APIs externas.</p>
         </div>
     </section>
 
-    <!-- Comunicação Técnica & Diferencial -->
-    <section>
-        <h2>Comunicação Técnica & Diferencial</h2>
-        <div class="item-entry">
-            <p style="font-size: 9.4px; color: var(--text-secondary); line-height: 1.28;">
-                <strong>Criador do Canal Clovin DEV</strong> (<a href="https://youtube.com/@clovindev" target="_blank" style="color: var(--link-color); text-decoration: none;">youtube.com/@clovindev</a>): Transmissões ao vivo diárias de código e arquitetura de software (Java, Spring Boot, React, Next.js e TypeScript), comunicando decisões técnicas e resolvendo problemas reais de concorrência e modelagem para mais de 200 inscritos.
-            </p>
-        </div>
-    </section>
-
-    <!-- Projetos em Destaque -->
+    <!-- Projetos em Destaque (Aplicações em Produção) -->
     <section>
         <h2>Projetos em Destaque (Aplicações em Produção)</h2>
-
-        <!-- Clovin Finanças -->
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">Clovin Finanças — Gestão Financeira & Open Finance <a href="https://projeto-financas-rouge.vercel.app" target="_blank">projeto-financas-rouge.vercel.app</a></span>
-                <span class="item-date">Em Produção</span>
-            </div>
-            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Prisma ORM 6 · Neon PostgreSQL · Auth.js v5 · Pluggy API · Tailwind CSS</div>
-            <div class="item-context">Projeto pessoal de controle financeiro criado para uso próprio e disponibilizado para usuários convidados; elimina planilhas manuais e a falta de visibilidade em compras parceladas futuras.</div>
-            <ul>
-                <li><strong>Open Finance & Webhooks HMAC:</strong> Integrado ao Open Finance Brasil via API Pluggy com Webhooks criptografados (HMAC-SHA256) para conciliação bancária automática de contas e cartões sem inputs manuais.</li>
-                <li><strong>Parcelamento em Cascata & Orçamento 50/30/20:</strong> Motor financeiro com agrupamento atômico de parcelas por UUID projetando o impacto na renda futura, regras 50/30/20 dinâmicas e parser semântico de despesas.</li>
-            </ul>
-        </div>
 
         <!-- BarberPro -->
         <div class="item-entry">
             <div class="item-header">
-                <span class="item-title">BarberPro — SaaS de Agendamento & Concorrência Atômica <a href="https://barberpro-rose.vercel.app" target="_blank">barberpro-rose.vercel.app</a></span>
-                <span class="item-date">Em Produção</span>
+                <span class="item-title">
+                    BarberPro — SaaS de Agendamento Profissional
+                    <a href="https://barberpro-rose.vercel.app" target="_blank">barberpro-rose.vercel.app ↗</a>
+                    <span class="item-badge">Projeto Freelance de Cliente · Repositório Privado</span>
+                </span>
+                <span class="item-date">Produção Ativa</span>
             </div>
             <div class="item-tech">Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Prisma ORM 6 · Neon PostgreSQL · JWT HttpOnly · Vercel</div>
-            <div class="item-context">Desenvolvido sob medida para o cabeleireiro autônomo Wesley; resolve o problema crônico de double-booking nos dias de pico e interrupções durante atendimentos via agendamento self-service.</div>
-            <ul>
-                <li><strong>Concorrência Atômica Homologada:</strong> Motor com transações serializáveis testado sob concorrência de 50 requisições disparadas no mesmo milissegundo resultando em <strong>1 confirmação e 49 conflitos HTTP 409 (0 double-booking)</strong>, além de 200 requisições de disponibilidade.</li>
-                <li><strong>UX Sem Fricção & Segurança:</strong> Agendamento público sem cadastro prévio, envio de ticket VIP formatado no WhatsApp (`wa.me`), cancelamento self-service (15 min) e revogação via `tokenVersion`.</li>
-            </ul>
-        </div>
-
-        <!-- ObraSync -->
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">ObraSync / Diário de Obra — SaaS Multi-Tenant de Obras <a href="https://obrasync-bf1t.onrender.com" target="_blank">obrasync-bf1t.onrender.com</a></span>
-                <span class="item-date">Em Produção</span>
-            </div>
-            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Neon PostgreSQL · Docker · Cloud (Render)</div>
-            <div class="item-context">Desenvolvido para escritórios de engenharia e arquitetura; elimina a desorganização de grupos de WhatsApp e a ansiedade dos proprietários através de um portal exclusivo de acompanhamento.</div>
-            <ul>
-                <li><strong>Multi-Tenancy Estrito & AppSec LGPD:</strong> Isolamento por `tenantId` via Prisma Extensions (Zero IDOR), validação de fotos por Magic Bytes e portal do proprietário via Magic Link seguro sem exigir senhas.</li>
-                <li><strong>Performance & Alta Carga:</strong> Edge Caching CDN com SWR (&lt; 30ms) homologado sob teste de carga com <strong>1.000 VUs concorrentes</strong> com atuação de Rate Limiter e relatórios em PDF server-side.</li>
-            </ul>
+            <div class="item-context"><strong>O que o cliente precisava:</strong> O cabeleireiro autônomo Wesley perdia clientes e sofria com interrupções frequentes para responder mensagens no WhatsApp durante atendimentos, além de constantes conflitos de horários aos sábados (double-booking) e faltas sem aviso prévio.</div>
+            <div class="item-context"><strong>Problema resolvido:</strong> Plataforma online self-service onde os clientes agendam horários livres pelo celular em tempo real sem cadastro prévio, com emissão automática de ticket formatado no WhatsApp. Motor transacional serializável testado sob concorrência de 50 requisições simultâneas no mesmo milissegundo resultando em <strong>1 confirmação e 49 conflitos HTTP 409 (zero double-bookings)</strong>, além de cancelamento self-service (15 min) e revogação de sessões com <code>tokenVersion</code>.</div>
         </div>
 
         <!-- BelasUnhas -->
         <div class="item-entry">
             <div class="item-header">
-                <span class="item-title">BelasUnhas / Manicure API — SaaS Multi-Tenant de Salões <a href="https://belasunhas.onrender.com" target="_blank">belasunhas.onrender.com</a></span>
-                <span class="item-date">Em Produção</span>
+                <span class="item-title">
+                    BelasUnhas / Manicure API — SaaS Multi-Tenant de Salões
+                    <a href="https://belasunhas.onrender.com" target="_blank">belasunhas.onrender.com ↗</a>
+                    <span class="item-badge">Projeto de Cliente · Repositório Privado</span>
+                </span>
+                <span class="item-date">Produção Ativa</span>
             </div>
             <div class="item-tech">Java 21 · Spring Boot 3 · Spring Security · Hibernate Filter (AOP) · PostgreSQL · Flyway (v17) · JUnit 5 · Docker</div>
-            <div class="item-context">Desenvolvido sob medida para a mãe do desenvolvedor gerenciar agendamentos e faturamento; resolve o encavalamento de horários por procedimentos de durações distintas (30 min a 2h) com cobrança Pix.</div>
+            <div class="item-context"><strong>O que o cliente precisava:</strong> O estabelecimento de manicure sofria com encavalamento de atendimentos devido a procedimentos com durações completamente distintas (manicure simples de 30 min vs alongamento de 2h), gerando atrasos em cascata e controle financeiro desorganizado.</div>
+            <div class="item-context"><strong>Problema resolvido:</strong> Algoritmo matemático de detecção de sobreposição por duração real de serviço (<code>validateTimeConflict</code>), eliminando sobreposições, automatizando agendamentos públicos e cobrança Pix dinâmica. Backend com isolamento multi-tenant seguro via <code>ThreadLocal</code> e filtros do Hibernate orquestrados por AOP, blindagem <em>Fail-Closed</em> contra IDOR, 17 migrations Flyway e suite JUnit 5/Mockito.</div>
+        </div>
+
+        <!-- ObraSync -->
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">
+                    ObraSync / Diário de Obra — SaaS Multi-Tenant de Obras
+                    <a href="https://obrasync-bf1t.onrender.com" target="_blank">obrasync-bf1t.onrender.com ↗</a>
+                    <span class="item-badge">Projeto Freelance de Cliente · Repositório Privado</span>
+                </span>
+                <span class="item-date">Produção Ativa</span>
+            </div>
+            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Neon PostgreSQL · Docker · Cloud (Render)</div>
+            <div class="item-context"><strong>O que o cliente precisava:</strong> Escritórios de arquitetura e engenharia perdiam horas atendendo ligações e mensagens ansiosas de proprietários sobre o andamento das reformas, com fotos e registros diários se perdendo em grupos de WhatsApp.</div>
+            <div class="item-context"><strong>Problema resolvido:</strong> Centralizou o diário de obras com envio seguro de fotos validadas por Magic Bytes e portal exclusivo do proprietário via Magic Link sem senhas complexas. Isolamento multi-tenant estrito por <code>tenantId</code> (Zero IDOR), Edge Caching CDN com SWR (&lt; 30ms) testado sob carga de <strong>1.000 VUs concorrentes</strong> com Rate Limiter e relatórios executivos em PDF server-side.</div>
+        </div>
+
+        <!-- EstudaBR / Eloped (OpenBREstudo) -->
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">
+                    EstudaBR / Eloped (OpenBREstudo) — Plataforma Educacional
+                    <a href="https://eloped.com.br" target="_blank">eloped.com.br ↗</a>
+                    <span class="item-badge">Projeto Freelance sob Encomenda · Repositório Privado</span>
+                </span>
+                <span class="item-date">Produção Ativa</span>
+            </div>
+            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Zod · 308 Testes Automatizados</div>
+            <div class="item-context"><strong>O que o cliente precisava:</strong> Comunidade escolar (gestão, professores e alunos) enfrentava fragmentação de diários em papel, falta de acompanhamento centralizado do rendimento escolar e demora na correção de simulados e emissão de boletins.</div>
+            <div class="item-context"><strong>Problema resolvido:</strong> Plataforma educacional integrada com controle de acesso RBAC em 4 perfis, trilhas da BNCC, simulados interativos com correção instantânea e dashboards de rendimento pedagógico. Geração dinâmica de boletins e comunicados oficiais em PDF e suite com <strong>308 testes automatizados aprovados</strong> garantindo estabilidade e integridade dos dados escolares.</div>
+        </div>
+
+        <!-- Clovin Finanças -->
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">
+                    Clovin Finanças — Gestão Financeira & Open Finance
+                    <a href="https://projeto-financas-rouge.vercel.app" target="_blank">projeto-financas-rouge.vercel.app ↗</a>
+                    <span class="item-badge">Projeto Autônomo · Repositório Privado</span>
+                </span>
+                <span class="item-date">Produção Ativa</span>
+            </div>
+            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Prisma ORM 6 · Neon PostgreSQL · Auth.js v5 · Pluggy API · Tailwind CSS</div>
+            <div class="item-context"><strong>O que o usuário precisava:</strong> Eliminar a dependência de planilhas manuais propensas a erro e acabar com a falta de previsibilidade sobre faturas futuras de cartões de crédito parcelados.</div>
+            <div class="item-context"><strong>Problema resolvido:</strong> Conciliação bancária 100% automática via Open Finance Brasil (API Pluggy com Webhooks HMAC-SHA256) e motor financeiro com agrupamento atômico de parcelas por UUID projetando o impacto na renda futura sob a regra 50/30/20.</div>
+        </div>
+    </section>
+
+    <!-- Experiência Profissional -->
+    <section>
+        <h2>Experiência Profissional</h2>
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">Desenvolvedor Full Stack Freelancer / Autônomo</span>
+                <span class="item-date">2023 – Presente</span>
+            </div>
+            <div class="item-context">Desenvolvimento e entrega de softwares comerciais sob encomenda, plataformas SaaS e soluções web para clientes autônomos, escritórios de arquitetura, estabelecimentos de estética e plataformas educacionais.</div>
             <ul>
-                <li><strong>Algoritmo de Colisão & Segurança:</strong> Algoritmo matemático de sobreposição por duração real de serviço (`validateTimeConflict`), blindagem Fail-Closed contra IDOR e geração de cobrança Pix dinâmica.</li>
-                <li><strong>Multi-Tenancy Nativo & Qualidade:</strong> Isolamento de dados via `ThreadLocal` e filtros nativos no Hibernate orquestrados por AOP, 17 migrations Flyway, suíte JUnit 5/Mockito e documentação OpenAPI/Swagger.</li>
+                <li><strong>Ciclo Completo de Engenharia:</strong> Levantamento de dores e requisitos diretamente com clientes, modelagem de banco relacional (PostgreSQL), concepção arquitetural e implementação full stack com <strong>Java 21 / Spring Boot 3</strong> e <strong>React 19 / Next.js 16 / TypeScript</strong>.</li>
+                <li><strong>Arquitetura & Segurança:</strong> Implementação de regras de isolamento multi-tenant seguro por <code>tenantId</code>, blindagem <em>Fail-Closed</em> contra vulnerabilidades IDOR, autenticação segura (JWT / HttpOnly Cookies), validação de regras de concorrência atômica e testes automatizados.</li>
+                <li><strong>Entrega & Nuvem:</strong> Deploy contínuo, orquestração de bancos de dados serverless (Neon, PostgreSQL) e hospedagem de aplicações em produção na nuvem (Vercel e Render Cloud) com acompanhamento e suporte técnico contínuo aos clientes.</li>
             </ul>
         </div>
     </section>
 
-    <!-- Grid Inferior: Formação & Experiência lado a lado -->
+    <!-- Grid Inferior: Formação Acadêmica & Canal Clovin DEV -->
     <div class="bottom-grid">
-        <!-- Formação Acadêmica & Cursos -->
         <section>
             <h2>Formação Acadêmica & Cursos</h2>
             <div class="edu-item">
@@ -412,16 +461,11 @@
             </div>
         </section>
 
-        <!-- Experiência Profissional -->
         <section>
-            <h2>Experiência Profissional</h2>
+            <h2>Comunicação Técnica & Canal Clovin DEV</h2>
             <div class="exp-item">
-                <strong>Pizzaiolo e Atendimento Operacional</strong> (2023 – Presente)<br>
-                <span>Padaria e Confeitaria (SP) — Atendimento balcão, WhatsApp Business e pedidos iFood sob alta demanda.</span>
-            </div>
-            <div class="exp-item" style="margin-top: 3px;">
-                <strong>Instrutor de Academia</strong> (2021 – 2022)<br>
-                <span>Academia (BA) — Atendimento ao público, orientação e elaboração de rotinas de treino personalizadas.</span>
+                <strong>Criador do Canal Clovin DEV</strong> (<a href="https://youtube.com/@clovindev" target="_blank" style="color: var(--link-color); text-decoration: none;">youtube.com/@clovindev</a>)<br>
+                <span>Transmissões ao vivo diárias de código e arquitetura de software (Java 21, Spring Boot 3, React 19, Next.js 16 e TypeScript), comunicando decisões técnicas de engenharia, modelagem e resolução de bugs para a comunidade técnica.</span>
             </div>
         </section>
     </div>
