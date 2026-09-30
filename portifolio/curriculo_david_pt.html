@@ -246,48 +246,138 @@
         @media print {
             @page {
                 size: A4 portrait;
-                margin: 7mm 11mm;
+                margin: 8mm 11mm;
             }
+
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
             body {
                 padding: 0;
+                margin: 0;
                 max-width: 100%;
-                font-size: 10.5px;
-                line-height: 1.34;
+                font-size: 10.2px;
+                line-height: 1.35;
+                background-color: #fff;
+                color: #0f172a;
             }
-            h1 {
-                font-size: 20px;
-            }
-            .subtitle {
-                font-size: 10.8px;
-            }
-            .contact-info {
-                font-size: 9.8px;
-            }
-            h2 {
-                font-size: 11.2px;
-                margin-top: 7px;
+
+            .header {
                 margin-bottom: 4px;
             }
+
+            h1 {
+                font-size: 20px;
+                line-height: 1.15;
+            }
+
+            .subtitle {
+                font-size: 10.5px;
+                margin-top: 2px;
+                margin-bottom: 4px;
+            }
+
+            .contact-info {
+                font-size: 9.5px;
+                gap: 6px;
+            }
+
+            hr.header-line {
+                margin: 6px 0 8px 0;
+            }
+
+            section {
+                margin-bottom: 10px;
+                page-break-inside: auto;
+                break-inside: auto;
+            }
+
+            h2 {
+                font-size: 11px;
+                margin-top: 8px;
+                margin-bottom: 5px;
+                padding-bottom: 2px;
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
             .summary p, li, .competencies-list p {
-                font-size: 10.2px;
+                font-size: 10px;
                 line-height: 1.34;
             }
-            .item-title {
-                font-size: 11.2px;
+
+            .summary {
+                page-break-inside: avoid;
+                break-inside: avoid;
             }
+
+            .competencies-list {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .competencies-list p {
+                margin: 2px 0;
+            }
+
+            /* Cada card individual evita quebra no meio, mas a lista de projetos flui entre as páginas */
+            .item-entry {
+                margin-bottom: 8px;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .item-header {
+                gap: 4px;
+            }
+
+            .item-title {
+                font-size: 11px;
+            }
+
             .item-badge {
+                font-size: 9px;
+                padding: 1px 6px;
+            }
+
+            .item-date {
                 font-size: 9.5px;
             }
+
             .item-context {
-                font-size: 10px;
-            }
-            .item-tech {
-                font-size: 9.2px;
-            }
-            .edu-item, .exp-item {
                 font-size: 9.8px;
+                margin: 2px 0;
+                line-height: 1.32;
             }
-            * {
+
+            .item-tech {
+                font-size: 9px;
+                margin-bottom: 2px;
+            }
+
+            ul {
+                padding-left: 15px;
+            }
+
+            li {
+                margin-bottom: 2px;
+                font-size: 9.8px;
+                line-height: 1.32;
+            }
+
+            .bottom-grid {
+                gap: 14px;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .edu-item, .exp-item {
+                font-size: 9.5px;
+                line-height: 1.32;
+                margin-bottom: 3px;
                 page-break-inside: avoid;
                 break-inside: avoid;
             }
