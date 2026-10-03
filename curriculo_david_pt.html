@@ -25,7 +25,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.5;
+            line-height: 1.48;
             color: var(--text-primary);
             max-width: 880px;
             margin: 0 auto;
@@ -77,9 +77,10 @@
             text-decoration: underline;
         }
 
-        .dot-separator {
+        .separator {
             color: var(--border-color);
             margin: 0 1px;
+            font-weight: 400;
         }
 
         hr.header-line {
@@ -90,15 +91,15 @@
 
         /* Sections */
         section {
-            margin-bottom: 15px;
+            margin-bottom: 13px;
         }
 
         h2 {
-            font-size: 14px;
+            font-size: 13.5px;
             color: var(--text-primary);
             border-bottom: 1.5px solid var(--border-color);
             padding-bottom: 4px;
-            margin-top: 14px;
+            margin-top: 12px;
             margin-bottom: 8px;
             text-transform: uppercase;
             font-weight: 700;
@@ -106,15 +107,15 @@
         }
 
         .summary p {
-            font-size: 13px;
+            font-size: 12.8px;
             color: var(--text-secondary);
-            line-height: 1.55;
+            line-height: 1.52;
         }
 
         /* Competencies */
         .competencies-list {
             font-size: 12.5px;
-            line-height: 1.55;
+            line-height: 1.52;
         }
 
         .competencies-list p {
@@ -129,7 +130,7 @@
 
         /* Projects / Items */
         .item-entry {
-            margin-bottom: 12px;
+            margin-bottom: 11px;
         }
 
         .item-header {
@@ -142,7 +143,7 @@
 
         .item-title {
             font-weight: 700;
-            font-size: 14px;
+            font-size: 13.5px;
             color: var(--text-primary);
         }
 
@@ -180,73 +181,40 @@
         .item-context {
             font-size: 12.5px;
             color: var(--text-secondary);
-            margin: 4px 0;
-            line-height: 1.5;
+            margin: 3px 0;
+            line-height: 1.48;
         }
 
         .item-tech {
-            font-size: 11.5px;
+            font-size: 11.8px;
             color: var(--text-muted);
             font-weight: 600;
             margin-bottom: 3px;
         }
 
-        ul {
-            padding-left: 18px;
+        ul.bullet-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 3px;
         }
 
-        li {
+        ul.bullet-list li {
             margin-bottom: 3px;
             color: var(--text-secondary);
             font-size: 12.5px;
-            line-height: 1.5;
+            line-height: 1.46;
+            padding-left: 2px;
         }
 
-        li strong {
+        ul.bullet-list li strong {
             color: var(--text-primary);
             font-weight: 600;
-        }
-
-        /* Two Column Layout for Bottom (Education + Channel) */
-        .bottom-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-            align-items: start;
-        }
-
-        .edu-item {
-            margin-bottom: 4px;
-            font-size: 12px;
-            line-height: 1.45;
-        }
-
-        .edu-item strong {
-            color: var(--text-primary);
-        }
-
-        .edu-item span {
-            color: var(--text-secondary);
-        }
-
-        .exp-item {
-            margin-bottom: 6px;
-            font-size: 12px;
-            line-height: 1.45;
-        }
-
-        .exp-item strong {
-            color: var(--text-primary);
-        }
-
-        .exp-item span {
-            color: var(--text-secondary);
         }
 
         @media print {
             @page {
                 size: A4 portrait;
-                margin: 8mm 11mm;
+                margin: 7mm 10mm;
             }
 
             * {
@@ -259,54 +227,54 @@
                 padding: 0;
                 margin: 0;
                 max-width: 100%;
-                font-size: 10.2px;
-                line-height: 1.35;
+                font-size: 9.8px;
+                line-height: 1.32;
                 background-color: #fff;
                 color: #0f172a;
             }
 
             .header {
-                margin-bottom: 4px;
+                margin-bottom: 2px;
             }
 
             h1 {
-                font-size: 20px;
+                font-size: 18.5px;
                 line-height: 1.15;
             }
 
             .subtitle {
-                font-size: 10.5px;
+                font-size: 9.8px;
                 margin-top: 2px;
-                margin-bottom: 4px;
+                margin-bottom: 3px;
             }
 
             .contact-info {
-                font-size: 9.5px;
-                gap: 6px;
+                font-size: 9px;
+                gap: 5px;
             }
 
             hr.header-line {
-                margin: 6px 0 8px 0;
+                margin: 4px 0 6px 0;
             }
 
             section {
-                margin-bottom: 10px;
+                margin-bottom: 7px;
                 page-break-inside: auto;
                 break-inside: auto;
             }
 
             h2 {
-                font-size: 11px;
-                margin-top: 8px;
-                margin-bottom: 5px;
+                font-size: 10.2px;
+                margin-top: 6px;
+                margin-bottom: 3px;
                 padding-bottom: 2px;
                 page-break-after: avoid;
                 break-after: avoid;
             }
 
-            .summary p, li, .competencies-list p {
-                font-size: 10px;
-                line-height: 1.34;
+            .summary p, ul.bullet-list li, .competencies-list p {
+                font-size: 9.3px;
+                line-height: 1.3;
             }
 
             .summary {
@@ -323,9 +291,8 @@
                 margin: 2px 0;
             }
 
-            /* Cada card individual evita quebra no meio, mas a lista de projetos flui entre as páginas */
             .item-entry {
-                margin-bottom: 8px;
+                margin-bottom: 6px;
                 page-break-inside: avoid;
                 break-inside: avoid;
             }
@@ -335,51 +302,37 @@
             }
 
             .item-title {
-                font-size: 11px;
+                font-size: 10.2px;
             }
 
             .item-badge {
-                font-size: 9px;
-                padding: 1px 6px;
+                font-size: 8.2px;
+                padding: 1px 5px;
             }
 
             .item-date {
-                font-size: 9.5px;
+                font-size: 9px;
             }
 
             .item-context {
-                font-size: 9.8px;
+                font-size: 9.3px;
                 margin: 2px 0;
-                line-height: 1.32;
+                line-height: 1.28;
             }
 
             .item-tech {
-                font-size: 9px;
+                font-size: 8.6px;
                 margin-bottom: 2px;
             }
 
-            ul {
-                padding-left: 15px;
+            ul.bullet-list {
+                margin-top: 2px;
             }
 
-            li {
+            ul.bullet-list li {
                 margin-bottom: 2px;
-                font-size: 9.8px;
-                line-height: 1.32;
-            }
-
-            .bottom-grid {
-                gap: 14px;
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-
-            .edu-item, .exp-item {
-                font-size: 9.5px;
-                line-height: 1.32;
-                margin-bottom: 3px;
-                page-break-inside: avoid;
-                break-inside: avoid;
+                font-size: 9.2px;
+                line-height: 1.28;
             }
         }
     </style>
@@ -392,16 +345,16 @@
         <div class="subtitle">Desenvolvedor Full Stack · Java 21 / Spring Boot 3 · React 19 / Next.js 16 · TypeScript</div>
         <div class="contact-info">
             <span>São Paulo, SP</span>
-            <span class="dot-separator">·</span>
-            <span>(11) 94008-9101</span>
-            <span class="dot-separator">·</span>
-            <a href="mailto:davis.clovins@gmail.com">davis.clovins@gmail.com</a>
-            <span class="dot-separator">·</span>
-            <a href="https://www.linkedin.com/in/david-silva-17b2882bb" target="_blank">linkedin.com/in/david-silva-17b2882bb</a>
-            <span class="dot-separator">·</span>
-            <a href="https://github.com/Davidds5" target="_blank">github.com/Davidds5</a>
-            <span class="dot-separator">·</span>
-            <a href="https://davidds5.github.io/portfolio_clovin" target="_blank">davidds5.github.io/portfolio_clovin</a>
+            <span class="separator">|</span>
+            <span>Telefone: (11) 94008-9101</span>
+            <span class="separator">|</span>
+            <span>E-mail: <a href="mailto:davis.clovins@gmail.com">davis.clovins@gmail.com</a></span>
+            <span class="separator">|</span>
+            <span>LinkedIn: <a href="https://www.linkedin.com/in/david-silva-17b2882bb" target="_blank">linkedin.com/in/david-silva-17b2882bb</a></span>
+            <span class="separator">|</span>
+            <span>GitHub: <a href="https://github.com/Davidds5" target="_blank">github.com/Davidds5</a></span>
+            <span class="separator">|</span>
+            <span>Portfólio: <a href="https://davidds5.github.io/portfolio_clovin" target="_blank">davidds5.github.io/portfolio_clovin</a></span>
         </div>
     </div>
     
@@ -411,16 +364,13 @@
     <section class="summary">
         <h2>Resumo Profissional</h2>
         <p>
-            <strong>Objetivo:</strong> Atuação como <strong>Desenvolvedor Full Stack ou Backend (Java 21 / Spring Boot 3 & React 19 / Next.js 16 / TypeScript)</strong> — Vagas Júnior ou Pleno.
+            Desenvolvedor Full Stack com sólida vivência prática em engenharia de software, focado no ecossistema <strong>Java 21 / Spring Boot 3</strong> e <strong>React 19 / Next.js 16 / TypeScript</strong> para atuação em vagas Júnior ou Pleno. Experiência no desenvolvimento de aplicações comerciais em produção, arquitetura de microsserviços, plataformas SaaS multi-tenant e resolução de desafios de alta concorrência. Busco fazer <strong>parte</strong> de equipes de engenharia focadas no desenvolvimento de sistemas escaláveis e de <strong>grande porte</strong>.
         </p>
-        <p style="margin-top: 3px;">
-            <strong>Problemas Reais que já Resolvi em Produção:</strong>
-        </p>
-        <ul style="margin-top: 2px;">
-            <li><strong>Concorrência e Conflitos de Agenda:</strong> Eliminação de 100% de sobreposições de horários (<em>double-booking</em>) em alta concorrência via transações atômicas serializáveis e algoritmos matemáticos de duração real de atendimento.</li>
-            <li><strong>Isolamento Multi-Tenant & AppSec:</strong> Implementação de plataformas SaaS multi-tenant com isolamento estrito de dados por <code>tenantId</code> (Hibernate Filter AOP e Prisma Extensions), blindagem <em>Fail-Closed</em> contra vulnerabilidades IDOR e proteção LGPD.</li>
-            <li><strong>Automação Financeira:</strong> Conciliação bancária 100% automática sem preenchimento manual via Open Finance Brasil (API Pluggy / HMAC Webhooks) e motor de cálculo de impacto de compras parceladas em cascata.</li>
-            <li><strong>Centralização de Processos:</strong> Substituição de planilhas manuais, papéis e grupos de WhatsApp por portais de clientes self-service seguros com relatórios em PDF server-side e links temporários.</li>
+        <ul class="bullet-list">
+            <li>• <strong>Eliminei 100% de conflitos de agenda</strong> (double-booking) via transações atômicas serializáveis sob concorrência de 50 requisições simultâneas.</li>
+            <li>• <strong>Implementei isolamento multi-tenant seguro</strong> por tenantId via Hibernate Filter AOP e Prisma Extensions com blindagem Fail-Closed contra IDOR.</li>
+            <li>• <strong>Automatizei conciliação bancária</strong> via Open Finance Brasil (API Pluggy com webhooks HMAC) e cálculo de compras parceladas em cascata.</li>
+            <li>• <strong>Substituí controles manuais</strong> por portais de clientes self-service seguros, relatórios server-side em PDF e deploy contínuo em nuvem.</li>
         </ul>
     </section>
 
@@ -428,11 +378,31 @@
     <section>
         <h2>Competências Técnicas</h2>
         <div class="competencies-list">
-            <p><strong>Linguagens & Backend:</strong> Java 21 (LTS), Spring Boot 3, TypeScript, JavaScript (ES6+), Node.js, RESTful APIs, POO, SOLID, Clean Architecture.</p>
-            <p><strong>Frontend & Web:</strong> React 19, Next.js 16 (App Router, Server Actions), Tailwind CSS v4, HTML5 Semântico, CSS3, Acessibilidade (WCAG AA).</p>
-            <p><strong>Segurança & Arquitetura:</strong> Multi-Tenancy (Hibernate Filter AOP, Prisma Client Extensions), Spring Security, JWT (Cookies HttpOnly), Blindagem Fail-Closed contra IDOR, Rate Limiting, LGPD.</p>
-            <p><strong>Bancos de Dados & Cloud:</strong> PostgreSQL, Neon Serverless (Pooling), Prisma ORM 6, Hibernate / JPA, Flyway Migrations, Docker, Vercel, Render Cloud.</p>
-            <p><strong>Qualidade & Diferenciais:</strong> Testes Automatizados (JUnit 5, Mockito, Vitest), Open Finance Brasil (API Pluggy / HMAC Webhooks), Integração de APIs externas.</p>
+            <p><strong>Linguagens:</strong> Java 21 (LTS), TypeScript, JavaScript (ES6+), SQL, HTML5 Semântico, CSS3.</p>
+            <p><strong>Backend & Microsserviços:</strong> Spring Boot 3, Spring Security, Hibernate / JPA, Microsserviços (Microservices), RESTful APIs, Node.js, Clean Architecture, SOLID, POO.</p>
+            <p><strong>Frontend & Web:</strong> React 19, Next.js 16 (App Router, Server Actions), Tailwind CSS v4, SWR, Acessibilidade (WCAG AA), Webhooks.</p>
+            <p><strong>Bancos de Dados & NoSQL:</strong> PostgreSQL, Neon Serverless (Connection Pooling), NoSQL (Redis para cache e rate limiting, conceitos MongoDB), Prisma ORM 6, Flyway Migrations.</p>
+            <p><strong>Mensageria, DevOps & Cloud:</strong> Arquitetura Orientada a Eventos, Mensageria assíncrona (RabbitMQ e Kafka conceitos), Docker, Kubernetes (K8s básico), AWS, Render Cloud, Vercel, Git, GitHub, CI/CD.</p>
+            <p><strong>Qualidade, Testes & Segurança:</strong> Testes Automatizados (JUnit 5, Mockito, Vitest), Multi-Tenancy (AOP / ThreadLocal), Autenticação JWT (Cookies HttpOnly), OWASP (Prevenção IDOR, Rate Limiting, Fail-Closed), Open Finance Brasil (API Pluggy / HMAC-SHA256).</p>
+        </div>
+    </section>
+
+    <!-- Experiência Profissional -->
+    <section>
+        <h2>Experiência Profissional</h2>
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">Desenvolvedor Full Stack Freelancer / Autônomo</span>
+                <span class="item-date">Jan 2023 – Presente</span>
+            </div>
+            <div class="item-context">Desenvolvimento e entrega de soluções corporativas e microsserviços sob encomenda, com vivência em plataformas SaaS e sistemas escaláveis de grande porte para múltiplos clientes.</div>
+            <ul class="bullet-list">
+                <li>• <strong>Desenvolvi e publiquei</strong> aplicações comerciais em produção utilizando Java 21 / Spring Boot 3, React 19, Next.js 16, TypeScript e PostgreSQL.</li>
+                <li>• <strong>Liderei o ciclo completo de engenharia</strong>, do levantamento de requisitos de negócio à modelagem relacional, APIs RESTful e deploy.</li>
+                <li>• <strong>Arquitetei isolamento multi-tenant seguro</strong> com Hibernate Filter AOP e Prisma Extensions, blindando endpoints contra vulnerabilidades IDOR.</li>
+                <li>• <strong>Implementei rotinas transacionais atômicas</strong> com isolamento serializável, eliminando 100% de double-bookings sob concorrência pesada.</li>
+                <li>• <strong>Orquestrei infraestrutura cloud e CI/CD</strong> com Docker, bancos serverless (Neon PostgreSQL) e hospedagem escalável na Vercel e Render.</li>
+            </ul>
         </div>
     </section>
 
@@ -445,14 +415,17 @@
             <div class="item-header">
                 <span class="item-title">
                     BarberPro — SaaS de Agendamento Profissional
-                    <a href="https://barberpro-rose.vercel.app" target="_blank">barberpro-rose.vercel.app ↗</a>
-                    <span class="item-badge">Projeto Freelance de Cliente · Repositório Privado</span>
+                    <a href="https://barberpro-rose.vercel.app" target="_blank">barberpro-rose.vercel.app</a>
+                    <span class="item-badge">Projeto de Cliente · Produção Ativa</span>
                 </span>
-                <span class="item-date">Produção Ativa</span>
+                <span class="item-date">Mai 2024 – Presente</span>
             </div>
             <div class="item-tech">Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Prisma ORM 6 · Neon PostgreSQL · JWT HttpOnly · Vercel</div>
-            <div class="item-context"><strong>O que o cliente precisava:</strong> O cabeleireiro autônomo Wesley perdia clientes e sofria com interrupções frequentes para responder mensagens no WhatsApp durante atendimentos, além de constantes conflitos de horários aos sábados (double-booking) e faltas sem aviso prévio.</div>
-            <div class="item-context"><strong>Problema resolvido:</strong> Plataforma online self-service onde os clientes agendam horários livres pelo celular em tempo real sem cadastro prévio, com emissão automática de ticket formatado no WhatsApp. Motor transacional serializável testado sob concorrência de 50 requisições simultâneas no mesmo milissegundo resultando em <strong>1 confirmação e 49 conflitos HTTP 409 (zero double-bookings)</strong>, além de cancelamento self-service (15 min) e revogação de sessões com <code>tokenVersion</code>.</div>
+            <ul class="bullet-list">
+                <li>• <strong>Desenvolvi plataforma SaaS self-service</strong> para agendamento online em tempo real sem cadastro prévio, eliminando filas no WhatsApp.</li>
+                <li>• <strong>Implementei motor transacional serializável</strong> eliminando 100% de double-bookings sob teste de estresse de 50 requisições simultâneas (HTTP 409).</li>
+                <li>• <strong>Automatizei emissão de tickets</strong> formatados no WhatsApp e controle de sessões seguras com cookies HttpOnly e revogação via tokenVersion.</li>
+            </ul>
         </div>
 
         <!-- BelasUnhas -->
@@ -460,44 +433,56 @@
             <div class="item-header">
                 <span class="item-title">
                     BelasUnhas / Manicure API — SaaS Multi-Tenant de Salões
-                    <a href="https://belasunhas.onrender.com" target="_blank">belasunhas.onrender.com ↗</a>
-                    <span class="item-badge">Projeto de Cliente · Repositório Privado</span>
+                    <a href="https://belasunhas.onrender.com" target="_blank">belasunhas.onrender.com</a>
+                    <span class="item-badge">Projeto de Cliente · Produção Ativa</span>
                 </span>
-                <span class="item-date">Produção Ativa</span>
+                <span class="item-date">Fev 2024 – Presente</span>
             </div>
-            <div class="item-tech">Java 21 · Spring Boot 3 · Spring Security · Hibernate Filter (AOP) · PostgreSQL · Flyway (v17) · JUnit 5 · Docker</div>
-            <div class="item-context"><strong>O que o cliente precisava:</strong> O estabelecimento de manicure sofria com encavalamento de atendimentos devido a procedimentos com durações completamente distintas (manicure simples de 30 min vs alongamento de 2h), gerando atrasos em cascata e controle financeiro desorganizado.</div>
-            <div class="item-context"><strong>Problema resolvido:</strong> Algoritmo matemático de detecção de sobreposição por duração real de serviço (<code>validateTimeConflict</code>), eliminando sobreposições, automatizando agendamentos públicos e cobrança Pix dinâmica. Backend com isolamento multi-tenant seguro via <code>ThreadLocal</code> e filtros do Hibernate orquestrados por AOP, blindagem <em>Fail-Closed</em> contra IDOR, 17 migrations Flyway e suite JUnit 5/Mockito.</div>
+            <div class="item-tech">Java 21 · Spring Boot 3 · Spring Security · Hibernate Filter (AOP) · PostgreSQL · Flyway (v17) · JUnit 5 · Mockito · Docker</div>
+            <ul class="bullet-list">
+                <li>• <strong>Desenvolvi microsserviço RESTful</strong> em Java 21 e Spring Boot 3 para gestão multi-tenant de agendamentos e controle financeiro.</li>
+                <li>• <strong>Implementei algoritmo de detecção de sobreposição</strong> por duração real (validateTimeConflict), solucionando encavalamento de atendimentos.</li>
+                <li>• <strong>Arquitetei isolamento multi-tenant</strong> via ThreadLocal e filtros Hibernate com AOP, com blindagem Fail-Closed contra falhas IDOR.</li>
+                <li>• <strong>Estruturei versionamento com 17 migrations</strong> Flyway e construí suíte de testes unitários e de integração com JUnit 5 e Mockito.</li>
+            </ul>
         </div>
 
         <!-- ObraSync -->
         <div class="item-entry">
             <div class="item-header">
                 <span class="item-title">
-                    ObraSync / Diário de Obra — SaaS Multi-Tenant de Obras
-                    <a href="https://obrasync-bf1t.onrender.com" target="_blank">obrasync-bf1t.onrender.com ↗</a>
-                    <span class="item-badge">Projeto Freelance de Cliente · Repositório Privado</span>
+                    ObraSync / Diário de Obra — SaaS Multi-Tenant de Engenharia
+                    <a href="https://obrasync-bf1t.onrender.com" target="_blank">obrasync-bf1t.onrender.com</a>
+                    <span class="item-badge">Projeto de Cliente · Produção Ativa</span>
                 </span>
-                <span class="item-date">Produção Ativa</span>
+                <span class="item-date">Out 2023 – Presente</span>
             </div>
-            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Neon PostgreSQL · Docker · Cloud (Render)</div>
-            <div class="item-context"><strong>O que o cliente precisava:</strong> Escritórios de arquitetura e engenharia perdiam horas atendendo ligações e mensagens ansiosas de proprietários sobre o andamento das reformas, com fotos e registros diários se perdendo em grupos de WhatsApp.</div>
-            <div class="item-context"><strong>Problema resolvido:</strong> Centralizou o diário de obras com envio seguro de fotos validadas por Magic Bytes e portal exclusivo do proprietário via Magic Link sem senhas complexas. Isolamento multi-tenant estrito por <code>tenantId</code> (Zero IDOR), Edge Caching CDN com SWR (&lt; 30ms) testado sob carga de <strong>1.000 VUs concorrentes</strong> com Rate Limiter e relatórios executivos em PDF server-side.</div>
+            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Neon PostgreSQL · Docker · Render Cloud</div>
+            <ul class="bullet-list">
+                <li>• <strong>Desenvolvi plataforma SaaS multi-tenant</strong> para gestão de obras civis, centralizando relatórios e eliminando desorganização em mensagens.</li>
+                <li>• <strong>Implementei portal do proprietário</strong> via Magic Link sem senhas e upload de imagens protegido com validação binária por Magic Bytes.</li>
+                <li>• <strong>Otimizei latência para menos de 30ms</strong> via Edge Caching CDN com SWR, suportando até 1.000 usuários simultâneos com Rate Limiting.</li>
+                <li>• <strong>Automatizei geração server-side</strong> de relatórios executivos em formato PDF para prestação de contas aos clientes.</li>
+            </ul>
         </div>
 
-        <!-- EstudaBR / Eloped (OpenBREstudo) -->
+        <!-- EstudaBR / Eloped -->
         <div class="item-entry">
             <div class="item-header">
                 <span class="item-title">
-                    EstudaBR / Eloped (OpenBREstudo) — Plataforma Educacional
-                    <a href="https://eloped.com.br" target="_blank">eloped.com.br ↗</a>
-                    <span class="item-badge">Projeto Freelance sob Encomenda · Repositório Privado</span>
+                    EstudaBR / Eloped — Plataforma Educacional Integrada
+                    <a href="https://eloped.com.br" target="_blank">eloped.com.br</a>
+                    <span class="item-badge">Projeto sob Encomenda · Produção Ativa</span>
                 </span>
-                <span class="item-date">Produção Ativa</span>
+                <span class="item-date">Ago 2023 – Abr 2024</span>
             </div>
-            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Zod · 308 Testes Automatizados</div>
-            <div class="item-context"><strong>O que o cliente precisava:</strong> Comunidade escolar (gestão, professores e alunos) enfrentava fragmentação de diários em papel, falta de acompanhamento centralizado do rendimento escolar e demora na correção de simulados e emissão de boletins.</div>
-            <div class="item-context"><strong>Problema resolvido:</strong> Plataforma educacional integrada com controle de acesso RBAC em 4 perfis, trilhas da BNCC, simulados interativos com correção instantânea e dashboards de rendimento pedagógico. Geração dinâmica de boletins e comunicados oficiais em PDF e suite com <strong>308 testes automatizados aprovados</strong> garantindo estabilidade e integridade dos dados escolares.</div>
+            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Zod · Vitest (308 Testes Automatizados)</div>
+            <ul class="bullet-list">
+                <li>• <strong>Desenvolvi plataforma educacional</strong> com controle de acesso RBAC para 4 perfis de usuários, alinhada à matriz da BNCC.</li>
+                <li>• <strong>Implementei simulados interativos</strong> com correção e cálculo instantâneo de notas e dashboards de acompanhamento pedagógico.</li>
+                <li>• <strong>Automatizei emissão de documentos</strong> escolares, comunicados e boletins oficiais em PDF gerados no servidor.</li>
+                <li>• <strong>Validei integridade das regras</strong> de negócio e schemas Zod com suíte de 308 testes automatizados aprovados sem regressões.</li>
+            </ul>
         </div>
 
         <!-- Clovin Finanças -->
@@ -505,63 +490,65 @@
             <div class="item-header">
                 <span class="item-title">
                     Clovin Finanças — Gestão Financeira & Open Finance
-                    <a href="https://projeto-financas-rouge.vercel.app" target="_blank">projeto-financas-rouge.vercel.app ↗</a>
-                    <span class="item-badge">Projeto Autônomo · Repositório Privado</span>
+                    <a href="https://projeto-financas-rouge.vercel.app" target="_blank">projeto-financas-rouge.vercel.app</a>
+                    <span class="item-badge">Projeto Autônomo · Produção Ativa</span>
                 </span>
-                <span class="item-date">Produção Ativa</span>
+                <span class="item-date">Jun 2024 – Presente</span>
             </div>
             <div class="item-tech">Next.js 16 · React 19 · TypeScript · Prisma ORM 6 · Neon PostgreSQL · Auth.js v5 · Pluggy API · Tailwind CSS</div>
-            <div class="item-context"><strong>O que o usuário precisava:</strong> Eliminar a dependência de planilhas manuais propensas a erro e acabar com a falta de previsibilidade sobre faturas futuras de cartões de crédito parcelados.</div>
-            <div class="item-context"><strong>Problema resolvido:</strong> Conciliação bancária 100% automática via Open Finance Brasil (API Pluggy com Webhooks HMAC-SHA256) e motor financeiro com agrupamento atômico de parcelas por UUID projetando o impacto na renda futura sob a regra 50/30/20.</div>
-        </div>
-    </section>
-
-    <!-- Experiência Profissional -->
-    <section>
-        <h2>Experiência Profissional</h2>
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">Desenvolvedor Full Stack Freelancer / Autônomo</span>
-                <span class="item-date">2023 – Presente</span>
-            </div>
-            <div class="item-context">Desenvolvimento e entrega de softwares comerciais sob encomenda, plataformas SaaS e soluções web para clientes autônomos, escritórios de arquitetura, estabelecimentos de estética e plataformas educacionais.</div>
-            <ul>
-                <li><strong>Ciclo Completo de Engenharia:</strong> Levantamento de dores e requisitos diretamente com clientes, modelagem de banco relacional (PostgreSQL), concepção arquitetural e implementação full stack com <strong>Java 21 / Spring Boot 3</strong> e <strong>React 19 / Next.js 16 / TypeScript</strong>.</li>
-                <li><strong>Arquitetura & Segurança:</strong> Implementação de regras de isolamento multi-tenant seguro por <code>tenantId</code>, blindagem <em>Fail-Closed</em> contra vulnerabilidades IDOR, autenticação segura (JWT / HttpOnly Cookies), validação de regras de concorrência atômica e testes automatizados.</li>
-                <li><strong>Entrega & Nuvem:</strong> Deploy contínuo, orquestração de bancos de dados serverless (Neon, PostgreSQL) e hospedagem de aplicações em produção na nuvem (Vercel e Render Cloud) com acompanhamento e suporte técnico contínuo aos clientes.</li>
+            <ul class="bullet-list">
+                <li>• <strong>Desenvolvi aplicação financeira</strong> com sincronização bancária 100% automatizada via Open Finance Brasil (API Pluggy e webhooks HMAC).</li>
+                <li>• <strong>Implementei motor de cálculo</strong> com agrupamento de compras parceladas por UUID, projetando faturas futuras sob a regra 50/30/20.</li>
+                <li>• <strong>Automatizei a categorização de transações</strong>, eliminando o preenchimento manual de planilhas e relatórios de despesas.</li>
             </ul>
         </div>
     </section>
 
-    <!-- Grid Inferior: Formação Acadêmica & Canal Clovin DEV -->
-    <div class="bottom-grid">
-        <section>
-            <h2>Formação Acadêmica & Cursos</h2>
-            <div class="edu-item">
-                <strong>Análise e Desenvolvimento de Sistemas (ADS)</strong> — <span>Estácio (Graduação Tecnológica, em andamento)</span>
+    <!-- Formação Acadêmica -->
+    <section>
+        <h2>Formação Acadêmica</h2>
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">Graduação Tecnológica em Análise e Desenvolvimento de Sistemas (ADS)</span>
+                <span class="item-date">Jan 2024 – Dez 2025 (Previsão de Conclusão)</span>
             </div>
-            <div class="edu-item">
-                <strong>Java COMPLETO e Orientação a Objetos</strong> — <span>Nelio Alves (54h de POO, JDBC, JPA/Hibernate)</span>
-            </div>
-            <div class="edu-item">
-                <strong>Spring Boot, Docker, K8s e Nuvem AWS/GCP</strong> — <span>Leandro Costa (54,5h de REST APIs, JWT, JUnit 5)</span>
-            </div>
-            <div class="edu-item">
-                <strong>JS e TypeScript do Básico ao Avançado</strong> — <span>Luiz Otávio Miranda (ES6+, POO, Design Patterns)</span>
-            </div>
-            <div class="edu-item">
-                <strong>Idiomas:</strong> <span>Português (Nativo) · Inglês (Intermediário - leitura técnica de documentação)</span>
-            </div>
-        </section>
+            <div class="item-context">Universidade Cidade de São Paulo (UNICID) — Ensino Superior / Tecnólogo</div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Comunicação Técnica & Canal Clovin DEV</h2>
-            <div class="exp-item">
-                <strong>Criador do Canal Clovin DEV</strong> (<a href="https://youtube.com/@clovindev" target="_blank" style="color: var(--link-color); text-decoration: none;">youtube.com/@clovindev</a>)<br>
-                <span>Transmissões ao vivo diárias de código e arquitetura de software (Java 21, Spring Boot 3, React 19, Next.js 16 e TypeScript), comunicando decisões técnicas de engenharia, modelagem e resolução de bugs para a comunidade técnica.</span>
+    <!-- Cursos Complementares & Certificações -->
+    <section>
+        <h2>Cursos Complementares & Certificações</h2>
+        <ul class="bullet-list">
+            <li>• <strong>Spring Boot, Docker, K8s e Nuvem AWS/GCP</strong> — Leandro Costa (54,5h: REST APIs, JWT, JUnit 5, Microsserviços, Docker, Kubernetes, AWS) — 2024</li>
+            <li>• <strong>Java COMPLETO e Orientação a Objetos</strong> — Nelio Alves (54h: POO, JDBC, JPA/Hibernate, Spring Boot, Lambdas e Streams) — 2023</li>
+            <li>• <strong>JavaScript e TypeScript do Básico ao Avançado</strong> — Luiz Otávio Miranda (ES6+, TypeScript, POO, Async e Design Patterns) — 2023</li>
+        </ul>
+    </section>
+
+    <!-- Comunicação Técnica & Liderança -->
+    <section>
+        <h2>Comunicação Técnica & Liderança</h2>
+        <div class="item-entry">
+            <div class="item-header">
+                <span class="item-title">Criador de Conteúdo Técnico — Canal Clovin DEV (<a href="https://youtube.com/@clovindev" target="_blank">youtube.com/@clovindev</a>)</span>
+                <span class="item-date">Jan 2024 – Presente</span>
             </div>
-        </section>
-    </div>
+            <ul class="bullet-list">
+                <li>• <strong>Apresento transmissões ao vivo</strong> de desenvolvimento prático e arquitetura de software (Java 21, Spring Boot 3, React 19, Next.js 16 e TypeScript).</li>
+                <li>• <strong>Compartilho boas práticas de engenharia</strong>, resolução de bugs em tempo real e modelagem relacional para a comunidade de desenvolvedores.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Idiomas -->
+    <section>
+        <h2>Idiomas</h2>
+        <ul class="bullet-list">
+            <li>• <strong>Português:</strong> Nativo</li>
+            <li>• <strong>Inglês:</strong> Intermediário (leitura fluente de documentações técnicas, consumo de conteúdos em inglês e redação técnica)</li>
+        </ul>
+    </section>
 
 </body>
 </html>
