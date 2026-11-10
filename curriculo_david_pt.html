@@ -6,7 +6,7 @@
   <style>
     @page {
       size: A4 portrait;
-      margin: 7mm 11mm 7mm 11mm;
+      margin: 6mm 10.5mm 6mm 10.5mm;
     }
     * {
       box-sizing: border-box;
@@ -17,36 +17,36 @@
       font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
       color: #1a1a1a;
       background: #fff;
-      font-size: 7.9pt;
-      line-height: 1.22;
+      font-size: 7.65pt;
+      line-height: 1.19;
       -webkit-font-smoothing: antialiased;
     }
     /* Header */
     .header {
       border-bottom: 1.5px solid #111;
-      padding-bottom: 3.5px;
-      margin-bottom: 4px;
+      padding-bottom: 3px;
+      margin-bottom: 3.5px;
     }
     .name {
-      font-size: 16pt;
+      font-size: 15.5pt;
       font-weight: 800;
       letter-spacing: -0.2px;
       color: #111;
-      line-height: 1.1;
+      line-height: 1.05;
       text-transform: uppercase;
     }
     .headline {
-      font-size: 8.1pt;
+      font-size: 8pt;
       font-weight: 700;
       color: #1a365d;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.25px;
       margin-top: 2px;
-      margin-bottom: 2.5px;
+      margin-bottom: 2px;
     }
     .contacts {
-      font-size: 7.5pt;
+      font-size: 7.35pt;
       color: #444;
-      line-height: 1.25;
+      line-height: 1.2;
     }
     .contacts a {
       color: #1a365d;
@@ -59,17 +59,17 @@
 
     /* Sections */
     .section {
-      margin-bottom: 4px;
+      margin-bottom: 3.5px;
     }
     .section-title {
-      font-size: 8.2pt;
+      font-size: 8.1pt;
       font-weight: 800;
       color: #111;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       border-bottom: 1px solid #ccc;
       padding-bottom: 1px;
-      margin-bottom: 2px;
+      margin-bottom: 1.8px;
     }
 
     /* Paragraphs & Lists */
@@ -84,7 +84,7 @@
     .bullet-item {
       position: relative;
       padding-left: 11px;
-      margin-bottom: 1.2px;
+      margin-bottom: 1px;
       text-align: justify;
     }
     .bullet-item::before {
@@ -106,21 +106,21 @@
     .item-title {
       font-weight: 700;
       color: #111;
-      font-size: 8pt;
+      font-size: 7.85pt;
     }
     .item-subtitle {
       font-weight: 600;
       color: #1a365d;
-      font-size: 7.5pt;
+      font-size: 7.35pt;
     }
     .item-date {
-      font-size: 7.3pt;
+      font-size: 7.2pt;
       color: #555;
       font-weight: 600;
       white-space: nowrap;
     }
     .tech-stack {
-      font-size: 7.1pt;
+      font-size: 7pt;
       color: #444;
       font-style: italic;
       margin-bottom: 1px;
@@ -128,8 +128,8 @@
 
     /* Competencies Grid */
     .comp-item {
-      margin-bottom: 1.2px;
-      line-height: 1.2;
+      margin-bottom: 1px;
+      line-height: 1.18;
     }
     .comp-label {
       font-weight: 700;
@@ -215,19 +215,28 @@
     </div>
     <div class="tech-stack">Java 21 · Spring Boot 3 · Spring Security (JWT) · Hibernate AOP · PostgreSQL · Flyway · JUnit 5 / Mockito · Docker</div>
     <div class="bullet-list">
-      <div class="bullet-item">Desenvolvi backend escalável com isolamento estrito por tenant via AOP Hibernate Filter, segurança fail-closed anti-IDOR e 17 migrations versionadas Flyway.</div>
-      <div class="bullet-item">Implementei algoritmo de detecção de sobreposição por duração real de serviço (`validateTimeConflict`) e suíte de testes unitários com JUnit 5/Mockito.</div>
+      <div class="bullet-item">Desenvolvi backend corporativo com isolamento estrito por tenant via AOP Hibernate Filter, segurança fail-closed anti-IDOR e 17 migrations Flyway.</div>
+      <div class="bullet-item">Implementei algoritmo de colisão matemática por duração real (`validateTimeConflict`) e suíte de testes unitários com JUnit 5/Mockito.</div>
     </div>
 
-    <!-- BarberPro & OrganizeEstudo -->
+    <!-- BarberPro -->
     <div class="item-header">
-      <div class="item-title">BarberPro & OrganizeEstudo — Agendamento Atômico & SaaS E2E <span class="item-subtitle">(barberpro-rose.vercel.app | organize-estudo.vercel.app)</span></div>
+      <div class="item-title">BarberPro — Agendamento Profissional & Concorrência Atômica <span class="item-subtitle">(barberpro-rose.vercel.app)</span></div>
       <div class="item-date">Mai 2024 – Presente</div>
     </div>
-    <div class="tech-stack">Next.js 16 · React 19 · TypeScript · Prisma ORM · Playwright E2E · Web Audio API · PWA · PostgreSQL Neon</div>
+    <div class="tech-stack">Next.js 16 · React 19 · TypeScript · Prisma ORM 6 · Neon PostgreSQL · Transações Serializáveis · Vercel</div>
     <div class="bullet-list">
-      <div class="bullet-item">BarberPro: Motor transacional serializável testado com 50 reqs simultâneas (1 confirmação e 49 HTTP 409, 0 double-booking) e tickets VIP via WhatsApp.</div>
-      <div class="bullet-item">OrganizeEstudo: Plataforma multi-usuário com suíte de 36 testes Playwright E2E, Pomodoro fullscreen a 60 FPS via Web Audio API e blindagem contra perda de dados.</div>
+      <div class="bullet-item">Desenvolvi motor transacional serializável testado com 50 reqs simultâneas (1 confirmação e 49 HTTP 409, zero double-booking) e tickets VIP via WhatsApp.</div>
+    </div>
+
+    <!-- OrganizeEstudo -->
+    <div class="item-header">
+      <div class="item-title">OrganizeEstudo — Plataforma Multi-Usuário da Jornada 180 Dias & E2E <span class="item-subtitle">(organize-estudo.vercel.app)</span></div>
+      <div class="item-date">Nov 2024 – Presente</div>
+    </div>
+    <div class="tech-stack">Next.js 16 · React 19 · TypeScript · Prisma ORM 6 · Playwright E2E · Web Audio API · PWA · PostgreSQL Neon</div>
+    <div class="bullet-list">
+      <div class="bullet-item">Arquitetei plataforma SaaS com suíte de 36 testes Playwright E2E, Pomodoro fullscreen a 60 FPS com Web Audio API e blindagem contra perda de dados.</div>
     </div>
 
     <!-- FitLog Pro -->
@@ -237,8 +246,7 @@
     </div>
     <div class="tech-stack">Next.js 16 · TypeScript · Tailwind CSS · PWA Service Worker v1.1 · Vitest · Gráficos SVG Nativos · LocalStorage</div>
     <div class="bullet-list">
-      <div class="bullet-item">Construí aplicação PWA 100% offline-first com renderização vetorial SVG de alta performance (60 FPS), tabela de séries compacta (~52px) e 28 testes Vitest.</div>
-      <div class="bullet-item">Desenvolvi motor de pirâmide de treinamento (1RM Epley), calculadora nutricional da Tabela TACO e governança com persistência resiliente de storage.</div>
+      <div class="bullet-item">Construí aplicação PWA 100% offline-first com renderização vetorial SVG (60 FPS), tabela compacta de séries (~52px) e 28 testes em Vitest.</div>
     </div>
   </div>
 
@@ -251,7 +259,7 @@
     </div>
     <div class="tech-stack">Universidade Cidade de São Paulo (UNICID) — Foco em Engenharia de Software, Arquitetura de Sistemas e Banco de Dados</div>
 
-    <div style="margin-top: 2px; font-size: 7.5pt; line-height: 1.24;">
+    <div style="margin-top: 1.5px; font-size: 7.3pt; line-height: 1.21;">
       <strong>Comunicação Técnica & Liderança:</strong> Criador do canal <strong>Clovin DEV</strong> (<a href="https://youtube.com/@clovindev">youtube.com/@clovindev</a>) — Transmissões ao vivo de código, arquitetura de sistemas e boas práticas.<br>
       <strong>Cursos Complementares:</strong> Docker, Kubernetes & AWS (54,5h) <span class="separator">|</span> Java & POO Completo (54h) <span class="separator">|</span> CI/CD com GitHub Actions <span class="separator">|</span> JS & TS Avançado.<br>
       <strong>Idiomas:</strong> Português (Nativo) <span class="separator">|</span> Inglês (Intermediário a Avançado: leitura e escrita fluente de documentações técnicas e comunicação corporativa).
