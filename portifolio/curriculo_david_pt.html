@@ -1,554 +1,262 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Silva - Desenvolvedor Full Stack (Java 21 · Spring Boot 3 · React · Next.js · TypeScript)</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        :root {
-            --text-primary: #0f172a; /* slate-900 */
-            --text-secondary: #334155; /* slate-700 */
-            --text-muted: #64748b; /* slate-500 */
-            --link-color: #1d4ed8; /* blue-700 */
-            --border-color: #cbd5e1; /* slate-300 */
-            --badge-bg: #f8fafc;
-            --badge-border: #e2e8f0;
-        }
+  <meta charset="UTF-8">
+  <title>David Silva - Currículo Oficial</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 7mm 11mm 7mm 11mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      font-size: 7.9pt;
+      line-height: 1.22;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Header */
+    .header {
+      border-bottom: 1.5px solid #111;
+      padding-bottom: 3.5px;
+      margin-bottom: 4px;
+    }
+    .name {
+      font-size: 16pt;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      color: #111;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .headline {
+      font-size: 8.1pt;
+      font-weight: 700;
+      color: #1a365d;
+      letter-spacing: 0.3px;
+      margin-top: 2px;
+      margin-bottom: 2.5px;
+    }
+    .contacts {
+      font-size: 7.5pt;
+      color: #444;
+      line-height: 1.25;
+    }
+    .contacts a {
+      color: #1a365d;
+      text-decoration: none;
+    }
+    .separator {
+      color: #888;
+      margin: 0 3px;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    /* Sections */
+    .section {
+      margin-bottom: 4px;
+    }
+    .section-title {
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: #111;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1px;
+      margin-bottom: 2px;
+    }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.48;
-            color: var(--text-primary);
-            max-width: 880px;
-            margin: 0 auto;
-            padding: 24px 36px;
-            background-color: #fff;
-            font-size: 13px;
-            -webkit-font-smoothing: antialiased;
-        }
+    /* Paragraphs & Lists */
+    p {
+      text-align: justify;
+      margin-bottom: 1.5px;
+    }
+    .bullet-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .bullet-item {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 1.2px;
+      text-align: justify;
+    }
+    .bullet-item::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: #111;
+      font-weight: bold;
+    }
 
-        /* Header */
-        .header {
-            margin-bottom: 8px;
-        }
+    /* Jobs & Projects */
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 1.5px;
+      margin-bottom: 0.5px;
+    }
+    .item-title {
+      font-weight: 700;
+      color: #111;
+      font-size: 8pt;
+    }
+    .item-subtitle {
+      font-weight: 600;
+      color: #1a365d;
+      font-size: 7.5pt;
+    }
+    .item-date {
+      font-size: 7.3pt;
+      color: #555;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .tech-stack {
+      font-size: 7.1pt;
+      color: #444;
+      font-style: italic;
+      margin-bottom: 1px;
+    }
 
-        h1 {
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.6px;
-            line-height: 1.15;
-        }
+    /* Competencies Grid */
+    .comp-item {
+      margin-bottom: 1.2px;
+      line-height: 1.2;
+    }
+    .comp-label {
+      font-weight: 700;
+      color: #111;
+    }
 
-        .subtitle {
-            font-size: 13px;
-            font-weight: 700;
-            color: #1e293b;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            margin-top: 4px;
-            margin-bottom: 6px;
-        }
-
-        .contact-info {
-            font-size: 12px;
-            color: var(--text-muted);
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .contact-info a {
-            color: var(--link-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .separator {
-            color: var(--border-color);
-            margin: 0 1px;
-            font-weight: 400;
-        }
-
-        hr.header-line {
-            border: 0;
-            border-top: 1.5px solid #0f172a;
-            margin: 8px 0 14px 0;
-        }
-
-        /* Sections */
-        section {
-            margin-bottom: 13px;
-        }
-
-        h2 {
-            font-size: 13.5px;
-            color: var(--text-primary);
-            border-bottom: 1.5px solid var(--border-color);
-            padding-bottom: 4px;
-            margin-top: 12px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 0.6px;
-        }
-
-        .summary p {
-            font-size: 12.8px;
-            color: var(--text-secondary);
-            line-height: 1.52;
-        }
-
-        /* Competencies */
-        .competencies-list {
-            font-size: 12.5px;
-            line-height: 1.52;
-        }
-
-        .competencies-list p {
-            margin: 4px 0;
-            color: var(--text-secondary);
-        }
-
-        .competencies-list strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        /* Projects / Items */
-        .item-entry {
-            margin-bottom: 11px;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .item-title {
-            font-weight: 700;
-            font-size: 13.5px;
-            color: var(--text-primary);
-        }
-
-        .item-title a {
-            color: var(--link-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 12.5px;
-            margin-left: 6px;
-        }
-
-        .item-title a:hover {
-            text-decoration: underline;
-        }
-
-        .item-badge {
-            display: inline-block;
-            font-size: 11px;
-            font-weight: 600;
-            color: #0f172a;
-            background-color: var(--badge-bg);
-            border: 1px solid var(--badge-border);
-            padding: 2px 7px;
-            border-radius: 4px;
-            margin-left: 6px;
-        }
-
-        .item-date {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-muted);
-            white-space: nowrap;
-        }
-
-        .item-context {
-            font-size: 12.5px;
-            color: var(--text-secondary);
-            margin: 3px 0;
-            line-height: 1.48;
-        }
-
-        .item-tech {
-            font-size: 11.8px;
-            color: var(--text-muted);
-            font-weight: 600;
-            margin-bottom: 3px;
-        }
-
-        ul.bullet-list {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 3px;
-        }
-
-        ul.bullet-list li {
-            margin-bottom: 3px;
-            color: var(--text-secondary);
-            font-size: 12.5px;
-            line-height: 1.46;
-            padding-left: 2px;
-        }
-
-        ul.bullet-list li strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        @media print {
-            @page {
-                size: A4 portrait;
-                margin: 7mm 10mm;
-            }
-
-            * {
-                box-sizing: border-box;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            body {
-                padding: 0;
-                margin: 0;
-                max-width: 100%;
-                font-size: 9.8px;
-                line-height: 1.32;
-                background-color: #fff;
-                color: #0f172a;
-            }
-
-            .header {
-                margin-bottom: 2px;
-            }
-
-            h1 {
-                font-size: 18.5px;
-                line-height: 1.15;
-            }
-
-            .subtitle {
-                font-size: 9.8px;
-                margin-top: 2px;
-                margin-bottom: 3px;
-            }
-
-            .contact-info {
-                font-size: 9px;
-                gap: 5px;
-            }
-
-            hr.header-line {
-                margin: 4px 0 6px 0;
-            }
-
-            section {
-                margin-bottom: 7px;
-                page-break-inside: auto;
-                break-inside: auto;
-            }
-
-            h2 {
-                font-size: 10.2px;
-                margin-top: 6px;
-                margin-bottom: 3px;
-                padding-bottom: 2px;
-                page-break-after: avoid;
-                break-after: avoid;
-            }
-
-            .summary p, ul.bullet-list li, .competencies-list p {
-                font-size: 9.3px;
-                line-height: 1.3;
-            }
-
-            .summary {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-
-            .competencies-list {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-
-            .competencies-list p {
-                margin: 2px 0;
-            }
-
-            .item-entry {
-                margin-bottom: 6px;
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-
-            .item-header {
-                gap: 4px;
-            }
-
-            .item-title {
-                font-size: 10.2px;
-            }
-
-            .item-badge {
-                font-size: 8.2px;
-                padding: 1px 5px;
-            }
-
-            .item-date {
-                font-size: 9px;
-            }
-
-            .item-context {
-                font-size: 9.3px;
-                margin: 2px 0;
-                line-height: 1.28;
-            }
-
-            .item-tech {
-                font-size: 8.6px;
-                margin-bottom: 2px;
-            }
-
-            ul.bullet-list {
-                margin-top: 2px;
-            }
-
-            ul.bullet-list li {
-                margin-bottom: 2px;
-                font-size: 9.2px;
-                line-height: 1.28;
-            }
-        }
-    </style>
+    strong {
+      font-weight: 700;
+      color: #111;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <div class="header">
-        <h1>David Silva</h1>
-        <div class="subtitle">Desenvolvedor Full Stack · Java 21 / Spring Boot 3 · React 19 / Next.js 16 · TypeScript</div>
-        <div class="contact-info">
-            <span>São Paulo, SP</span>
-            <span class="separator">|</span>
-            <span>Telefone: (11) 94008-9101</span>
-            <span class="separator">|</span>
-            <span>E-mail: <a href="mailto:davis.clovins@gmail.com">davis.clovins@gmail.com</a></span>
-            <span class="separator">|</span>
-            <span>LinkedIn: <a href="https://www.linkedin.com/in/david-silva-17b2882bb" target="_blank">linkedin.com/in/david-silva-17b2882bb</a></span>
-            <span class="separator">|</span>
-            <span>GitHub: <a href="https://github.com/Davidds5" target="_blank">github.com/Davidds5</a></span>
-            <span class="separator">|</span>
-            <span>Portfólio: <a href="https://davidds5.github.io/portfolio_clovin" target="_blank">davidds5.github.io/portfolio_clovin</a></span>
-        </div>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="name">David Silva</div>
+    <div class="headline">DESENVOLVEDOR FULL STACK · JAVA 21 & SPRING BOOT 3 · NEXT.JS 16 & REACT 19 · TYPESCRIPT · NODE.JS · SQL</div>
+    <div class="contacts">
+      São Paulo, SP <span class="separator">|</span>
+      Telefone: (11) 94008-9101 <span class="separator">|</span>
+      E-mail: <a href="mailto:davis.clovins@gmail.com">davis.clovins@gmail.com</a> <span class="separator">|</span>
+      LinkedIn: <a href="https://linkedin.com/in/david-silva-17b2882bb">linkedin.com/in/david-silva-17b2882bb</a> <span class="separator">|</span>
+      GitHub: <a href="https://github.com/Davidds5">github.com/Davidds5</a> <span class="separator">|</span>
+      Portfólio: <a href="https://davidds5.github.io/portfolio_clovin">davidds5.github.io/portfolio_clovin</a>
     </div>
-    
-    <hr class="header-line">
+  </div>
 
-    <!-- Resumo Profissional -->
-    <section class="summary">
-        <h2>Resumo Profissional</h2>
-        <p>
-            Desenvolvedor Full Stack com sólida vivência prática em engenharia de software e <strong>desenho</strong> de arquitetura de microsserviços, focado no ecossistema <strong>Java 21 / Spring Boot 3</strong> e <strong>React 19 / Next.js 16 / TypeScript</strong> para atuação em vagas Júnior ou Pleno. Atuação como <strong>referência técnica</strong> em boas práticas (Clean Architecture, SOLID e TDD). Experiência comprovada em soluções corporativas, plataformas SaaS multi-tenant, integração financeira e <strong>carteiras digitais</strong>. Comprometido com entregas de alto valor e impacto (<em>awesome deliveries</em>), busco fazer parte do time da <strong>ília (ilia)</strong> construindo sistemas escaláveis e de alta disponibilidade.
-        </p>
-        <ul class="bullet-list">
-            <li>• <strong>Eliminei 100% de conflitos de agenda</strong> (double-booking) via transações atômicas serializáveis sob concorrência de 50 requisições simultâneas.</li>
-            <li>• <strong>Implementei isolamento multi-tenant seguro</strong> por tenantId via Hibernate Filter AOP e Prisma Extensions com blindagem Fail-Closed contra IDOR.</li>
-            <li>• <strong>Automatizei conciliação bancária</strong> via Open Finance Brasil (API Pluggy com webhooks HMAC) e cálculo de compras parceladas em cascata.</li>
-            <li>• <strong>Substituí controles manuais</strong> por portais de clientes self-service seguros, relatórios server-side em PDF e esteira de deploy contínuo em nuvem.</li>
-        </ul>
-    </section>
+  <!-- RESUMO PROFISSIONAL -->
+  <div class="section">
+    <div class="section-title">Resumo Profissional</div>
+    <p>
+      Estudante de Análise e Desenvolvimento de Sistemas (ADS) com sólida vivência prática em engenharia de software Full Stack, microsserviços escaláveis, APIs RESTful e aplicações SaaS em produção (<strong>Java 21 / Spring Boot 3</strong>, <strong>TypeScript / Node.js</strong>, <strong>Next.js 16 / React 19</strong>, <strong>Python</strong> e <strong>SQL</strong>). Experiência comprovada na arquitetura de soluções financeiras com Open Finance Brasil, motores transacionais de alta concorrência operacional (50 requisições simultâneas com zero double-bookings), suítes de testes determinísticos (<strong>Playwright E2E</strong>, <strong>Vitest</strong> e <strong>JUnit 5</strong>) e governança em metodologias ágeis (<strong>Scrum / Kanban / GitHub Projects</strong>). Perfil proativo orientado a <strong>Problem Solving</strong>, excelência arquitetural e liderança comunicativa (Criador do canal <strong>Clovin DEV</strong>, realizando transmissões ao vivo de live coding e arquitetura).
+    </p>
+  </div>
 
-    <!-- Competências Técnicas -->
-    <section>
-        <h2>Competências Técnicas</h2>
-        <div class="competencies-list">
-            <p><strong>Linguagens:</strong> Java 21 (LTS), TypeScript, JavaScript (ES6+), SQL, HTML5 Semântico, CSS3.</p>
-            <p><strong>Backend & Microsserviços:</strong> Spring Boot 3, Spring Security, Hibernate / JPA, Microsserviços (Microservices), RESTful APIs, Node.js, Clean Architecture, SOLID, POO, desenho e governança de soluções.</p>
-            <p><strong>Frontend & Web:</strong> React 19, Next.js 16 (App Router, Server Actions), Tailwind CSS v4, fundamentos de Angular, SWR, Acessibilidade (WCAG AA), Webhooks.</p>
-            <p><strong>Bancos de Dados & NoSQL:</strong> PostgreSQL, Neon Serverless (Connection Pooling), NoSQL (Redis para cache e rate limiting, conceitos MongoDB), Prisma ORM 6, Flyway Migrations.</p>
-            <p><strong>Mensageria, DevOps & Cloud:</strong> Arquitetura Orientada a Eventos, Mensageria assíncrona (RabbitMQ e Kafka conceitos), Docker, Kubernetes (K8s básico), AWS, Render Cloud, Vercel, Git, GitHub, esteira de CI/CD automatizada.</p>
-            <p><strong>Qualidade, Testes & Segurança:</strong> Testes Automatizados (JUnit 5, Mockito, Vitest), Multi-Tenancy (AOP / ThreadLocal), Autenticação JWT (Cookies HttpOnly), tokenização de dados sensíveis, governança de APIs, OWASP (Prevenção IDOR, Rate Limiting, Fail-Closed), Open Finance Brasil (API Pluggy / HMAC-SHA256).</p>
-        </div>
-    </section>
+  <!-- COMPETÊNCIAS TÉCNICAS -->
+  <div class="section">
+    <div class="section-title">Competências Técnicas</div>
+    <div class="comp-item"><span class="comp-label">Linguagens & Runtimes:</span> <strong>Java</strong> (17 e 21 LTS), <strong>Node.js</strong>, <strong>TypeScript</strong>, JavaScript (ES6+), <strong>Python</strong> (Automações / APIs), SQL (ANSI).</div>
+    <div class="comp-item"><span class="comp-label">Backend & APIs:</span> Spring Boot 3, Spring Security (JWT), Hibernate/JPA, APIs RESTful, microsserviços, tratamento global de erros, Clean Architecture e SOLID.</div>
+    <div class="comp-item"><span class="comp-label">Bancos de Dados & Governança:</span> PostgreSQL, Neon Serverless (Connection Pooling), modelagem relacional, Prisma ORM 6, migrations versionadas com Flyway, Redis.</div>
+    <div class="comp-item"><span class="comp-label">Frontend & PWA:</span> Next.js 16 (App Router, Server Components), React 19, Tailwind CSS, PWA Offline-First, Web Audio API procedural, acessibilidade WCAG.</div>
+    <div class="comp-item"><span class="comp-label">Testes, Qualidade & DevOps:</span> <strong>Playwright (E2E)</strong>, <strong>Vitest</strong>, <strong>JUnit 5</strong>, Mockito, Docker (multi-stage), CI/CD (GitHub Actions), Vercel, Render, Swagger, Scrum, Kanban (WIP Limit), GitHub Projects.</div>
+  </div>
 
-    <!-- Experiência Profissional -->
-    <section>
-        <h2>Experiência Profissional</h2>
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">Desenvolvedor Full Stack Freelancer / Autônomo</span>
-                <span class="item-date">Jan 2023 – Presente</span>
-            </div>
-            <div class="item-context">Desenvolvimento e entrega de soluções corporativas e microsserviços sob encomenda, com vivência em plataformas SaaS e sistemas escaláveis de grande porte para múltiplos clientes.</div>
-            <ul class="bullet-list">
-                <li>• <strong>Desenvolvi e publiquei</strong> aplicações comerciais em produção utilizando Java 21 / Spring Boot 3, React 19, Next.js 16, TypeScript e PostgreSQL.</li>
-                <li>• <strong>Liderei o ciclo completo de engenharia</strong>, do levantamento de requisitos ao desenho de arquitetura de microsserviços, APIs RESTful e governança.</li>
-                <li>• <strong>Arquitetei isolamento multi-tenant seguro</strong> com Hibernate Filter AOP e Prisma Extensions, blindando endpoints contra vulnerabilidades IDOR.</li>
-                <li>• <strong>Implementei rotinas transacionais atômicas</strong> com isolamento serializável, eliminando 100% de double-bookings sob concorrência pesada.</li>
-                <li>• <strong>Estruturei esteira de CI/CD e infraestrutura cloud</strong> com Docker, bancos serverless (Neon PostgreSQL) e hospedagem escalável na Vercel e Render.</li>
-            </ul>
-        </div>
-    </section>
+  <!-- EXPERIÊNCIA PROFISSIONAL -->
+  <div class="section">
+    <div class="section-title">Experiência Profissional</div>
+    <div class="item-header">
+      <div class="item-title">Desenvolvedor Full Stack Freelancer / Engenharia de SaaS em Produção</div>
+      <div class="item-date">Jan 2023 – Presente</div>
+    </div>
+    <div class="tech-stack">Engenharia, arquitetura de software de ponta a ponta e sustentação de produtos comerciais reais no ar</div>
+    <div class="bullet-list">
+      <div class="bullet-item">Desenvolvimento Full Stack completo e sustentação de 6 aplicações SaaS em produção combinando Java 21/Spring Boot 3, Next.js 16, TypeScript e PostgreSQL.</div>
+      <div class="bullet-item">Implementação de algoritmos com transações atômicas serializáveis sob alta concorrência operacional (50 VUs concorrentes com 0 double-bookings comprovados).</div>
+      <div class="bullet-item">Arquitetura de integrações via APIs RESTful seguras e webhooks assíncronos com validação criptográfica (HMAC-SHA256) e conciliação em tempo real.</div>
+      <div class="bullet-item">Garantia de confiabilidade com pipelines de testes automatizados (Playwright E2E e Vitest), isolamento multi-tenant (Zero IDOR) e esteiras de CI/CD.</div>
+      <div class="bullet-item">Gestão do ciclo de vida de desenvolvimento (SDLC) com rituais ágeis (Scrum / Kanban), rastreamento de issues e limites rigorosos de trabalho em andamento (WIP).</div>
+    </div>
+  </div>
 
-    <!-- Projetos em Destaque (Aplicações em Produção) -->
-    <section>
-        <h2>Projetos em Destaque (Aplicações em Produção)</h2>
+  <!-- PROJETOS EM DESTAQUE -->
+  <div class="section">
+    <div class="section-title">Projetos em Destaque (Aplicações em Produção)</div>
 
-        <!-- BarberPro -->
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">
-                    BarberPro — SaaS de Agendamento Profissional
-                    <a href="https://barberpro-rose.vercel.app" target="_blank">barberpro-rose.vercel.app</a>
-                    <span class="item-badge">Projeto de Cliente · Produção Ativa</span>
-                </span>
-                <span class="item-date">Mai 2024 – Presente</span>
-            </div>
-            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Prisma ORM 6 · Neon PostgreSQL · JWT HttpOnly · Vercel</div>
-            <ul class="bullet-list">
-                <li>• <strong>Desenvolvi plataforma SaaS self-service</strong> para agendamento online em tempo real sem cadastro prévio, eliminando filas no WhatsApp.</li>
-                <li>• <strong>Implementei motor transacional serializável</strong> eliminando 100% de double-bookings sob teste de estresse de 50 requisições simultâneas (HTTP 409).</li>
-                <li>• <strong>Automatizei emissão de tickets</strong> formatados no WhatsApp e controle de sessões seguras com cookies HttpOnly e revogação via tokenVersion.</li>
-            </ul>
-        </div>
+    <!-- Clovin Finanças -->
+    <div class="item-header">
+      <div class="item-title">Clovin Finanças — Gestão Orçamentária & Open Finance Brasil <span class="item-subtitle">(projeto-financas-rouge.vercel.app)</span></div>
+      <div class="item-date">Jun 2024 – Presente</div>
+    </div>
+    <div class="tech-stack">Next.js 16 · React 19 · TypeScript · Prisma ORM 6 · PostgreSQL Neon · Webhooks HMAC · Open Finance (Pluggy API)</div>
+    <div class="bullet-list">
+      <div class="bullet-item">Arquitetei sincronização bancária automatizada via Open Finance oficial com processamento de webhooks HMAC-SHA256 e conciliação em tempo real.</div>
+      <div class="bullet-item">Modelei schemas relacionais com agrupamento atômico de compras parceladas por UUID, projeção orçamentária 50/30/20 e tokenização segura (LGPD).</div>
+    </div>
 
-        <!-- BelasUnhas -->
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">
-                    BelasUnhas / Manicure API — SaaS Multi-Tenant de Salões
-                    <a href="https://belasunhas.onrender.com" target="_blank">belasunhas.onrender.com</a>
-                    <span class="item-badge">Projeto de Cliente · Produção Ativa</span>
-                </span>
-                <span class="item-date">Fev 2024 – Presente</span>
-            </div>
-            <div class="item-tech">Java 21 · Spring Boot 3 · Spring Security · Hibernate Filter (AOP) · PostgreSQL · Flyway (v17) · JUnit 5 · Mockito · Docker</div>
-            <ul class="bullet-list">
-                <li>• <strong>Desenvolvi microsserviço RESTful</strong> em Java 21 e Spring Boot 3 para gestão multi-tenant de agendamentos e controle financeiro.</li>
-                <li>• <strong>Implementei algoritmo de detecção de sobreposição</strong> por duração real (validateTimeConflict), solucionando encavalamento de atendimentos.</li>
-                <li>• <strong>Arquitetei isolamento multi-tenant</strong> via ThreadLocal e filtros Hibernate com AOP, com blindagem Fail-Closed contra falhas IDOR.</li>
-                <li>• <strong>Estruturei versionamento com 17 migrations</strong> Flyway e construí suíte de testes unitários e de integração com JUnit 5 e Mockito.</li>
-            </ul>
-        </div>
+    <!-- BelasUnhas -->
+    <div class="item-header">
+      <div class="item-title">BelasUnhas / Manicure API — SaaS Multi-Tenant & Microsserviço Corporativo <span class="item-subtitle">(belasunhas.onrender.com)</span></div>
+      <div class="item-date">Fev 2024 – Presente</div>
+    </div>
+    <div class="tech-stack">Java 21 · Spring Boot 3 · Spring Security (JWT) · Hibernate AOP · PostgreSQL · Flyway · JUnit 5 / Mockito · Docker</div>
+    <div class="bullet-list">
+      <div class="bullet-item">Desenvolvi backend escalável com isolamento estrito por tenant via AOP Hibernate Filter, segurança fail-closed anti-IDOR e 17 migrations versionadas Flyway.</div>
+      <div class="bullet-item">Implementei algoritmo de detecção de sobreposição por duração real de serviço (`validateTimeConflict`) e suíte de testes unitários com JUnit 5/Mockito.</div>
+    </div>
 
-        <!-- ObraSync -->
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">
-                    ObraSync / Diário de Obra — SaaS Multi-Tenant de Engenharia
-                    <a href="https://obrasync-bf1t.onrender.com" target="_blank">obrasync-bf1t.onrender.com</a>
-                    <span class="item-badge">Projeto de Cliente · Produção Ativa</span>
-                </span>
-                <span class="item-date">Out 2023 – Presente</span>
-            </div>
-            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Tailwind CSS · Prisma ORM · Neon PostgreSQL · Docker · Render Cloud</div>
-            <ul class="bullet-list">
-                <li>• <strong>Desenvolvi plataforma SaaS multi-tenant</strong> para gestão de obras civis, centralizando relatórios e eliminando desorganização em mensagens.</li>
-                <li>• <strong>Implementei portal do proprietário</strong> via Magic Link sem senhas e upload de imagens protegido com validação binária por Magic Bytes.</li>
-                <li>• <strong>Otimizei latência para menos de 30ms</strong> via Edge Caching CDN com SWR, suportando até 1.000 usuários simultâneos com Rate Limiting.</li>
-                <li>• <strong>Automatizei geração server-side</strong> de relatórios executivos em formato PDF para prestação de contas aos clientes.</li>
-            </ul>
-        </div>
+    <!-- BarberPro & OrganizeEstudo -->
+    <div class="item-header">
+      <div class="item-title">BarberPro & OrganizeEstudo — Agendamento Atômico & SaaS E2E <span class="item-subtitle">(barberpro-rose.vercel.app | organize-estudo.vercel.app)</span></div>
+      <div class="item-date">Mai 2024 – Presente</div>
+    </div>
+    <div class="tech-stack">Next.js 16 · React 19 · TypeScript · Prisma ORM · Playwright E2E · Web Audio API · PWA · PostgreSQL Neon</div>
+    <div class="bullet-list">
+      <div class="bullet-item">BarberPro: Motor transacional serializável testado com 50 reqs simultâneas (1 confirmação e 49 HTTP 409, 0 double-booking) e tickets VIP via WhatsApp.</div>
+      <div class="bullet-item">OrganizeEstudo: Plataforma multi-usuário com suíte de 36 testes Playwright E2E, Pomodoro fullscreen a 60 FPS via Web Audio API e blindagem contra perda de dados.</div>
+    </div>
 
-        <!-- EstudaBR / Eloped -->
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">
-                    EstudaBR / Eloped — Plataforma Educacional Integrada
-                    <a href="https://eloped.com.br" target="_blank">eloped.com.br</a>
-                    <span class="item-badge">Projeto sob Encomenda · Produção Ativa</span>
-                </span>
-                <span class="item-date">Ago 2023 – Abr 2024</span>
-            </div>
-            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Zod · Vitest (308 Testes Automatizados)</div>
-            <ul class="bullet-list">
-                <li>• <strong>Desenvolvi plataforma educacional</strong> com controle de acesso RBAC para 4 perfis de usuários, alinhada à matriz da BNCC.</li>
-                <li>• <strong>Implementei simulados interativos</strong> com correção e cálculo instantâneo de notas e dashboards de acompanhamento pedagógico.</li>
-                <li>• <strong>Automatizei emissão de documentos</strong> escolares, comunicados e boletins oficiais em PDF gerados no servidor.</li>
-                <li>• <strong>Validei integridade das regras</strong> de negócio e schemas Zod com suíte de 308 testes automatizados aprovados sem regressões.</li>
-            </ul>
-        </div>
+    <!-- FitLog Pro -->
+    <div class="item-header">
+      <div class="item-title">FitLog Pro — PWA Mobile-First Offline, Evolução & Dieta TACO <span class="item-subtitle">(fitlog-pro-wb4p.vercel.app)</span></div>
+      <div class="item-date">Out 2024 – Presente</div>
+    </div>
+    <div class="tech-stack">Next.js 16 · TypeScript · Tailwind CSS · PWA Service Worker v1.1 · Vitest · Gráficos SVG Nativos · LocalStorage</div>
+    <div class="bullet-list">
+      <div class="bullet-item">Construí aplicação PWA 100% offline-first com renderização vetorial SVG de alta performance (60 FPS), tabela de séries compacta (~52px) e 28 testes Vitest.</div>
+      <div class="bullet-item">Desenvolvi motor de pirâmide de treinamento (1RM Epley), calculadora nutricional da Tabela TACO e governança com persistência resiliente de storage.</div>
+    </div>
+  </div>
 
-        <!-- Clovin Finanças -->
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">
-                    Clovin Finanças — Gestão Financeira & Open Finance
-                    <a href="https://projeto-financas-rouge.vercel.app" target="_blank">projeto-financas-rouge.vercel.app</a>
-                    <span class="item-badge">Projeto Autônomo · Produção Ativa</span>
-                </span>
-                <span class="item-date">Jun 2024 – Presente</span>
-            </div>
-            <div class="item-tech">Next.js 16 · React 19 · TypeScript · Prisma ORM 6 · Neon PostgreSQL · Auth.js v5 · Pluggy API · Tailwind CSS</div>
-            <ul class="bullet-list">
-                <li>• <strong>Desenvolvi aplicação financeira</strong> com sincronização bancária 100% automatizada via Open Finance Brasil (API Pluggy e webhooks HMAC).</li>
-                <li>• <strong>Implementei motor de cálculo</strong> com agrupamento de compras parceladas por UUID e integração com fluxos de carteiras digitais.</li>
-                <li>• <strong>Assegurei proteção de dados sensíveis</strong> através de tokenização de credenciais bancárias e conformidade com padrões de governança da LGPD.</li>
-            </ul>
-        </div>
-    </section>
+  <!-- FORMAÇÃO ACADÊMICA -->
+  <div class="section">
+    <div class="section-title">Formação Acadêmica & Atividades</div>
+    <div class="item-header">
+      <div class="item-title">Graduação Tecnológica em Análise e Desenvolvimento de Sistemas (ADS)</div>
+      <div class="item-date">Jan 2024 – Dez 2025 (Cursando)</div>
+    </div>
+    <div class="tech-stack">Universidade Cidade de São Paulo (UNICID) — Foco em Engenharia de Software, Arquitetura de Sistemas e Banco de Dados</div>
 
-    <!-- Formação Acadêmica -->
-    <section>
-        <h2>Formação Acadêmica</h2>
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">Graduação Tecnológica em Análise e Desenvolvimento de Sistemas (ADS)</span>
-                <span class="item-date">Jan 2024 – Dez 2025 (Previsão de Conclusão)</span>
-            </div>
-            <div class="item-context">Universidade Cidade de São Paulo (UNICID) — Ensino Superior / Tecnólogo</div>
-        </div>
-    </section>
-
-    <!-- Cursos Complementares & Certificações -->
-    <section>
-        <h2>Cursos Complementares & Certificações</h2>
-        <ul class="bullet-list">
-            <li>• <strong>Spring Boot, Docker, K8s e Nuvem AWS/GCP</strong> — Leandro Costa (54,5h: REST APIs, JWT, JUnit 5, Microsserviços, Docker, Kubernetes, AWS) — 2024</li>
-            <li>• <strong>Java COMPLETO e Orientação a Objetos</strong> — Nelio Alves (54h: POO, JDBC, JPA/Hibernate, Spring Boot, Lambdas e Streams) — 2023</li>
-            <li>• <strong>JavaScript e TypeScript do Básico ao Avançado</strong> — Luiz Otávio Miranda (ES6+, TypeScript, POO, Async e Design Patterns) — 2023</li>
-        </ul>
-    </section>
-
-    <!-- Comunicação Técnica & Liderança -->
-    <section>
-        <h2>Comunicação Técnica & Liderança</h2>
-        <div class="item-entry">
-            <div class="item-header">
-                <span class="item-title">Criador de Conteúdo Técnico — Canal Clovin DEV (<a href="https://youtube.com/@clovindev" target="_blank">youtube.com/@clovindev</a>)</span>
-                <span class="item-date">Jan 2024 – Presente</span>
-            </div>
-            <ul class="bullet-list">
-                <li>• <strong>Apresento transmissões ao vivo</strong> de desenvolvimento prático e arquitetura de software (Java 21, Spring Boot 3, React 19, Next.js 16 e TypeScript).</li>
-                <li>• <strong>Compartilho boas práticas de engenharia</strong>, resolução de bugs em tempo real e modelagem relacional para a comunidade de desenvolvedores.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Idiomas -->
-    <section>
-        <h2>Idiomas</h2>
-        <ul class="bullet-list">
-            <li>• <strong>Português:</strong> Nativo</li>
-            <li>• <strong>Inglês:</strong> Intermediário (leitura fluente de documentações técnicas, consumo de conteúdos em inglês e redação técnica)</li>
-        </ul>
-    </section>
+    <div style="margin-top: 2px; font-size: 7.5pt; line-height: 1.24;">
+      <strong>Comunicação Técnica & Liderança:</strong> Criador do canal <strong>Clovin DEV</strong> (<a href="https://youtube.com/@clovindev">youtube.com/@clovindev</a>) — Transmissões ao vivo de código, arquitetura de sistemas e boas práticas.<br>
+      <strong>Cursos Complementares:</strong> Docker, Kubernetes & AWS (54,5h) <span class="separator">|</span> Java & POO Completo (54h) <span class="separator">|</span> CI/CD com GitHub Actions <span class="separator">|</span> JS & TS Avançado.<br>
+      <strong>Idiomas:</strong> Português (Nativo) <span class="separator">|</span> Inglês (Intermediário a Avançado: leitura e escrita fluente de documentações técnicas e comunicação corporativa).
+    </div>
+  </div>
 
 </body>
 </html>
